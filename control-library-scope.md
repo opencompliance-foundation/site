@@ -37,3 +37,14 @@ The target model is:
 5. keep the remaining slices explicit in the same verification graph.
 
 That is the direction the public mapping metadata now points toward.
+
+## Exact-anchor pilot
+
+The specs now also carry a first exact-anchor review pilot.
+
+That pilot does two things at once:
+
+1. it records public-source exact anchors where the source material is actually open enough to review responsibly, and
+2. it records explicit blocker entries where proprietary or non-public framework text still prevents an honest exact-anchor publication.
+
+That is a better state than a fake complete mapping corpus.
