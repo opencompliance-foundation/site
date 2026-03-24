@@ -8,6 +8,7 @@ It is a standalone static bundle intended for GitHub Pages under `opencompliance
 
 - the public explanation of OpenCompliance,
 - the trust model and publication model,
+- the framework-depth and standards-priority pages,
 - the roadmap and foundation pages,
 - and only static assets that are safe to publish openly.
 

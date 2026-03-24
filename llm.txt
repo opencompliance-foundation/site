@@ -13,6 +13,7 @@ Primary pages:
 - /open-proof-layer.html: essay on why an open proof layer helps the industry
 - /competitive-landscape.html: overlap with commercial trust/compliance platforms and the open-source thesis
 - /foundation.html: foundation charter, sponsor model, repo structure, and peer review discipline
+- /frameworks.html: standards depth order, framework coverage, and AI-standard priorities
 - /roadmap.html: phased roadmap
 - /showcase.html: ExampleCo walkthrough showing how a hypothetical company can present corridor-scoped proofs, attestations, and punch-lists
 - /public-artifacts.html: docs/specs/examples publication strategy
