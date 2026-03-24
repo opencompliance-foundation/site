@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenCompliance Foundation</title>
+  <meta name="description" content="Why OpenCompliance should be stewarded through a vendor-neutral foundation, how sponsorship should work, which public repositories should exist, and how the documents should be peer reviewed.">
+  <meta name="theme-color" content="#0b1324">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">OC</span>
+        <span>OpenCompliance</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Overview</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="trust.html">Trust Model</a>
+        <a href="open-proof-layer.html">Essay</a>
+        <a href="competitive-landscape.html">Landscape</a>
+        <a href="foundation.html" aria-current="page">Foundation</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="public-artifacts.html">Public Artifacts</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div class="eyebrow">Foundation Design</div>
+      <h1>Build the proof commons in a neutral home.</h1>
+      <p class="lead">OpenCompliance should not look like one vendor's side project with a good essay attached. If the semantic layer is meant to be shared by vendors, customers, auditors, and end users, it needs a public home, explicit anti-capture rules, and a review process that punishes hand-waving.</p>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <strong>0</strong>
+          <span>sponsor-weighted votes in the proposed model</span>
+        </div>
+        <div class="stat-card">
+          <strong>7</strong>
+          <span>day-one public repositories in the proposed org map</span>
+        </div>
+        <div class="stat-card">
+          <strong>3</strong>
+          <span>artifact classes kept separate: proofs, attestations, judgment</span>
+        </div>
+        <div class="stat-card">
+          <strong>1</strong>
+          <span>hard honesty rule: say what is not built yet</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="double-grid">
+      <article class="section-card">
+        <div class="kicker">Why A Foundation</div>
+        <h2>Shared semantics should not live inside one vendor's black box.</h2>
+        <p>The public value in OpenCompliance is the semantic layer: open schemas, open mappings, Lean 4 control corridors, conformance tests, and replayable public artifacts. That layer becomes more credible if it is stewarded in a neutral home rather than treated as a feature inside one company's product stack.</p>
+        <p>The aim is to elevate the whole market. Commercial platforms still compete on workflow, integrations, services, trust-centre UX, and customer support. The foundation only governs the shared substrate.</p>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Who Benefits</div>
+        <h2>Vendors, customers, and users all get something real.</h2>
+        <ul class="list">
+          <li><strong>Vendors:</strong> less duplicated mapping work, less semantic lock-in pressure, and fewer incentives to defend opaque trust claims.</li>
+          <li><strong>Customers:</strong> clearer artifacts, better portability, and a more direct way to challenge weak evidence or over-broad claims.</li>
+          <li><strong>End users:</strong> a stronger and more inspectable chain of trust, even if they never read the specs themselves.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="double-grid">
+      <article class="callout">
+        <div class="kicker">What Exists Today</div>
+        <p>The project already has a public docs site, a detailed PRD, a trust model, a publication strategy, and sandbox material showing how one company could separate proved controls from attestations and judgment.</p>
+      </article>
+      <article class="callout">
+        <div class="kicker">What Does Not Exist Yet</div>
+        <p>There is no incorporated foundation, no elected steering group, no dues model, no public conformance programme, and no stable reference implementation. Any public language that implies otherwise is wrong.</p>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>Charter principles</h2>
+    </section>
+    <section class="card-grid">
+      <article class="artifact-card">
+        <div class="kicker">Principle 1</div>
+        <h3>Do not flatten epistemology</h3>
+        <p>Proofs, signed attestations, and judgment calls are different things. The commons must keep them separate instead of compressing them into one status light.</p>
+      </article>
+      <article class="artifact-card">
+        <div class="kicker">Principle 2</div>
+        <h3>Keep semantics public</h3>
+        <p>Mappings, proof boundaries, schemas, and conformance rules should be versioned, reviewable, and reusable by anyone.</p>
+      </article>
+      <article class="artifact-card">
+        <div class="kicker">Principle 3</div>
+        <h3>Sponsors fund work, not meaning</h3>
+        <p>Commercial support is welcome. Buying extra control over normative text is not.</p>
+      </article>
+      <article class="artifact-card">
+        <div class="kicker">Principle 4</div>
+        <h3>Stay explicit about limits</h3>
+        <p>If something is incomplete, mark it incomplete. If legal judgment is still required, say so directly.</p>
+      </article>
+      <article class="artifact-card">
+        <div class="kicker">Principle 5</div>
+        <h3>Publish inspectable trust chains</h3>
+        <p>Prefer signed artifacts, canonical digests, append-only transparency, witness reruns, and visible revocation over static PDFs and unverifiable prose.</p>
+      </article>
+      <article class="artifact-card">
+        <div class="kicker">Principle 6</div>
+        <h3>Optimise for the full trust chain</h3>
+        <p>The project should improve trust for vendors, their customers, and the people at the far end of the chain who bear the real-world consequences.</p>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>Sponsor model</h2>
+    </section>
+    <section class="double-grid">
+      <article class="section-card">
+        <div class="kicker">Participation</div>
+        <h3>Four classes, one public process</h3>
+        <ul class="list">
+          <li><strong>Maintainers:</strong> earn influence through sustained public work.</li>
+          <li><strong>Sponsors:</strong> fund staff time, infrastructure, or workstreams, but do not buy votes.</li>
+          <li><strong>Public-interest reviewers:</strong> privacy, standards, buyer-side, and academic voices who can challenge the work without paying.</li>
+          <li><strong>Adopters:</strong> use the outputs, file issues, and feed back operational reality.</li>
+        </ul>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Anti-Capture</div>
+        <h3>The sponsor rules need to be boring and hard.</h3>
+        <ul class="list">
+          <li>No sponsor-weighted voting.</li>
+          <li>No closed normative process.</li>
+          <li>No secret compatibility carve-outs.</li>
+          <li>Mandatory conflict disclosure for maintainers and reviewers.</li>
+          <li>No certification, endorsement, or trust-mark implication from sponsorship.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>Public organisation layout</h2>
+    </section>
+    <div class="panel">
+      <pre><code>opencompliance-foundation/
+  site                public docs and project explanation
+  governance          charter, governance, sponsor model, conflicts
+  specs               normative public artifact formats
+  lean4-controls      formal control corridor in Lean 4
+  evidence-schema     typed evidence claim schemas
+  conformance         tests and verifier behaviour checks
+  examples            synthetic bundles and replay fixtures
+
+later, only when justified:
+  reference-verifier
+  connectors</code></pre>
+    </div>
+
+    <section class="double-grid">
+      <article class="section-card">
+        <div class="kicker">Governance Repo</div>
+        <h3>Day-one documents should be concrete.</h3>
+        <ul class="list">
+          <li><strong>Charter:</strong> the project mission, scope, and anti-theatre boundaries.</li>
+          <li><strong>Governance:</strong> roles, decision types, review periods, and maintainer rules.</li>
+          <li><strong>Conflicts:</strong> disclosure, recusal, and anti-capture hygiene.</li>
+          <li><strong>Sponsor model:</strong> how vendors can fund work without buying meaning.</li>
+          <li><strong>Release and sign-off:</strong> how public artifacts become real releases instead of mutable draft prose.</li>
+        </ul>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Export Boundary</div>
+        <h3>Two public bundles come first.</h3>
+        <p>The first allow-listed exports should be simple: one bundle for the public site and one for the governance repo. If the project cannot publish those cleanly from explicit manifests, it is not ready to talk about a bigger public ecosystem.</p>
+        <p>The boundary rule stays the same: if a path is not on the allow-list, it does not ship.</p>
+      </article>
+    </section>
+
+    <section class="double-grid">
+      <article class="callout">
+        <div class="kicker">Boundary</div>
+        <p>The private working repo should remain private. Public repos should be fed by explicit export manifests and release checks, not by wishful thinking or whole-repo mirroring.</p>
+        <a class="pill" href="public-artifacts.html">Publication strategy</a>
+      </article>
+      <article class="callout">
+        <div class="kicker">Trust</div>
+        <p>The foundation and the trust model are linked. If the public home cannot explain its signer rules, replay story, and revocation story clearly, the project is not ready to claim that it improves the industry.</p>
+        <a class="pill" href="trust.html">Trust model</a>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>Peer review discipline</h2>
+    </section>
+    <section class="card-grid">
+      <article class="artifact-card">
+        <div class="kicker">Round 0</div>
+        <h3>Honesty gate</h3>
+        <p>Run a blunt pre-flight review first. Kill hype, separate current reality from aspiration, and make every document say what is not built yet.</p>
+      </article>
+      <article class="artifact-card">
+        <div class="kicker">Round 1</div>
+        <h3>Verifier and trust chain</h3>
+        <p>Pressure-test the formal methods story, signed artifacts, transparency, witness reruns, and conformance claims.</p>
+      </article>
+      <article class="artifact-card">
+        <div class="kicker">Round 2</div>
+        <h3>Law, privacy, and compliance</h3>
+        <p>Force the docs to survive hostile readings from privacy, legal-formalisation, and compliance-semantics perspectives.</p>
+      </article>
+      <article class="artifact-card">
+        <div class="kicker">Round 3</div>
+        <h3>Security and incentives</h3>
+        <p>Ask how the trust claims can be gamed, how the incentives can drift, and which shortcuts the market will try the moment the docs look successful.</p>
+      </article>
+      <article class="artifact-card">
+        <div class="kicker">Round 4</div>
+        <h3>Foundation realism</h3>
+        <p>Check that the governance and funding model could survive real contributors, real sponsors, and real maintenance burden.</p>
+      </article>
+      <article class="artifact-card">
+        <div class="kicker">Round 5</div>
+        <h3>Actual industry review</h3>
+        <p>Bring in vendors, buyers, auditors, privacy counsel, standards maintainers, and public-interest reviewers before treating the documents as settled.</p>
+      </article>
+    </section>
+
+    <blockquote class="quote">The right public tone is not "trust us more." It is "here is the exact machinery, here are the limits, and here is how to challenge it."</blockquote>
+
+    <footer class="footer">
+      <p>This foundation design is meant to make the open layer stronger for everyone in the chain, not to turn the project into an anti-vendor club or a ceremonial standards body.</p>
+      <div class="footer-nav">
+        <a href="index.html">Overview</a>
+        <a href="competitive-landscape.html">Landscape</a>
+        <a href="trust.html">Trust model</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="public-artifacts.html">Public artifacts</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

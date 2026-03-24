@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenCompliance Trust Model</title>
+  <meta name="description" content="How OpenCompliance handles trust boundaries, proof surfaces, signed artifacts, transparency logs, witness reruns, and fail-closed certification without blockchain.">
+  <meta name="theme-color" content="#0b1324">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">OC</span>
+        <span>OpenCompliance</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Overview</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="trust.html" aria-current="page">Trust Model</a>
+        <a href="open-proof-layer.html">Essay</a>
+        <a href="competitive-landscape.html">Landscape</a>
+        <a href="foundation.html">Foundation</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="public-artifacts.html">Public Artifacts</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div class="eyebrow">Tamper-Evident Verification</div>
+      <h1>Make it hard to cheat without pretending to be a blockchain.</h1>
+      <p class="lead">The goal is not tokenized infrastructure or global consensus. The goal is to make the path from evidence to certificate signed, append-only, replayable, and independently inspectable so shortcuts become noisy and expensive.</p>
+      <div class="pill-row">
+        <span class="pill">Signed facts</span>
+        <span class="pill">Append-only logs</span>
+        <span class="pill">Witness reruns</span>
+      </div>
+    </section>
+
+    <section class="double-grid">
+      <article class="section-card">
+        <div class="kicker">Trust Surface</div>
+        <h2>What the product should always disclose</h2>
+        <ul class="list">
+          <li>Which controls were actually proved from inspectable system state.</li>
+          <li>Which controls were satisfied by signed attestations and who signed them.</li>
+          <li>Which controls remain judgment-dependent and therefore require human review.</li>
+          <li>Which assumptions, exclusions, or unresolved axioms still remain in the artifact set.</li>
+        </ul>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Shortcut-Proof</div>
+        <h2>What that means here</h2>
+        <p>Shortcut-proof does not mean impossible to attack. It means a vendor should not be able to leap from mutable internal state to a polished certificate while skipping the public, checkable intermediate trail.</p>
+        <p>The verification chain should be legible enough that missing steps break issuance instead of being smoothed over by prose.</p>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>The anti-shortcut design</h2>
+    </section>
+    <section class="flow-grid">
+      <article class="flow-step">
+        <div class="kicker">1</div>
+        <strong>Canonicalize before signing</strong>
+        <p>Evidence claims, proof bundles, certificates, and revocations get canonical serialization before hashing or signing so identity is sharper than presentation.</p>
+      </article>
+      <article class="flow-step">
+        <div class="kicker">2</div>
+        <strong>Separate signer roles</strong>
+        <p>Producers sign facts. Reviewers sign attestations. The verifier signs conclusions. Witnesses sign replay receipts. Each role means something different.</p>
+      </article>
+      <article class="flow-step">
+        <div class="kicker">3</div>
+        <strong>Append-only transparency</strong>
+        <p>Artifact digests go into a transparency ledger. Replacements require new append entries. Silent mutation should be structurally invalid.</p>
+      </article>
+      <article class="flow-step">
+        <div class="kicker">4</div>
+        <strong>Independent witness reruns</strong>
+        <p>Published proof bundles can be replayed in clean environments. Witness receipts only exist on exact digest matches under the expected verifier version.</p>
+      </article>
+      <article class="flow-step">
+        <div class="kicker">5</div>
+        <strong>Fail closed</strong>
+        <p>No proof bundle, no certificate. No logged attestation digest, no certificate. Expired signer authority, no certificate. Missing steps are hard stops.</p>
+      </article>
+      <article class="flow-step">
+        <div class="kicker">6</div>
+        <strong>Revocation stays public</strong>
+        <p>When drift breaks an issued result, the revocation is an artifact too. Certificates are revocable state, not static PDFs that quietly age in place.</p>
+      </article>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="double-grid">
+      <article class="callout">
+        <div class="kicker">Why Not Blockchain</div>
+        <p>The trust problem here is not scarce digital assets or distributed consensus. It is auditability, mutation resistance, and reproducibility. Supply-chain security patterns fit better: signatures, transparency logs, provenance, reproducible environments, and public witnesses.</p>
+      </article>
+      <article class="callout">
+        <div class="kicker">What Remains Human</div>
+        <p>Even a perfectly logged verification chain does not remove normative judgment. Policy adequacy, physical assurance, and legal attestation remain outside the theorem prover. The point is to make those boundaries sharper, not to deny they exist.</p>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>One trust chain</h2>
+    </section>
+    <div class="panel">
+      <pre><code>signed evidence claim
+  -> canonical digest
+  -> transparency entry
+  -> proof bundle digest
+  -> verification verdict
+  -> certificate digest
+  -> witness replay receipt
+  -> drift detection
+  -> revocation entry if state changes</code></pre>
+    </div>
+
+    <section class="section-title">
+      <h2>Limitations stay first-class</h2>
+    </section>
+    <blockquote class="quote">OpenCompliance should be useful because it states its limits clearly, not because it pretends those limits are gone.</blockquote>
+
+    <footer class="footer">
+      <p>Trust here comes from explicitness: explicit proof boundaries, explicit signer roles, explicit logs, explicit replay, and explicit limitations.</p>
+      <div class="footer-nav">
+        <a href="index.html">Overview</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="competitive-landscape.html">Landscape</a>
+        <a href="foundation.html">Foundation</a>
+        <a href="public-artifacts.html">Public artifacts</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

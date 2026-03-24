@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenCompliance Public Artifacts</title>
+  <meta name="description" content="How OpenCompliance can publish docs, open specs, and public example bundles safely through separate public repositories or submodules.">
+  <meta name="theme-color" content="#0b1324">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">OC</span>
+        <span>OpenCompliance</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Overview</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="trust.html">Trust Model</a>
+        <a href="open-proof-layer.html">Essay</a>
+        <a href="competitive-landscape.html">Landscape</a>
+        <a href="foundation.html">Foundation</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="public-artifacts.html" aria-current="page">Public Artifacts</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div class="eyebrow">Publication Strategy</div>
+      <h1>Publish only what is meant to be public.</h1>
+      <p class="lead">The cleanest model is a private working repository with explicit public export bundles. Docs, open specs, and public example fixtures each get their own allow-listed release target instead of mirroring the whole repository by accident.</p>
+    </section>
+
+    <section class="double-grid">
+      <article class="section-card">
+        <div class="kicker">Recommended Split</div>
+        <h2>Seven public repos</h2>
+        <ul class="list">
+          <li><strong>Docs repo:</strong> the static site under <code>docs/</code>, suitable for GitHub Pages.</li>
+          <li><strong>Governance repo:</strong> charter, governance, conflicts, sponsor model, and release policy.</li>
+          <li><strong>Specs repo:</strong> draft artifact formats for trust-surface reports, proof bundles, witness receipts, revocations, and versioning rules.</li>
+          <li><strong>Examples repo:</strong> replay bundles, sample fixtures, witness examples, and synthetic public test data.</li>
+          <li><strong>Conformance repo:</strong> descriptive vectors and expected outputs tied to the public examples.</li>
+          <li><strong>Evidence-schema repo:</strong> typed evidence claim envelopes and public example claims.</li>
+          <li><strong>Lean4-controls repo:</strong> an honest status note and corridor declaration, not a fake released control library.</li>
+        </ul>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Why Split Them</div>
+        <h2>Different audiences, different risk</h2>
+        <p>The docs need to be simple and public. The open specs need reviewable semantics and versioning. The example bundles need public-safe synthetic fixtures. The private working repo may still contain internal experiments, private evidence, or unpublished runtime work that should never leak into a public mirror.</p>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>Submodule-friendly model</h2>
+    </section>
+    <div class="panel">
+      <pre><code>private monorepo
+  projects/dev/opencompliance/docs/              -> public docs repo or docs submodule
+  projects/dev/opencompliance/foundation/        -> public governance repo or governance submodule
+  projects/dev/opencompliance/open-specs/        -> public specs repo or specs submodule
+  projects/dev/opencompliance/fixtures/public/   -> public examples repo or examples submodule
+
+private only
+  projects/dev/opencompliance/src/
+  projects/dev/opencompliance/fixtures/internal/
+  projects/dev/opencompliance/.env
+  projects/dev/opencompliance/secrets/</code></pre>
+    </div>
+
+    <section class="card-grid">
+      <article class="artifact-card">
+        <div class="kicker">Rule 1</div>
+        <h3>Allow-list every release</h3>
+        <p>Publication should be manifest-driven. If a path is not listed for a public bundle, it does not ship.</p>
+      </article>
+      <article class="artifact-card">
+        <div class="kicker">Rule 2</div>
+        <h3>Run public-boundary checks in CI</h3>
+        <p>Secret scans, path checks, and artifact-manifest validation should block release before anything reaches the mirror target.</p>
+      </article>
+      <article class="artifact-card">
+        <div class="kicker">Rule 3</div>
+        <h3>Keep docs independently publishable</h3>
+        <p>The docs bundle should work as a standalone GitHub Pages site so it can be published without exposing the rest of the project.</p>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>Publication options</h2>
+    </section>
+    <section class="double-grid">
+      <article class="callout">
+        <div class="kicker">Option A</div>
+        <h3>One-way export to public repos</h3>
+        <p>Keep the monorepo as the source of truth, generate release manifests, and push allow-listed bundles into separate public repositories. This is the safest operational model.</p>
+      </article>
+      <article class="callout">
+        <div class="kicker">Option B</div>
+        <h3>Public repos as submodules</h3>
+        <p>Mount the public repositories as submodules and publish into them from the private repo. This helps reuse and external contribution, but the publication boundary still needs manifest checks or the submodule will just become another leak path.</p>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>Immediate next step</h2>
+    </section>
+    <blockquote class="quote">Keep the first exports synchronized, add release discipline and licensing, and resist the temptation to publish a "reference verifier" before the public artifacts and conformance vectors are stable enough to support it.</blockquote>
+
+    <footer class="footer">
+      <p>This page exists so publication is designed as part of the system rather than treated as an afterthought once there is already too much private state mixed into the repo.</p>
+      <div class="footer-nav">
+        <a href="index.html">Overview</a>
+        <a href="competitive-landscape.html">Landscape</a>
+        <a href="foundation.html">Foundation</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="trust.html">Trust model</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

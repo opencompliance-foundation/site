@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compliance Needs an Open Proof Layer</title>
+  <meta name="description" content="Why an open, limitation-aware verification tool would still move the compliance industry forward.">
+  <meta name="theme-color" content="#0b1324">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">OC</span>
+        <span>OpenCompliance</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Overview</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="trust.html">Trust Model</a>
+        <a href="open-proof-layer.html" aria-current="page">Essay</a>
+        <a href="competitive-landscape.html">Landscape</a>
+        <a href="foundation.html">Foundation</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="public-artifacts.html">Public Artifacts</a>
+      </nav>
+    </header>
+
+    <article class="page-hero">
+      <div class="eyebrow">Essay</div>
+      <h1>Compliance needs an open proof layer.</h1>
+      <p class="lead">An open, limitation-aware verification tool would improve the industry even before it covered every control, because the semantic layer itself would finally become inspectable.</p>
+      <p class="small-note">Drafted for eventual publication and kept here as part of the public product explanation.</p>
+    </article>
+
+    <section class="essay-block">
+      <p>Compliance today sits in an awkward middle ground. There is a lot of process, a lot of paperwork, and a great deal of theatre. But there is also a real hard core: some controls are objective enough to verify mechanically, while others depend on testimony, judgment, and institutional discretion. The mistake the industry keeps making is flattening those categories into one thing.</p>
+      <p>An open tool like OpenCompliance would matter not because it solves all of compliance, but because it forces sharper distinctions. It says: these controls were proved from machine evidence; these were supported by signed attestations; these remain judgment calls; these were excluded. That is already a meaningful improvement over a large amount of current practice, where every green checkmark appears equally authoritative even when the reasoning underneath is radically different.</p>
+    </section>
+
+    <section class="double-grid">
+      <article class="essay-block">
+        <h2>The public good is the semantic layer</h2>
+        <p>The most valuable open-source artifact here is probably not the interface. It is the mapping from standards into formal representations, the type system for evidence claims, the overlap model between frameworks, and the public record of where interpretation is easy versus where it is genuinely contested.</p>
+        <p>If that work is done in the open, the whole industry gets a better language for arguing about compliance. A control mapping stops being consultant folklore and becomes a versioned object with explicit semantics and explicit proof boundaries.</p>
+      </article>
+      <article class="essay-block">
+        <h2>Incomplete does not mean useless</h2>
+        <p>A limitation-aware tool still helps if it is honest. It can start with the technical corridor that is most defensible: access control, MFA enforcement, repository protections, CI guarantees, cryptographic settings, logging, retention, and configuration invariants.</p>
+        <p>For everything else, the right response is not bluff. It is signed attestation slots, explicit review queues, and visible exclusions. Progress comes from sharper boundaries, not from pretending every boundary has disappeared.</p>
+      </article>
+    </section>
+
+    <section class="essay-block">
+      <h2>Clearer audits are a deeper change than they sound</h2>
+      <p>A clearer audit localizes disagreement. If an auditor disputes a result, the argument becomes structured: is the control mapping wrong, is the evidence stale, did the signer lack authority, is the theorem correct but the interpretation wrong, or is the scope wrong? That is far better than arguing over a static PDF whose reasoning has been flattened into prose.</p>
+      <p>The point of an open proof layer is not to eliminate disagreement. It is to give disagreement a legible shape.</p>
+    </section>
+
+    <section class="double-grid">
+      <article class="essay-block">
+        <h2>Make shortcutting noisy</h2>
+        <p>If the path from evidence to verdict is opaque, the system can still be gamed. So the artifacts should be signed. Their digests should go into an append-only public log. The verifier should be reproducible. Proof bundles should be replayable by third parties. Revocations should be visible. Silent mutation should be difficult, detectable, and expensive.</p>
+        <p>This is the useful part of the smart-contract analogy: not tokens, but public state transitions and replayable enforcement.</p>
+      </article>
+      <article class="essay-block">
+        <h2>Do it in the open</h2>
+        <p>A private vendor can ship some of these ideas alone. The industry changes faster if the core artifacts are public. Open mappings, public examples, mirrored proof corpora, and independent witnesses make weak semantics easier to challenge and strong semantics easier to reuse.</p>
+        <p>The right ambition is not “replace auditors.” It is “change what a respectable audit artifact looks like.”</p>
+      </article>
+    </section>
+
+    <section class="essay-block">
+      <blockquote class="quote">A respectable compliance artifact should distinguish proofs from attestations, assumptions from conclusions, and fresh evidence from stale uploads. It should be machine-readable, signed, replayable, and inspectable where possible.</blockquote>
+      <p>That would not finish the compliance problem. It would, however, move the industry onto firmer ground.</p>
+    </section>
+
+    <footer class="footer">
+      <p>This essay is part of the public explanation layer for OpenCompliance. The project is strongest when the proof boundary and the limits are stated in the same place.</p>
+      <div class="footer-nav">
+        <a href="index.html">Overview</a>
+        <a href="trust.html">Trust model</a>
+        <a href="competitive-landscape.html">Landscape</a>
+        <a href="foundation.html">Foundation</a>
+        <a href="roadmap.html">Roadmap</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

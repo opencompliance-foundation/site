@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenCompliance Roadmap</title>
+  <meta name="description" content="The OpenCompliance roadmap: formal control specs, typed evidence claims, deterministic verification, tamper-evident artifacts, and public proof commons.">
+  <meta name="theme-color" content="#0b1324">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">OC</span>
+        <span>OpenCompliance</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Overview</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="trust.html">Trust Model</a>
+        <a href="open-proof-layer.html">Essay</a>
+        <a href="competitive-landscape.html">Landscape</a>
+        <a href="foundation.html">Foundation</a>
+        <a href="roadmap.html" aria-current="page">Roadmap</a>
+        <a href="public-artifacts.html">Public Artifacts</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div class="eyebrow">Roadmap</div>
+      <h1>Build the narrow corridor first, then harden it in public.</h1>
+      <p class="lead">The sequence matters. OpenCompliance is strongest if it goes from formal semantics to deterministic verification, then to tamper-evident artifact handling, and only after that to broader publication and continuous operation.</p>
+    </section>
+
+    <section class="timeline">
+      <article class="roadmap-stage">
+        <div class="stage-number">1</div>
+        <h3>Semantics foundation</h3>
+        <p>Publish the first open Lean 4 control-spec library and the three-tier control classification model for the SOC 2 Security plus ISO 27001 technical overlap corridor.</p>
+      </article>
+      <article class="roadmap-stage">
+        <div class="stage-number">2</div>
+        <h3>Evidence and interchange</h3>
+        <p>Define the typed evidence-claim schema, actor ontology, and OSCAL-native ingest path for catalogs, profiles, mappings, and assessment-style artifacts.</p>
+      </article>
+      <article class="roadmap-stage">
+        <div class="stage-number">3</div>
+        <h3>Deterministic verification</h3>
+        <p>Ship the Lean proof runner, trust-surface report, and single Verify flow that returns a certificate or typed punch-list for the same evidence every time.</p>
+      </article>
+      <article class="roadmap-stage">
+        <div class="stage-number">4</div>
+        <h3>Trust hardening</h3>
+        <p>Add canonical artifact envelopes, signatures, transparency logging, reproducible replay bundles, and witness receipts for exact-match reruns.</p>
+      </article>
+      <article class="roadmap-stage">
+        <div class="stage-number">5</div>
+        <h3>Live evidence and lifecycle</h3>
+        <p>Connect real evidence sources, track freshness, detect compliance drift, and handle certificate revocation or re-verification when state changes.</p>
+      </article>
+      <article class="roadmap-stage">
+        <div class="stage-number">6</div>
+        <h3>Public proof commons</h3>
+        <p>Split docs, open specs, and public example fixtures into separate public bundles so the semantic layer can be inspected and reused in the open.</p>
+      </article>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="double-grid">
+      <article class="section-card">
+        <div class="kicker">Current Focus</div>
+        <h2>First corridor first</h2>
+        <p>The first milestone is intentionally narrow. Formalizing ten defensible controls well is more valuable than claiming full-framework coverage loosely. The project should earn trust by being exact about what it can verify today.</p>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Target Public Outputs</div>
+        <h2>What others should be able to inspect</h2>
+        <ul class="list">
+          <li>The open Lean 4 control-spec library and proof-boundary metadata.</li>
+          <li>Typed evidence-claim schemas and actor ontology documents.</li>
+          <li>Replayable proof bundles and example witness receipts.</li>
+          <li>The docs site that states the limits as clearly as the ambitions.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>Longer-term goals</h2>
+    </section>
+    <section class="card-grid">
+      <article class="section-card">
+        <div class="kicker">Goal 1</div>
+        <h3>Open spec library</h3>
+        <p>Make the standards-to-formal-language mapping reviewable and extendable in the open.</p>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Goal 2</div>
+        <h3>Deterministic verify loop</h3>
+        <p>Ensure the same evidence package yields the same verdict and trust-surface output every time.</p>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Goal 3</div>
+        <h3>Continuous compliance</h3>
+        <p>Move from one-shot runs to delta-triggered rechecks and revocable certificate lifecycles.</p>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <p>The roadmap is deliberately staged so the public explanation and publication-safe export model develop alongside the proof system rather than being bolted on later.</p>
+      <div class="footer-nav">
+        <a href="index.html">Overview</a>
+        <a href="competitive-landscape.html">Landscape</a>
+        <a href="foundation.html">Foundation</a>
+        <a href="public-artifacts.html">Public artifacts</a>
+        <a href="trust.html">Trust model</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

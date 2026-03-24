@@ -1,0 +1,24 @@
+# OpenCompliance
+
+OpenCompliance is a proof-carrying compliance project.
+
+Primary pages:
+- /index.html: overview, product thesis, limitations, and verify flow
+- /architecture.html: runtime pipeline and component model
+- /trust.html: trust surface, tamper-evident design, and fail-closed issuance
+- /open-proof-layer.html: essay on why an open proof layer helps the industry
+- /competitive-landscape.html: overlap with commercial trust/compliance platforms and the open-source thesis
+- /foundation.html: foundation charter, sponsor model, repo structure, and peer review discipline
+- /roadmap.html: phased roadmap
+- /public-artifacts.html: docs/specs/examples publication strategy
+
+Key concepts:
+- OSCAL as the external control and assessment interchange format
+- Lean 4 as the proof kernel for the narrow technical corridor
+- typed evidence claims with signer, scope, freshness, and provenance
+- three-tier classification: decidable, attestation, judgment
+- trust-surface reports instead of flattened green checks
+- signed artifacts, append-only transparency logs, and witness reruns without blockchain
+
+Important limitation:
+OpenCompliance does not replace auditors, licensed CPA firms, ISO certification bodies, or human judgment.

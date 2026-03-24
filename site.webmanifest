@@ -1,0 +1,16 @@
+{
+  "name": "OpenCompliance",
+  "short_name": "OpenCompliance",
+  "description": "Proof-carrying compliance with OSCAL, Lean 4, typed evidence claims, and tamper-evident audit artifacts.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#0b1324",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
