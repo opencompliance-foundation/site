@@ -14,14 +14,15 @@ Primary pages:
 - /competitive-landscape.html: overlap with commercial trust/compliance platforms and the open-source thesis
 - /foundation.html: foundation charter, sponsor model, repo structure, and peer review discipline
 - /roadmap.html: phased roadmap
+- /showcase.html: ExampleCo walkthrough showing how a hypothetical company can present corridor-scoped proofs, attestations, and punch-lists
 - /public-artifacts.html: docs/specs/examples publication strategy
 
 Public repositories:
 - https://github.com/opencompliance-foundation/site: static project site published at opencompliancefoundation.com
 - https://github.com/opencompliance-foundation/governance: charter, governance, conflicts, sponsor model, and release/sign-off policy
 - https://github.com/opencompliance-foundation/specs: public artifact formats, mapping methodology, control-boundary metadata, exact-anchor review pilots, and versioning rules
-- https://github.com/opencompliance-foundation/examples: synthetic ExampleCo bundles, lifecycle packs, replay bundles, transparency logs, and witness receipts
-- https://github.com/opencompliance-foundation/conformance: executable validators, conformance vectors, and public-boundary checks
+- https://github.com/opencompliance-foundation/examples: synthetic ExampleCo bundles, the ExampleCo showcase meta-pack, lifecycle packs, replay bundles, transparency logs, and witness receipts
+- https://github.com/opencompliance-foundation/conformance: executable validators, conformance vectors, public-boundary checks, and the showcase builder
 - https://github.com/opencompliance-foundation/evidence-schema: typed evidence envelope schema plus public claim-type payload schemas
 - https://github.com/opencompliance-foundation/lean4-controls: buildable Lean 4 corridor with explicit proof-boundary notes
 

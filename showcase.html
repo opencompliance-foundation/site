@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenCompliance Showcase</title>
+  <meta name="description" content="A synthetic ExampleCo showcase showing how a hypothetical company can publish scoped OpenCompliance artifacts that separate proved, attested, failed, and judgment-dependent controls.">
+  <meta name="theme-color" content="#0b1324">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">OC</span>
+        <span>OpenCompliance</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Overview</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="trust.html">Trust Model</a>
+        <a href="open-proof-layer.html">Essay</a>
+        <a href="competitive-landscape.html">Landscape</a>
+        <a href="foundation.html">Foundation</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="showcase.html" aria-current="page">Showcase</a>
+        <a href="public-artifacts.html">Public Artifacts</a>
+        <a href="repositories.html">Repositories</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div class="eyebrow">ExampleCo Showcase</div>
+      <h1>How a hypothetical company could say what is proved.</h1>
+      <p class="lead">The safest public OpenCompliance demo is not a claim that “ExampleCo is compliant.” It is a synthetic package showing corridor by corridor what ExampleCo can prove today, what still depends on signed attestation, and what blocks issuance. That is what the public ExampleCo showcase pack now does.</p>
+      <div class="pill-row">
+        <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/exampleco-showcase">Showcase pack</a>
+        <a class="pill" href="https://github.com/opencompliance-foundation/conformance/blob/main/scripts/build_showcase_manifest.py">Builder script</a>
+        <a class="pill" href="repositories.html">Repository map</a>
+      </div>
+    </section>
+
+    <section class="section-title">
+      <h2>What the showcase contains</h2>
+    </section>
+    <section class="stat-grid">
+      <article class="stat-card">
+        <strong>4</strong>
+        <span>Scoped corridors</span>
+      </article>
+      <article class="stat-card">
+        <strong>3</strong>
+        <span>Issued outcomes</span>
+      </article>
+      <article class="stat-card">
+        <strong>1</strong>
+        <span>Blocked outcome</span>
+      </article>
+      <article class="stat-card">
+        <strong>10</strong>
+        <span>Proved claims</span>
+      </article>
+      <article class="stat-card">
+        <strong>9</strong>
+        <span>Attested claims</span>
+      </article>
+      <article class="stat-card">
+        <strong>4</strong>
+        <span>Lean-backed proved claims</span>
+      </article>
+    </section>
+
+    <section class="double-grid">
+      <article class="section-card">
+        <div class="kicker">Narrative</div>
+        <h2>The right public story</h2>
+        <p>ExampleCo can show a buyer or auditor a replayable package with four different corridor outcomes. One corridor is a clean cyber baseline. One is a narrow issued mixed corridor. One is an honest AI-governance corridor where most of the value is still documentary. One is a blocked corridor that becomes a punch-list instead of a fake badge.</p>
+        <p>That is a much stronger demonstration than a single generic “we are compliant” statement.</p>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Public Root</div>
+        <h2>Direct public artifacts</h2>
+        <p>The generated showcase report and summary live in the public examples repo, and the builder script lives in the public conformance repo. The site page is explanatory, but the GitHub artifacts are the main evidence surface.</p>
+        <ul class="list">
+          <li><strong><a href="https://github.com/opencompliance-foundation/examples/blob/main/exampleco-showcase/showcase-report.json">showcase-report.json</a>:</strong> machine-readable aggregate of corridor outcomes, framework view, and artifact links.</li>
+          <li><strong><a href="https://github.com/opencompliance-foundation/examples/blob/main/exampleco-showcase/showcase-summary.md">showcase-summary.md</a>:</strong> human-readable version of the same story.</li>
+          <li><strong><a href="https://github.com/opencompliance-foundation/conformance/blob/main/scripts/build_showcase_manifest.py">build_showcase_manifest.py</a>:</strong> the public builder that regenerates the showcase from the corridor artifacts.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>The workflow</h2>
+    </section>
+    <section class="flow-grid">
+      <article class="flow-step">
+        <div class="kicker">Step 1</div>
+        <strong>Define narrow corridors</strong>
+        <p>Split the company story into specific surfaces: cyber hygiene, mixed issued controls, AI governance, and blocked slices. Do not jump straight to whole-framework claims.</p>
+      </article>
+      <article class="flow-step">
+        <div class="kicker">Step 2</div>
+        <strong>Collect typed evidence</strong>
+        <p>Machine exports become typed claims. Training, incident procedure, and oversight material stay as signed attestations. The split is explicit from the start.</p>
+      </article>
+      <article class="flow-step">
+        <div class="kicker">Step 3</div>
+        <strong>Run Verify per corridor</strong>
+        <p>Each corridor emits a proof bundle, classification result, trust-surface report, verification result, and either a certificate or a punch-list.</p>
+      </article>
+      <article class="flow-step">
+        <div class="kicker">Step 4</div>
+        <strong>Publish public-safe artifacts</strong>
+        <p>Trust-surface reports, replay bundles, witness receipts, transparency logs, and OSCAL-shaped projections can be published without leaking private operating detail.</p>
+      </article>
+      <article class="flow-step">
+        <div class="kicker">Step 5</div>
+        <strong>Aggregate for buyers</strong>
+        <p>The showcase builder turns separate corridor artifacts into one company-level package while preserving scope boundaries and outcome differences.</p>
+      </article>
+      <article class="flow-step">
+        <div class="kicker">Step 6</div>
+        <strong>Stay honest in language</strong>
+        <p>ExampleCo says what is proved, what is attested, and what is blocked. It does not say “ISO 27001 is proved” or “the AI Act is automated.”</p>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>Four corridor story</h2>
+    </section>
+    <section class="card-grid">
+      <article class="section-card">
+        <div class="kicker">Cyber Baseline</div>
+        <h3>Clean machine-checkable slice</h3>
+        <p>The cyber baseline corridor issues cleanly with five proved claims and no attestations. It is the strongest current demonstration of what a narrow provable slice looks like.</p>
+        <p><strong>Safe statement:</strong> ExampleCo can say the scoped managed admin and endpoint baseline enforces MFA, default-deny network boundaries, secure configuration, patching, and malware protection.</p>
+        <div class="pill-row">
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/blob/main/cyber-baseline/trust-surface-report.md">Trust surface</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/blob/main/cyber-baseline/certificate.json">Certificate</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/cyber-baseline">Artifacts</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Issued Mixed Corridor</div>
+        <h3>Realistic near-term issuance</h3>
+        <p>The issued corridor combines machine proofs with signed operational attestations. It shows the narrow path most companies are likely to use first.</p>
+        <p><strong>Safe statement:</strong> ExampleCo can say the scoped identity, logging, access-review, training, restore, and incident-runbook corridor has no blocking gaps, while still disclosing which parts are proved and which parts are attested.</p>
+        <div class="pill-row">
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/blob/main/issued/trust-surface-report.md">Trust surface</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/blob/main/issued/certificate.json">Certificate</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/issued">Artifacts</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">AI Governance</div>
+        <h3>Documentary by design</h3>
+        <p>The AI-governance corridor is intentionally mixed. Four claims are attested, one disclosure control is proved. That is a more honest current AI story than pretending governance is fully machine-checkable.</p>
+        <p><strong>Safe statement:</strong> ExampleCo can say AI context, risk process, oversight, and monitoring are documented and signed, and that AI-generated content disclosure is mechanically demonstrated on the scoped assistant surface.</p>
+        <div class="pill-row">
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/blob/main/ai-governance/trust-surface-report.md">Trust surface</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/blob/main/ai-governance/certificate.json">Certificate</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/ai-governance">Artifacts</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Blocked Corridor</div>
+        <h3>Failure is first-class</h3>
+        <p>The failed corridor does not issue. It produces a typed punch-list with one machine failure and one judgment-required blocker. This is the corridor that makes the whole framework believable.</p>
+        <p><strong>Safe statement:</strong> ExampleCo can say this corridor is not issuance-ready, and can hand over a typed remediation package instead of hiding the failure.</p>
+        <div class="pill-row">
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/blob/main/failed/trust-surface-report.md">Trust surface</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/blob/main/failed/punch-list.json">Punch-list</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/failed">Artifacts</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>What ExampleCo should say, and not say</h2>
+    </section>
+    <section class="double-grid">
+      <article class="callout">
+        <div class="kicker">Say This</div>
+        <p>“Here are our scoped corridor artifacts. This cyber baseline is mechanically demonstrated. This issued corridor mixes proofs and signed attestations. This AI governance corridor is mostly documentary. This failed corridor is not issuance-ready and comes with a typed remediation list.”</p>
+      </article>
+      <article class="callout">
+        <div class="kicker">Do Not Say</div>
+        <p>“OpenCompliance proved our ISO 27001 compliance,” “we automated the AI Act,” or “one green badge means everything is done.” The framework is most credible when the boundaries stay visible.</p>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>Rebuild the showcase</h2>
+    </section>
+    <section class="double-grid">
+      <article class="panel">
+        <div class="kicker">Private Working Tree</div>
+        <pre><code>cd projects/dev/opencompliance
+python3 conformance/scripts/build_showcase_manifest.py \
+  --showcase-root fixtures/public/exampleco-showcase \
+  --check</code></pre>
+      </article>
+      <article class="panel">
+        <div class="kicker">Public Multi-Repo Checkout</div>
+        <pre><code>cd conformance
+python3 scripts/build_showcase_manifest.py \
+  --examples-root ../examples \
+  --showcase-root exampleco-showcase \
+  --check
+
+python3 scripts/validate_public_examples.py \
+  --examples-root ../examples \
+  --specs-root ../specs \
+  --schema-root ../evidence-schema</code></pre>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <p>The ExampleCo showcase exists so buyers, auditors, and contributors can see how a company-level OpenCompliance story should be assembled without over-claiming what the system has actually demonstrated.</p>
+      <div class="footer-nav">
+        <a href="index.html">Overview</a>
+        <a href="public-artifacts.html">Public artifacts</a>
+        <a href="repositories.html">Repositories</a>
+        <a href="https://github.com/opencompliance-foundation/examples/tree/main/exampleco-showcase">Showcase pack</a>
+        <a href="https://github.com/opencompliance-foundation/conformance/blob/main/scripts/build_showcase_manifest.py">Builder script</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
