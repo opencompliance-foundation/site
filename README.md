@@ -2,7 +2,7 @@
 
 This directory is the source of truth for the public `opencompliance-foundation/site` repository.
 
-It is a standalone static bundle intended for GitHub Pages under `opencompliance.aguilar-pelaez.co.uk`.
+It is a standalone static bundle intended for GitHub Pages under `opencompliancefoundation.com`.
 
 ## What belongs here
 

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenCompliance Repositories</title>
+  <meta name="description" content="Direct links to the OpenCompliance Foundation GitHub organization and every public repository: site, governance, specs, examples, conformance, evidence schema, and Lean 4 controls.">
+  <meta name="theme-color" content="#0b1324">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">OC</span>
+        <span>OpenCompliance</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Overview</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="trust.html">Trust Model</a>
+        <a href="open-proof-layer.html">Essay</a>
+        <a href="competitive-landscape.html">Landscape</a>
+        <a href="foundation.html">Foundation</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="public-artifacts.html">Public Artifacts</a>
+        <a href="repositories.html" aria-current="page">Repositories</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div class="eyebrow">GitHub Organization</div>
+      <h1>The public work lives in GitHub, not only on this website.</h1>
+      <p class="lead">If you want to inspect the project seriously, start with the public GitHub organization. The site explains the system; the repositories hold the publishable source, specs, examples, schemas, validators, and Lean corridor.</p>
+      <div class="pill-row">
+        <a class="pill" href="https://github.com/opencompliance-foundation">GitHub organization</a>
+        <a class="pill" href="public-artifacts.html">Publication model</a>
+        <a class="pill" href="foundation.html">Foundation model</a>
+      </div>
+    </section>
+
+    <section class="section-title">
+      <h2>Canonical public repos</h2>
+    </section>
+    <section class="card-grid">
+      <article class="section-card">
+        <div class="kicker">Site</div>
+        <h3>Project docs and landing pages</h3>
+        <p>The static site published at <code>opencompliancefoundation.com</code>. This is the public explanatory layer, not the whole codebase.</p>
+        <a class="pill" href="https://github.com/opencompliance-foundation/site">Open site repo</a>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Governance</div>
+        <h3>Charter, conflicts, and sponsor rules</h3>
+        <p>The foundation-facing documents that explain how meaning stays public and why sponsors do not buy semantics.</p>
+        <a class="pill" href="https://github.com/opencompliance-foundation/governance">Open governance repo</a>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Specs</div>
+        <h3>Normative public artifacts</h3>
+        <p>The public artifact contracts, mapping methodology, control-boundary metadata, source-availability notes, and exact-anchor review pilots.</p>
+        <a class="pill" href="https://github.com/opencompliance-foundation/specs">Open specs repo</a>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Examples</div>
+        <h3>Synthetic ExampleCo corridors</h3>
+        <p>Replay bundles, transparency logs, witness receipts, lifecycle packs, and synthetic verification corridors for public inspection.</p>
+        <a class="pill" href="https://github.com/opencompliance-foundation/examples">Open examples repo</a>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Conformance</div>
+        <h3>Executable checks</h3>
+        <p>The public validators and conformance vectors that keep the synthetic bundles, schemas, and OSCAL projections consistent.</p>
+        <a class="pill" href="https://github.com/opencompliance-foundation/conformance">Open conformance repo</a>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Evidence Schema</div>
+        <h3>Typed claim envelopes</h3>
+        <p>The public schema surface for typed evidence claims, signer metadata, provenance, freshness, and control-mapped payloads.</p>
+        <a class="pill" href="https://github.com/opencompliance-foundation/evidence-schema">Open schema repo</a>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Lean 4 Controls</div>
+        <h3>Public proof corridor</h3>
+        <p>The buildable Lean 4 package that defines the narrow technical proof slice and keeps its proof boundaries explicit.</p>
+        <a class="pill" href="https://github.com/opencompliance-foundation/lean4-controls">Open Lean repo</a>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Organization</div>
+        <h3>Browse everything from one root</h3>
+        <p>The quickest external entry point is the organization root if you want issues, stars, repo metadata, and the public project map in one place.</p>
+        <a class="pill" href="https://github.com/opencompliance-foundation">Open GitHub org</a>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>What each repo is for</h2>
+    </section>
+    <section class="double-grid">
+      <article class="section-card">
+        <div class="kicker">Read Order</div>
+        <ul class="list">
+          <li><strong>Start with `site`</strong> for the product thesis, trust boundary, and roadmap.</li>
+          <li><strong>Then read `public-artifacts` and `repositories` here</strong> so you understand which repo carries which surface.</li>
+          <li><strong>Open `specs` next</strong> if you want the most normative public definitions.</li>
+          <li><strong>Open `examples` and `conformance` together</strong> if you want replayable synthetic bundles and the validator that checks them.</li>
+          <li><strong>Open `evidence-schema` and `lean4-controls`</strong> if you want the typed claim surface and the current public proof corridor.</li>
+        </ul>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Boundary</div>
+        <p>The public organization is intentionally smaller than the private working repository. That is part of the safety model. The point is to publish what others can inspect and improve without leaking private experiments, secrets, or customer-specific state.</p>
+        <p>The safest reading is: the website tells you what exists, the GitHub repos show you exactly what has been published, and the docs should never imply more than the public repos can support.</p>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>Machine discovery</h2>
+    </section>
+    <section class="double-grid">
+      <article class="callout">
+        <div class="kicker">Crawlers</div>
+        <p>This site ships an allow-all <code>robots.txt</code>, a <code>sitemap.xml</code>, plus both <code>llms.txt</code> and <code>llm.txt</code> so search engines and LLM-oriented crawlers can find the pages and the GitHub organization entry points cleanly.</p>
+      </article>
+      <article class="callout">
+        <div class="kicker">Canonical source</div>
+        <p>The canonical public home is <code>opencompliancefoundation.com</code>. The legacy <code>opencompliance.aguilar-pelaez.co.uk</code> hostname now redirects here at the Cloudflare edge.</p>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <p>This page exists because a serious open project should make the public source easy to find, not force readers to infer the GitHub layout from prose.</p>
+      <div class="footer-nav">
+        <a href="index.html">Overview</a>
+        <a href="public-artifacts.html">Public artifacts</a>
+        <a href="foundation.html">Foundation</a>
+        <a href="https://github.com/opencompliance-foundation">GitHub org</a>
+        <a href="https://github.com/opencompliance-foundation/specs">Specs repo</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
