@@ -17,10 +17,12 @@ Those narrow controls are then cross-walked outward to public-safe family proxie
 
 The public Lean package now also imports `LegalLean` and exposes a typed boundary
 layer for the same corridor. That layer currently covers
-`FormalisationBoundary`-typed identity results, a concrete `Defeats` example for
-risk acceptance, a small `Vague` inventory for discretionary compliance terms,
-and a first `LegalLean.Solver` instantiation for the five-claim minimal corpus.
-That is real progress, but it is still narrower than a full runtime replacement.
+`FormalisationBoundary`-typed identity and logging results, a concrete `Defeats`
+example for risk acceptance, a small `Vague` inventory for discretionary
+compliance terms, and a first `LegalLean.Solver` instantiation for the
+five-claim minimal corpus. That solver now drives the runtime verdict path for
+the `minimal`, `failed`, and `stale` synthetic corridors. That is real
+progress, but it is still narrower than a full runtime replacement.
 
 ## Interpretation rule
 
