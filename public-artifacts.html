@@ -46,7 +46,7 @@
           <li><strong>Examples repo:</strong> replay bundles, sample fixtures, witness examples, and synthetic public test data.</li>
           <li><strong>Conformance repo:</strong> descriptive vectors and expected outputs tied to the public examples.</li>
           <li><strong>Evidence-schema repo:</strong> typed evidence claim envelopes and public example claims.</li>
-          <li><strong>Lean4-controls repo:</strong> an honest status note and corridor declaration, not a fake released control library.</li>
+          <li><strong>Lean4-controls repo:</strong> a buildable minimal Lean 4 corridor with explicit proof-boundary notes tied to the public example bundle.</li>
         </ul>
       </article>
       <article class="section-card">
@@ -65,6 +65,9 @@
   projects/dev/opencompliance/foundation/        -> public governance repo or governance submodule
   projects/dev/opencompliance/open-specs/        -> public specs repo or specs submodule
   projects/dev/opencompliance/fixtures/public/   -> public examples repo or examples submodule
+  projects/dev/opencompliance/conformance/       -> public conformance repo or conformance submodule
+  projects/dev/opencompliance/evidence-schema/   -> public schema repo or schema submodule
+  projects/dev/opencompliance/lean4-controls/    -> public Lean repo or Lean submodule
 
 private only
   projects/dev/opencompliance/src/
@@ -110,7 +113,7 @@ private only
     <section class="section-title">
       <h2>Immediate next step</h2>
     </section>
-    <blockquote class="quote">Keep the first exports synchronized, add release discipline and licensing, and resist the temptation to publish a "reference verifier" before the public artifacts and conformance vectors are stable enough to support it.</blockquote>
+    <blockquote class="quote">Keep the exports synchronized, expand conformance honestly, and resist the temptation to publish a "reference verifier" before the public artifacts and proof corridor are stable enough to support it.</blockquote>
 
     <footer class="footer">
       <p>This page exists so publication is designed as part of the system rather than treated as an afterthought once there is already too much private state mixed into the repo.</p>
