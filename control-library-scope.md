@@ -7,6 +7,7 @@ The current public Lean corridor does not encode ISO 27001 or SOC 2 directly.
 It encodes narrow OpenCompliance controls such as:
 
 - scoped administrative MFA,
+- scoped password policy,
 - unique named infrastructure identities,
 - customer and environment segmentation,
 - scoped audit logging,
@@ -35,9 +36,9 @@ The project now also keeps private ISO 27001 and SOC 2 framework-depth reports
 that quantify how far the imported seed corpus has been decomposed and promoted
 without publishing the imported taxonomy itself. Those reports are not public
 artifacts, but they now drive the order of the next depth slices, with the
-encryption-at-rest, unique-infrastructure-identity, and segmentation slices
-already promoted and the next ISO-first work now focused on the remaining
-password, WAF, availability, and environment controls.
+password-policy, encryption-at-rest, unique-infrastructure-identity, and
+segmentation slices already promoted and the next ISO-first work now focused on
+the remaining WAF, availability, and environment controls.
 
 ## Interpretation rule
 
