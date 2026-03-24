@@ -8,6 +8,7 @@ It encodes narrow OpenCompliance controls such as:
 
 - scoped administrative MFA,
 - unique named infrastructure identities,
+- customer and environment segmentation,
 - scoped audit logging,
 - hardened TLS ingress,
 - managed ingress-boundary attachment,
@@ -34,9 +35,9 @@ The project now also keeps private ISO 27001 and SOC 2 framework-depth reports
 that quantify how far the imported seed corpus has been decomposed and promoted
 without publishing the imported taxonomy itself. Those reports are not public
 artifacts, but they now drive the order of the next depth slices, with the
-encryption-at-rest and unique-infrastructure-identity slices already promoted
-and the next ISO-first work now focused on the remaining privileged-access and
-segmentation controls.
+encryption-at-rest, unique-infrastructure-identity, and segmentation slices
+already promoted and the next ISO-first work now focused on the remaining
+password, WAF, availability, and environment controls.
 
 ## Interpretation rule
 
