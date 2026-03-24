@@ -13,7 +13,7 @@ It encodes narrow OpenCompliance controls such as:
 - approved-region boundaries,
 - and backup schedule declarations.
 
-Those narrow controls are then cross-walked outward to public-safe family proxies for ISO 27001, SOC 2, IRAP, and GDPR.
+Those narrow controls are then cross-walked outward to public-safe family proxies for ISO 27001, SOC 2, IRAP, GDPR, Cyber Essentials, NCSC CAF 4.0, NIST CSF 2.0, NIST SP 800-53 Rev. 5.1, and the first AI-governance frameworks.
 
 ## Interpretation rule
 
@@ -42,9 +42,10 @@ That is the direction the public mapping metadata now points toward.
 
 The specs now also carry a first exact-anchor review pilot.
 
-That pilot does two things at once:
+That pilot does three things at once:
 
 1. it records public-source exact anchors where the source material is actually open enough to review responsibly, and
 2. it records explicit blocker entries where proprietary or non-public framework text still prevents an honest exact-anchor publication.
+3. it allows planned controls with no public fixture yet, so Cyber Essentials and AI-governance expansion can be reviewed before runtime examples exist.
 
 That is a better state than a fake complete mapping corpus.
