@@ -42,8 +42,8 @@
         <ul class="list">
           <li><strong>Docs repo:</strong> the static site under <code>docs/</code>, suitable for GitHub Pages.</li>
           <li><strong>Governance repo:</strong> charter, governance, conflicts, sponsor model, and release policy.</li>
-          <li><strong>Specs repo:</strong> draft artifact formats for trust-surface reports, proof bundles, witness receipts, revocations, and versioning rules.</li>
-          <li><strong>Examples repo:</strong> replay bundles, sample fixtures, witness examples, and synthetic public test data.</li>
+          <li><strong>Specs repo:</strong> draft artifact formats for trust-surface reports, proof bundles, witness receipts, revocations, signed-artifact manifests, and versioning rules.</li>
+          <li><strong>Examples repo:</strong> replay bundles, lifecycle examples, signature manifests, public keys, and other synthetic public test data.</li>
           <li><strong>Conformance repo:</strong> descriptive vectors, witness expectations, and an executable validator tied to the public examples.</li>
           <li><strong>Evidence-schema repo:</strong> typed evidence claim envelopes, signer and provenance fields, and public claim-type payload schemas.</li>
           <li><strong>Lean4-controls repo:</strong> a buildable Lean 4 corridor with explicit proof-boundary notes tied to the synthetic example bundles.</li>
@@ -106,7 +106,7 @@ private only
       <article class="section-card">
         <div class="kicker">Examples</div>
         <h3>Three corridor bundles plus a lifecycle pack</h3>
-        <p>The public `examples` repo now has a small `minimal` blocked bundle, a richer `medium` blocked corridor, an `issued` ExampleCo corridor that demonstrates the narrow certificate path, and a lifecycle pack showing drift, delta rechecks, and composed component certificates. Together they show typed punch-lists, scoped certificates, replay bundles, OSCAL-shaped projections, witness receipts, and lifecycle artifacts without leaking private data.</p>
+        <p>The public `examples` repo now has a small `minimal` blocked bundle, a richer `medium` blocked corridor, an `issued` ExampleCo corridor that demonstrates the narrow certificate path, a lifecycle pack showing drift, delta rechecks, and composed component certificates, and a signing pack with a synthetic public key plus signed-artifact manifests. Together they show typed punch-lists, scoped certificates, replay bundles, OSCAL-shaped projections, witness receipts, lifecycle artifacts, and public signature verification without leaking private data.</p>
       </article>
       <article class="section-card">
         <div class="kicker">Conformance</div>

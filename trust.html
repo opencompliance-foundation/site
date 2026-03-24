@@ -71,7 +71,7 @@
       <article class="flow-step">
         <div class="kicker">2</div>
         <strong>Separate signer roles</strong>
-        <p>Producers sign facts. Reviewers sign attestations. The verifier signs conclusions. Witnesses sign replay receipts. Each role means something different.</p>
+        <p>Producers sign facts. Reviewers sign attestations. The verifier signs conclusions. Witnesses sign replay receipts. The current public pack now includes synthetic Ed25519 signature manifests so this is an executable example, not just a future design note.</p>
       </article>
       <article class="flow-step">
         <div class="kicker">3</div>
@@ -103,8 +103,8 @@
         <p>The trust problem here is not scarce digital assets or distributed consensus. It is auditability, mutation resistance, and reproducibility. Supply-chain security patterns fit better: signatures, transparency logs, provenance, reproducible environments, and public witnesses.</p>
       </article>
       <article class="callout">
-        <div class="kicker">What Remains Human</div>
-        <p>Even a perfectly logged verification chain does not remove normative judgment. Policy adequacy, physical assurance, and legal attestation remain outside the theorem prover. The point is to make those boundaries sharper, not to deny they exist.</p>
+        <div class="kicker">Current Public Signing Pack</div>
+        <p>The public examples now ship a synthetic Ed25519 public key plus signed-artifact manifests for the issued corridor and the lifecycle pack. That makes the canonical-digest story independently checkable even before a real release identity exists.</p>
       </article>
     </section>
 
@@ -135,6 +135,7 @@
         <a href="architecture.html">Architecture</a>
         <a href="competitive-landscape.html">Landscape</a>
         <a href="foundation.html">Foundation</a>
+        <a href="continuous-verification.html">Continuous verification</a>
         <a href="public-artifacts.html">Public artifacts</a>
       </div>
     </footer>
