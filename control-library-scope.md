@@ -15,6 +15,13 @@ It encodes narrow OpenCompliance controls such as:
 
 Those narrow controls are then cross-walked outward to public-safe family proxies for ISO 27001, SOC 2, IRAP, GDPR, Cyber Essentials, NCSC CAF 4.0, NIST CSF 2.0, NIST SP 800-53 Rev. 5.1, and the first AI-governance frameworks.
 
+The public Lean package now also imports `LegalLean` and exposes a typed boundary
+layer for the same corridor. That layer currently covers
+`FormalisationBoundary`-typed identity results, a concrete `Defeats` example for
+risk acceptance, a small `Vague` inventory for discretionary compliance terms,
+and a first `LegalLean.Solver` instantiation for the five-claim minimal corpus.
+That is real progress, but it is still narrower than a full runtime replacement.
+
 ## Interpretation rule
 
 This means the current public corridor is:
