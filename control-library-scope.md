@@ -12,6 +12,7 @@ It encodes narrow OpenCompliance controls such as:
 - managed ingress-boundary attachment,
 - administrative-ingress source restriction,
 - plaintext transport disabled,
+- encryption at rest enabled for scoped customer data stores,
 - service-account key hygiene,
 - approved-region boundaries,
 - backup schedule declarations,
@@ -31,7 +32,9 @@ progress, but it is still narrower than a full runtime replacement.
 The project now also keeps private ISO 27001 and SOC 2 framework-depth reports
 that quantify how far the imported seed corpus has been decomposed and promoted
 without publishing the imported taxonomy itself. Those reports are not public
-artifacts, but they now drive the order of the next depth slices.
+artifacts, but they now drive the order of the next depth slices, with the
+encryption-at-rest slice already promoted and the next ISO-first work now
+focused on the remaining access and segmentation controls.
 
 ## Interpretation rule
 
