@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenCompliance Continuous Verification</title>
+  <meta name="description" content="How OpenCompliance handles drift, revocation, delta rechecks, and composed certificates without pretending a static PDF can stay trustworthy forever.">
+  <meta name="theme-color" content="#0b1324">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">OC</span>
+        <span>OpenCompliance</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Overview</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="trust.html">Trust Model</a>
+        <a href="open-proof-layer.html">Essay</a>
+        <a href="competitive-landscape.html">Landscape</a>
+        <a href="foundation.html">Foundation</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="public-artifacts.html">Public Artifacts</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div class="eyebrow">Continuous Verification</div>
+      <h1>A certificate that cannot age honestly is not much of a certificate.</h1>
+      <p class="lead">OpenCompliance treats certificates as revocable state, not static PDFs. The lifecycle layer maps source changes to impacted controls, plans a delta recheck, and either marks trust stale or revokes it before anyone can compose that stale result into a larger artifact.</p>
+    </section>
+
+    <section class="double-grid">
+      <article class="section-card">
+        <div class="kicker">Current Synthetic Reference</div>
+        <h2>One issued corridor, one drift event</h2>
+        <p>The current public lifecycle pack starts from the issued ExampleCo corridor and applies a normalized source-change event: the scheduled cloud-logging export is missing in the next sync window. That one change maps cleanly to the logging control, one proof claim, and the issued certificate that depended on it.</p>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Policy Choice</div>
+        <h2>Reverify or revoke</h2>
+        <p>The same source change can be expressed in two policy modes. A cautious mode marks the certificate <code>re_verification_required</code>. A fail-closed mode revokes it immediately. In both cases, the child certificate is blocked from further composition until trust is restored.</p>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>Lifecycle chain</h2>
+    </section>
+    <div class="panel">
+      <pre><code>issued certificate
+  -> normalized source-change event
+  -> impacted controls and claims
+  -> delta recheck plan
+  -> re-verification-required or revoked
+  -> composition blocked until trust is restored</code></pre>
+    </div>
+
+    <section class="card-grid">
+      <article class="section-card">
+        <div class="kicker">Drift Mapping</div>
+        <h3>No hand-wavy blast radius</h3>
+        <p>The lifecycle artifact records the exact impacted control refs and impacted claims. In the current pack, only <code>oc.log-01</code> and <code>EX-CLAIM-202</code> move, so the recheck plan does not pretend the whole corridor changed.</p>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Delta Recheck</div>
+        <h3>Reuse what did not change</h3>
+        <p>The lifecycle event keeps a list of <code>recheckClaims</code> and a separate list of <code>reusedClaims</code>. That makes the “continuous” part legible: only the impacted claim should be rerun first.</p>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Lineage</div>
+        <h3>Historical state stays visible</h3>
+        <p>The lifecycle record keeps the original certificate issuance entry and the later stale or revoked state in one lineage trail. Silent mutation is not acceptable; state transitions have to be artifacts too.</p>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Composition</div>
+        <h3>Children can poison the parent</h3>
+        <p>The public pack also includes two synthetic issued component certificates and a composed higher-level certificate. The rule is strict: composition only works while every child remains issued and aligned on organisation and framework intent.</p>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>What exists today</h2>
+    </section>
+    <section class="double-grid">
+      <article class="callout">
+        <div class="kicker">Available Now</div>
+        <ul class="list">
+          <li>A public drift event over the issued ExampleCo corridor.</li>
+          <li>Lifecycle artifacts for both <code>re_verification_required</code> and <code>revoked</code> policies.</li>
+          <li>A delta-recheck plan that isolates only the impacted claim.</li>
+          <li>A composed certificate artifact built from two aligned synthetic component certificates.</li>
+        </ul>
+      </article>
+      <article class="callout">
+        <div class="kicker">Still Missing</div>
+        <ul class="list">
+          <li>No live connector event stream yet.</li>
+          <li>No scheduler that reruns impacted corridors automatically.</li>
+          <li>No signer-bound publication model for lifecycle decisions yet.</li>
+          <li>No production-grade composition policy beyond the current synthetic alignment rules.</li>
+        </ul>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <p>The lifecycle story matters because compliance artifacts only stay credible while their dependency chain stays current. OpenCompliance should make that dependency chain explicit instead of pretending a green check can freeze time.</p>
+      <div class="footer-nav">
+        <a href="index.html">Overview</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="public-artifacts.html">Public artifacts</a>
+        <a href="trust.html">Trust model</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
