@@ -9,9 +9,13 @@ It encodes narrow OpenCompliance controls such as:
 - scoped administrative MFA,
 - scoped audit logging,
 - hardened TLS ingress,
+- managed ingress-boundary attachment,
+- administrative-ingress source restriction,
+- plaintext transport disabled,
 - service-account key hygiene,
 - approved-region boundaries,
-- and backup schedule declarations.
+- backup schedule declarations,
+- and a default-deny network-boundary baseline for the cyber-hygiene corridor.
 
 Those narrow controls are then cross-walked outward to public-safe family proxies for ISO 27001, SOC 2, IRAP, GDPR, Cyber Essentials, NCSC CAF 4.0, NIST CSF 2.0, NIST SP 800-53 Rev. 5.1, and the first AI-governance frameworks.
 
@@ -23,6 +27,11 @@ compliance terms, and a first `LegalLean.Solver` instantiation for the
 five-claim minimal corpus. That solver now drives the runtime verdict path for
 the `minimal`, `failed`, and `stale` synthetic corridors. That is real
 progress, but it is still narrower than a full runtime replacement.
+
+The project now also keeps private ISO 27001 and SOC 2 framework-depth reports
+that quantify how far the imported seed corpus has been decomposed and promoted
+without publishing the imported taxonomy itself. Those reports are not public
+artifacts, but they now drive the order of the next depth slices.
 
 ## Interpretation rule
 
