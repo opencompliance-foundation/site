@@ -105,13 +105,13 @@ private only
     <section class="double-grid">
       <article class="section-card">
         <div class="kicker">Examples</div>
-        <h3>Four corridor bundles plus lifecycle and signing packs</h3>
-        <p>The public `examples` repo now has a small `minimal` blocked bundle, a `failed` corridor that demonstrates present-but-non-compliant evidence, a `stale` corridor that demonstrates freshness-blocked evidence, a richer `medium` blocked corridor with raw synthetic source exports spanning repo policy, CI policy, IAM, cloud, and signed governance attestations, plus a first public mixed-control decomposition for change management, an `issued` ExampleCo corridor that demonstrates the narrow certificate path, a lifecycle pack showing drift, delta rechecks, and composed component certificates, and a signing pack with a synthetic public key plus signed-artifact manifests. Together they show persisted classification artifacts, boundary-aware proof-runner metadata, typed punch-lists, scoped certificates, replay bundles, transparency logs, inclusion proofs, OSCAL-shaped projections, witness receipts, lifecycle artifacts, and public signature verification without leaking private data.</p>
+        <h3>Seven corridor bundles plus lifecycle and signing packs</h3>
+        <p>The public `examples` repo now has a small `minimal` blocked bundle, a `failed` corridor that demonstrates present-but-non-compliant evidence, a `stale` corridor that demonstrates freshness-blocked evidence, a richer `medium` blocked corridor with raw synthetic source exports spanning repo policy, CI policy, IAM, cloud, and signed governance attestations, an `issued` ExampleCo corridor that demonstrates the narrow certificate path, a `cyber-baseline` corridor that demonstrates a clean Cyber Essentials-style hygiene baseline, an `ai-governance` corridor that demonstrates documentary AI governance plus machine-checkable disclosure, a lifecycle pack showing drift, delta rechecks, and composed component certificates, and a signing pack with a synthetic public key plus signed-artifact manifests. Together they show persisted classification artifacts, boundary-aware proof-runner metadata, typed punch-lists, scoped certificates, replay bundles, transparency logs, inclusion proofs, OSCAL-shaped projections, witness receipts, lifecycle artifacts, and public signature verification without leaking private data.</p>
       </article>
       <article class="section-card">
         <div class="kicker">Conformance</div>
-        <h3>The validator now checks all four corridors</h3>
-        <p>The public `conformance` repo validates typed payload schemas, persisted classification artifacts, mixed-control decompositions, proof-bundle mappings, proof-runner boundary inventory, witness digests, transparency logs, inclusion proofs, corridor control references, control-boundary mapping maturity metadata, the exact-anchor review pilot, and OSCAL projection consistency across the four synthetic corridor bundles. The lifecycle pack is public and executable, but it is still a descriptive example rather than part of the conformance matrix.</p>
+        <h3>The validator now checks all seven corridors</h3>
+        <p>The public `conformance` repo validates typed payload schemas, persisted classification artifacts, mixed-control decompositions, proof-bundle mappings, proof-runner boundary inventory, witness digests, transparency logs, inclusion proofs, corridor control references, control-boundary mapping maturity metadata, the exact-anchor review pilot, and OSCAL projection consistency across the seven synthetic corridor bundles. The lifecycle pack is public and executable, but it is still a descriptive example rather than part of the conformance matrix.</p>
       </article>
     </section>
 
@@ -122,7 +122,7 @@ private only
       <article class="section-card">
         <div class="kicker">Current State</div>
         <h3>Family proxies, not fake completeness</h3>
-        <p>The public corridor still maps narrow OpenCompliance controls to family-level proxy targets. That is an honest seed state. It lets others inspect the proof corridor without pretending that whole ISO 27001 clauses or SOC 2 criteria have already been reduced into theorems. It now also includes planned controls with no public fixture yet, which are marked by empty `publicExamples` arrays in the specs instead of being implied as already implemented.</p>
+        <p>The public corridor still maps narrow OpenCompliance controls to family-level proxy targets. That is an honest seed state. It lets others inspect the proof corridor without pretending that whole ISO 27001 clauses or SOC 2 criteria have already been reduced into theorems. The public fixture set now spans seven synthetic corridors, including dedicated cyber-baseline and AI-governance packs, while exact-anchor review remains a separate maturity layer.</p>
       </article>
       <article class="section-card">
         <div class="kicker">Target State</div>
@@ -150,7 +150,7 @@ private only
     <section class="section-title">
       <h2>Immediate next step</h2>
     </section>
-    <blockquote class="quote">Keep the exports synchronized, expand conformance honestly, add lifecycle and composition checks without bluffing, and resist the temptation to publish a "reference verifier" before the public artifacts and proof corridor are stable enough to support it.</blockquote>
+    <blockquote class="quote">Keep the exports synchronized, expand live-style connectors honestly, add reviewed exact anchors where the public source text supports them, and resist the temptation to publish a "reference verifier" before the public artifacts and proof corridor are stable enough to support it.</blockquote>
 
     <footer class="footer">
       <p>This page exists so publication is designed as part of the system rather than treated as an afterthought once there is already too much private state mixed into the repo.</p>

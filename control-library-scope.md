@@ -46,6 +46,6 @@ That pilot does three things at once:
 
 1. it records public-source exact anchors where the source material is actually open enough to review responsibly, and
 2. it records explicit blocker entries where proprietary or non-public framework text still prevents an honest exact-anchor publication.
-3. it allows planned controls with no public fixture yet, so Cyber Essentials and AI-governance expansion can be reviewed before runtime examples exist.
+3. it still reaches beyond the implemented runtime examples, so the public exact-anchor layer can stay ahead of the current Lean and fixture corridor without pretending those reviewed anchors are already fully proved.
 
 That is a better state than a fake complete mapping corpus.
