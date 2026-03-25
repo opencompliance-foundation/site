@@ -7,6 +7,7 @@ The current public Lean corridor does not encode ISO 27001 or SOC 2 directly.
 It encodes narrow OpenCompliance controls such as:
 
 - scoped administrative MFA,
+- typed periodic access-review exports,
 - scoped password policy,
 - a managed web application firewall on the scoped public ingress path,
 - unique named infrastructure identities,
@@ -21,6 +22,12 @@ It encodes narrow OpenCompliance controls such as:
 - service-account key hygiene,
 - approved-region boundaries,
 - backup schedule declarations,
+- default-branch protections,
+- CI workflow policy constraints,
+- secure baseline configuration,
+- supported security updates,
+- endpoint malware protection,
+- AI-generated-content disclosure configuration,
 - and a default-deny network-boundary baseline for the cyber-hygiene corridor.
 
 Those narrow controls are then cross-walked outward to public-safe family proxies for ISO 27001, SOC 2, IRAP, GDPR, Cyber Essentials, NCSC CAF 4.0, NIST CSF 2.0, NIST SP 800-53 Rev. 5.1, and the current AI-governance plus AI-assurance frameworks.
@@ -29,10 +36,10 @@ The public Lean package now also imports `LegalLean` and exposes a typed boundar
 layer for the same corridor. That layer currently covers
 `FormalisationBoundary`-typed identity and logging results, a concrete `Defeats`
 example for risk acceptance, a small `Vague` inventory for discretionary
-compliance terms, and a first `LegalLean.Solver` instantiation for the
-five-claim minimal corpus. That solver now drives the runtime verdict path for
-the `minimal`, `failed`, and `stale` synthetic corridors. That is real
-progress, but it is still narrower than a full runtime replacement.
+compliance terms, a first `LegalLean.Solver` instantiation for the
+five-claim minimal corpus, and a public runtime layer that now drives the
+verification verdict path for every current synthetic corridor. That is real
+progress, but it is still narrower than a released live-evidence verifier.
 
 The project now also keeps private ISO 27001 and SOC 2 framework-depth reports
 that quantify how far the imported seed corpus has been decomposed and promoted
