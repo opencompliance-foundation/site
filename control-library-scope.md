@@ -23,7 +23,7 @@ It encodes narrow OpenCompliance controls such as:
 - backup schedule declarations,
 - and a default-deny network-boundary baseline for the cyber-hygiene corridor.
 
-Those narrow controls are then cross-walked outward to public-safe family proxies for ISO 27001, SOC 2, IRAP, GDPR, Cyber Essentials, NCSC CAF 4.0, NIST CSF 2.0, NIST SP 800-53 Rev. 5.1, and the first AI-governance frameworks.
+Those narrow controls are then cross-walked outward to public-safe family proxies for ISO 27001, SOC 2, IRAP, GDPR, Cyber Essentials, NCSC CAF 4.0, NIST CSF 2.0, NIST SP 800-53 Rev. 5.1, and the current AI-governance plus AI-assurance frameworks.
 
 The public Lean package now also imports `LegalLean` and exposes a typed boundary
 layer for the same corridor. That layer currently covers
@@ -72,11 +72,11 @@ That is the direction the public mapping metadata now points toward.
 
 The specs now also carry a first exact-anchor review pilot.
 
-That pilot now covers 41 public controls across 20 frameworks, and it does
+That pilot now covers 44 public controls across 25 frameworks, and it does
 three things at once:
 
-1. it records public-source exact anchors where the source material is actually open enough to review responsibly, including the current GDPR control set, a deeper IRAP operational layer that now reaches secure baselines, configuration exceptions, CI policy, change governance, access-review exports and closure, patch state, and patch exceptions, and the first UK ICO, NIST AI 600-1, and ETSI AI anchors,
+1. it records public-source exact anchors where the source material is actually open enough to review responsibly, including the current GDPR control set, a deeper IRAP operational layer that now reaches secure baselines, configuration exceptions, CI policy, change governance, access-review exports and closure, patch state, and patch exceptions, plus the first NIST AI 100-4 and NIST AI 700-2 anchors alongside the earlier UK ICO, NIST AI 600-1, and ETSI AI layers,
 2. it records explicit blocker entries where proprietary or non-public framework text still prevents an honest exact-anchor publication, and
-3. it still reaches beyond the implemented runtime examples, so the public exact-anchor layer can stay ahead of the current Lean and fixture corridor without pretending those reviewed anchors are already fully proved.
+3. it still reaches beyond the implemented runtime examples, so the public exact-anchor layer can stay ahead of the current Lean and fixture corridor without pretending those reviewed anchors are already fully proved, including planned AI provenance, evaluation, and data-quality controls that do not yet have public fixture evidence.
 
 That is a better state than a fake complete mapping corpus.
