@@ -40,9 +40,10 @@ without publishing the imported taxonomy itself. Those reports are not public
 artifacts, but they now drive the order of the next depth slices, with the
 password-policy, managed-WAF, centralized-monitoring, encryption-at-rest,
 key-hygiene, locality, incident, repository-integrity,
-unique-infrastructure-identity, and segmentation slices already promoted and
-the next ISO-first work now focused on data classification, access procedures,
-and the remaining unpublished availability or vulnerability-management atoms.
+unique-infrastructure-identity, segmentation, data-governance,
+access-procedure, vulnerability-scanning, and penetration-testing slices now
+decomposed or promoted and the next ISO-first work focused on continuity,
+device, and malware-monitoring atoms.
 
 ## Interpretation rule
 
@@ -71,10 +72,10 @@ That is the direction the public mapping metadata now points toward.
 
 The specs now also carry a first exact-anchor review pilot.
 
-That pilot now covers 34 public controls across 20 frameworks, and it does
+That pilot now covers 41 public controls across 20 frameworks, and it does
 three things at once:
 
-1. it records public-source exact anchors where the source material is actually open enough to review responsibly, including the current GDPR control set, a deeper IRAP operational layer, and the first UK ICO, NIST AI 600-1, and ETSI AI anchors,
+1. it records public-source exact anchors where the source material is actually open enough to review responsibly, including the current GDPR control set, a deeper IRAP operational layer that now reaches secure baselines, configuration exceptions, CI policy, change governance, access-review exports and closure, patch state, and patch exceptions, and the first UK ICO, NIST AI 600-1, and ETSI AI anchors,
 2. it records explicit blocker entries where proprietary or non-public framework text still prevents an honest exact-anchor publication, and
 3. it still reaches beyond the implemented runtime examples, so the public exact-anchor layer can stay ahead of the current Lean and fixture corridor without pretending those reviewed anchors are already fully proved.
 
