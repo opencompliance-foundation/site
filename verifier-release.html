@@ -39,6 +39,7 @@
       <p class="lead">The first public verifier release packages the Python runtime, Lean corridor, public specs, evidence schemas, conformance scripts, and synthetic ExampleCo corridors into one replayable bundle. It is still synthetic and scoped, but it is no longer only a private monorepo execution path.</p>
       <div class="pill-row">
         <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.8.0">Open release bundle</a>
+        <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/verifier-contract.json">Open verifier contract</a>
         <a class="pill" href="repositories.html">See repo map</a>
       </div>
     </section>
@@ -85,9 +86,10 @@
       <article class="section-card">
         <div class="kicker">Contracts</div>
         <h3>Specs, schemas, and conformance</h3>
-        <p>The bundle includes <code>open-specs/</code>, <code>evidence-schema/</code>, and <code>conformance/</code> so the artifact shapes and the replay checks travel with the release.</p>
+        <p>The bundle includes <code>open-specs/</code>, <code>evidence-schema/</code>, and <code>conformance/</code> so the artifact shapes and the replay checks travel with the release. The release manifest now points at a machine-readable verifier contract instead of leaving the runtime surface implicit.</p>
         <div class="card-actions">
           <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.8.0/open-specs">Open bundled specs</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/verifier-contract.json">Open verifier contract</a>
         </div>
       </article>
       <article class="section-card">
@@ -113,9 +115,10 @@ python3 scripts/verify_signed_artifacts.py --manifest signed-artifact-manifest.j
     <section class="double-grid">
       <article class="section-card">
         <div class="kicker">What it proves</div>
-        <p>The release proves that a third party can take the public bundle, rerun the verifier, rerun the Lean slice, validate the synthetic corridors, and verify the signed file manifest without access to the private working repo.</p>
+        <p>The release proves that a third party can take the public bundle, rerun the verifier, rerun the Lean slice, validate the synthetic corridors, verify the signed file manifest, and read one explicit contract describing which release artifacts, fixture artifacts, typed-boundary tags, and outcome policies are meant to stay stable.</p>
         <div class="card-actions">
           <a class="pill" href="https://github.com/opencompliance-foundation/examples/blob/main/verifier-release/opencompliance-verifier-0.8.0/release-manifest.json">Open release manifest</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/verifier-contract.json">Open verifier contract</a>
         </div>
       </article>
       <article class="section-card">
