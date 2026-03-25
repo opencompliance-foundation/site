@@ -49,10 +49,13 @@ password-policy, managed-WAF, centralized-monitoring, encryption-at-rest,
 key-hygiene, locality, incident, repository-integrity,
 unique-infrastructure-identity, segmentation, data-governance,
 access-procedure, vulnerability-scanning, and penetration-testing slices now
-decomposed or promoted, the next planned public wave now covering continuity,
-risk-governance, and retention/deletion controls, and the next ISO-first work
-moving onward into facilities, supplier commitments, governance context, and
-project-security atoms.
+decomposed or promoted, with the current planned public waves now covering
+continuity, risk-governance, retention/deletion, facilities, supplier
+commitments, ISMS context, project-security, reported-security-concern
+handling, and outsourced-development governance controls, and the next
+ISO-first work moving onward into stakeholder management, continual
+improvement, compliance-requirement inventories, intellectual-property
+governance, and remote-working atoms.
 
 ## Interpretation rule
 
