@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenCompliance Verifier Release</title>
+  <meta name="description" content="The first versioned OpenCompliance public verifier bundle: what it includes, how to run it, and where it lives in the public examples repo.">
+  <meta name="theme-color" content="#0b1324">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">OC</span>
+        <span>OpenCompliance</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Overview</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="trust.html">Trust Model</a>
+        <a href="open-proof-layer.html">Essay</a>
+        <a href="competitive-landscape.html">Landscape</a>
+        <a href="foundation.html">Foundation</a>
+        <a href="frameworks.html">Frameworks</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="showcase.html">Showcase</a>
+        <a href="public-artifacts.html">Public Artifacts</a>
+        <a href="repositories.html">Repositories</a>
+        <a href="verifier-release.html" aria-current="page">Verifier Release</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div class="eyebrow">Public Runtime</div>
+      <h1>A versioned verifier bundle now exists.</h1>
+      <p class="lead">The first public verifier release packages the Python runtime, Lean corridor, public specs, evidence schemas, conformance scripts, and synthetic ExampleCo corridors into one replayable bundle. It is still synthetic and scoped, but it is no longer only a private monorepo execution path.</p>
+      <div class="pill-row">
+        <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.8.0">Open release bundle</a>
+        <a class="pill" href="repositories.html">See repo map</a>
+      </div>
+    </section>
+
+    <section class="double-grid">
+      <article class="section-card">
+        <div class="kicker">Release ID</div>
+        <h2><code>opencompliance-verifier-0.8.0</code></h2>
+        <p>The release bundle lives in the public <code>examples</code> repository because it is a stitched, public-safe snapshot of the verifier runtime plus the synthetic corridors it can replay.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples">Open examples repo</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Verifier Version</div>
+        <h2><code>opencompliance-verifier/0.8.0</code></h2>
+        <p>All current public corridors now report one stable verifier version rather than a different version string per fixture. That makes the public artifacts look like a release line instead of a set of unrelated examples.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/blob/main/verifier-release/opencompliance-verifier-0.8.0/VERSION">Open version file</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>What the bundle includes</h2>
+    </section>
+    <section class="card-grid">
+      <article class="section-card">
+        <div class="kicker">Runtime</div>
+        <h3>Python verifier and entrypoint scripts</h3>
+        <p>The bundle ships the verifier runtime under <code>src/opencompliance/</code> plus runnable scripts for fixture verification, Lean batch inspection, transparency verification, and signed-artifact verification.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.8.0/src/opencompliance">Open bundled runtime</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Lean</div>
+        <h3>Proof corridor with first-run bootstrap</h3>
+        <p>The bundle ships the Lean 4 corridor source under <code>lean4-controls/</code>. On first use it bootstraps the local Lake build state instead of assuming a prebuilt private workspace.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.8.0/lean4-controls">Open bundled Lean package</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Contracts</div>
+        <h3>Specs, schemas, and conformance</h3>
+        <p>The bundle includes <code>open-specs/</code>, <code>evidence-schema/</code>, and <code>conformance/</code> so the artifact shapes and the replay checks travel with the release.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.8.0/open-specs">Open bundled specs</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Examples</div>
+        <h3>Seven runnable corridors plus support packs</h3>
+        <p>The bundled fixtures cover <code>minimal</code>, <code>failed</code>, <code>stale</code>, <code>medium</code>, <code>issued</code>, <code>cyber-baseline</code>, and <code>ai-governance</code>, plus the showcase, lifecycle, and signing packs.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.8.0/fixtures/public">Open bundled fixtures</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>How to use it</h2>
+    </section>
+    <div class="panel">
+      <pre><code>python3 scripts/verify_fixture.py --fixture-root fixtures/public/minimal --check
+python3 scripts/run_lean_batch.py --fixture minimal
+python3 conformance/scripts/validate_public_examples.py --fixture all
+python3 scripts/verify_signed_artifacts.py --manifest signed-artifact-manifest.json --artifact-root .</code></pre>
+    </div>
+
+    <section class="double-grid">
+      <article class="section-card">
+        <div class="kicker">What it proves</div>
+        <p>The release proves that a third party can take the public bundle, rerun the verifier, rerun the Lean slice, validate the synthetic corridors, and verify the signed file manifest without access to the private working repo.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/blob/main/verifier-release/opencompliance-verifier-0.8.0/release-manifest.json">Open release manifest</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">What it does not prove</div>
+        <p>It does not yet prove live-connector operation, real-organisation evidence ingestion, or a production release pipeline. It is still a synthetic public reference release, not a claim of full audit readiness for arbitrary organisations.</p>
+        <div class="card-actions">
+          <a class="pill" href="roadmap.html">See remaining roadmap</a>
+        </div>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <p>The point of this bundle is not hype. It is to make the public runtime contract inspectable, replayable, and stable enough that others can critique or reuse it seriously.</p>
+      <div class="footer-nav">
+        <a href="index.html">Overview</a>
+        <a href="public-artifacts.html">Public artifacts</a>
+        <a href="repositories.html">Repositories</a>
+        <a href="showcase.html">Showcase</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

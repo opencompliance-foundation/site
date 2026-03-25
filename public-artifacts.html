@@ -41,12 +41,12 @@
     <section class="double-grid">
       <article class="section-card">
         <div class="kicker">Recommended Split</div>
-        <h2>Seven public repos</h2>
+        <h2>Seven public repos plus one release bundle lane</h2>
         <ul class="list">
           <li><strong><a href="https://github.com/opencompliance-foundation/site">Docs repo</a>:</strong> the static site under <code>docs/</code>, suitable for GitHub Pages.</li>
           <li><strong><a href="https://github.com/opencompliance-foundation/governance">Governance repo</a>:</strong> charter, governance, conflicts, sponsor model, and release policy.</li>
           <li><strong><a href="https://github.com/opencompliance-foundation/specs">Specs repo</a>:</strong> draft artifact formats, mapping methodology, control-boundary metadata, exact-anchor review pilots, witness receipts, revocations, signed-artifact manifests, and versioning rules.</li>
-          <li><strong><a href="https://github.com/opencompliance-foundation/examples">Examples repo</a>:</strong> replay bundles, lifecycle examples, signature manifests, public keys, and other synthetic public test data.</li>
+          <li><strong><a href="https://github.com/opencompliance-foundation/examples">Examples repo</a>:</strong> replay bundles, lifecycle examples, signature manifests, public keys, other synthetic public test data, and the versioned verifier release bundle.</li>
           <li><strong><a href="https://github.com/opencompliance-foundation/conformance">Conformance repo</a>:</strong> descriptive vectors, witness expectations, and an executable validator tied to the public examples.</li>
           <li><strong><a href="https://github.com/opencompliance-foundation/evidence-schema">Evidence-schema repo</a>:</strong> typed evidence claim envelopes, signer and provenance fields, and public claim-type payload schemas.</li>
           <li><strong><a href="https://github.com/opencompliance-foundation/lean4-controls">Lean4-controls repo</a>:</strong> a buildable Lean 4 corridor with explicit proof-boundary notes plus a LegalLean-backed typed layer for `FormalisationBoundary`, `Defeats`, `Vague`, typed logging, and the first minimal-corpus solver with runtime claim decisions. The current public predicates now cover scoped password policy, managed web-application-firewall state, unique named infrastructure identities, customer and environment segmentation, ingress-boundary attachment, admin-ingress restriction, plaintext-transport disablement, scoped encryption at rest, and the cyber-baseline default-deny boundary in addition to the earlier identity, logging, key, location, and backup slice.</li>
@@ -113,6 +113,14 @@ private only
           <a class="pill" href="https://github.com/opencompliance-foundation/examples">Open examples repo</a>
         </div>
       </article>
+      <article class="artifact-card">
+        <div class="kicker">Rule 5</div>
+        <h3>Release a runnable verifier bundle</h3>
+        <p>The public runtime should not exist only as private repo glue. The examples surface now also carries a versioned verifier bundle that can rerun the synthetic corridors outside the monorepo.</p>
+        <div class="card-actions">
+          <a class="pill" href="verifier-release.html">See verifier release</a>
+        </div>
+      </article>
     </section>
 
     <section class="section-title">
@@ -121,10 +129,11 @@ private only
     <section class="double-grid">
       <article class="section-card">
         <div class="kicker">Examples</div>
-        <h3>Seven corridor bundles plus lifecycle and signing packs</h3>
-        <p>The public `examples` repo now has a small `minimal` blocked bundle, a `failed` corridor that demonstrates present-but-non-compliant evidence, a `stale` corridor that demonstrates freshness-blocked evidence, a richer `medium` blocked corridor with raw synthetic source exports spanning repo policy, CI policy, IAM, cloud, password policy, managed WAF state, centralized monitoring, storage encryption, infrastructure identity state, and environment-segmentation state, signed governance attestations for access-review closure, monitoring review, configuration exceptions, patch exceptions, incident procedures, and vendor terms, plus Lean-backed access-review-export, password-policy, managed-WAF, centralized-monitoring, managed-boundary, admin-ingress, plaintext-transport, encryption-at-rest, unique-infrastructure-identity, repository-integrity, CI-policy, and segmentation claims, an `issued` ExampleCo corridor that demonstrates the narrow certificate path with typed access-review exports, scoped password-policy, managed-WAF, centralized-monitoring, storage-encryption, infrastructure-identity, and environment-segmentation exports, plus signed closure, monitoring-review, and incident-runbook attestations, a `cyber-baseline` corridor that demonstrates a clean Cyber Essentials-style hygiene baseline with Lean-backed default-deny boundary, secure-baseline, update-hygiene, and malware-protection proofs, an `ai-governance` corridor that demonstrates documentary AI governance plus machine-checkable disclosure, and planned public AI-assurance controls for provenance metadata, evaluation design, and data-quality governance even though those three slices do not yet have fixture evidence. The `exampleco-showcase` meta-pack aggregates the strongest company-level story across four corridors, while the lifecycle pack shows drift, delta rechecks, and composed component certificates, and the signing pack carries a synthetic public key plus signed-artifact manifests. Together they show persisted classification artifacts, boundary-aware proof-runner metadata, an explicit LegalLean typed-boundary summary, runtime-consumed LegalLean verdicts across all current public corridors, typed punch-lists, scoped certificates, replay bundles, transparency logs, inclusion proofs, OSCAL-shaped projections, witness receipts, lifecycle artifacts, public signature verification, and a buyer-facing showcase model without leaking private data.</p>
+        <h3>Seven corridor bundles, lifecycle/signing packs, and a verifier release</h3>
+        <p>The public `examples` repo now has a small `minimal` blocked bundle, a `failed` corridor that demonstrates present-but-non-compliant evidence, a `stale` corridor that demonstrates freshness-blocked evidence, a richer `medium` blocked corridor with raw synthetic source exports spanning repo policy, CI policy, IAM, cloud, password policy, managed WAF state, centralized monitoring, storage encryption, infrastructure identity state, and environment-segmentation state, signed governance attestations for access-review closure, monitoring review, configuration exceptions, patch exceptions, incident procedures, and vendor terms, plus Lean-backed access-review-export, password-policy, managed-WAF, centralized-monitoring, managed-boundary, admin-ingress, plaintext-transport, encryption-at-rest, unique-infrastructure-identity, repository-integrity, CI-policy, and segmentation claims, an `issued` ExampleCo corridor that demonstrates the narrow certificate path with typed access-review exports, scoped password-policy, managed-WAF, centralized-monitoring, storage-encryption, infrastructure-identity, and environment-segmentation exports, plus signed closure, monitoring-review, and incident-runbook attestations, a `cyber-baseline` corridor that demonstrates a clean Cyber Essentials-style hygiene baseline with Lean-backed default-deny boundary, secure-baseline, update-hygiene, and malware-protection proofs, an `ai-governance` corridor that demonstrates documentary AI governance plus machine-checkable disclosure, and planned public AI-assurance controls for provenance metadata, evaluation design, and data-quality governance even though those three slices do not yet have fixture evidence. The `exampleco-showcase` meta-pack aggregates the strongest company-level story across four corridors, while the lifecycle pack shows drift, delta rechecks, and composed component certificates, the signing pack carries a synthetic public key plus signed-artifact manifests, and the `verifier-release/` lane now carries a stitched public verifier bundle that can rerun the synthetic corridors outside the private monorepo. Together they show persisted classification artifacts, boundary-aware proof-runner metadata, an explicit LegalLean typed-boundary summary, runtime-consumed LegalLean verdicts across all current public corridors, typed punch-lists, scoped certificates, replay bundles, transparency logs, inclusion proofs, OSCAL-shaped projections, witness receipts, lifecycle artifacts, public signature verification, a release-manifest contract, and a buyer-facing showcase model without leaking private data.</p>
         <div class="card-actions">
           <a class="pill" href="https://github.com/opencompliance-foundation/examples">Open examples repo</a>
+          <a class="pill" href="verifier-release.html">See verifier release</a>
         </div>
       </article>
       <article class="section-card">
@@ -185,7 +194,7 @@ private only
     <section class="section-title">
       <h2>Immediate next step</h2>
     </section>
-    <blockquote class="quote">Keep the exports synchronized, keep going depth-first on the ISO 27001-driven decomposition order, expand live-style connectors honestly, and resist the temptation to publish a "reference verifier" before the public artifacts and proof corridor are stable enough to support it.</blockquote>
+    <blockquote class="quote">Keep the exports synchronized, treat the released verifier bundle as a public contract rather than an ad hoc snapshot, keep going depth-first on the ISO 27001-driven decomposition order, and expand live-style connectors honestly.</blockquote>
 
     <footer class="footer">
       <p>This page exists so publication is designed as part of the system rather than treated as an afterthought once there is already too much private state mixed into the repo.</p>
