@@ -18,6 +18,7 @@ Primary pages:
 - /showcase.html: ExampleCo walkthrough showing how a hypothetical company can present corridor-scoped proofs, attestations, and punch-lists
 - /public-artifacts.html: docs/specs/examples publication strategy
 - /verifier-release.html: versioned public verifier bundle, release manifest, and runnable replay path
+- /verify-workbench.html: local browser workbench for the deterministic Verify API and copied public release bundle
 
 Public repositories:
 - https://github.com/opencompliance-foundation/site: static project site published at opencompliancefoundation.com

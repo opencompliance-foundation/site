@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenCompliance Verify Workbench</title>
+  <meta name="description" content="How to run the local OpenCompliance Verify workbench against the deterministic Verify API and the versioned public verifier bundle.">
+  <meta name="theme-color" content="#0b1324">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">OC</span>
+        <span>OpenCompliance</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Overview</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="trust.html">Trust Model</a>
+        <a href="frameworks.html">Frameworks</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="showcase.html">Showcase</a>
+        <a href="public-artifacts.html">Public Artifacts</a>
+        <a href="repositories.html">Repositories</a>
+        <a href="verifier-release.html">Verifier Release</a>
+        <a href="verify-workbench.html" aria-current="page">Verify Workbench</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div class="eyebrow">Local UX</div>
+      <h1>A minimal local workbench now exists for the Verify surface.</h1>
+      <p class="lead">The workbench is intentionally narrow. It does not pretend there is already a hosted multi-tenant product UI. It gives a serious user one browser entrypoint for the deterministic local Verify API, the current synthetic ExampleCo corridors, and the machine-readable verifier contract.</p>
+      <div class="pill-row">
+        <a class="pill" href="verifier-release.html">Verifier release</a>
+        <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.9.1/ui/verify">Bundled workbench</a>
+        <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/verifier-contract.json">Verifier contract</a>
+      </div>
+    </section>
+
+    <section class="double-grid">
+      <article class="section-card">
+        <div class="kicker">Source Path</div>
+        <h2><code>ui/verify/index.html</code></h2>
+        <p>The workbench lives in the private source tree and is also copied into the public verifier bundle. The same file should work from a local checkout or from a copied release bundle served over a local HTTP server.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.9.1/ui/verify">Open bundled UI</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">API Contract</div>
+        <h2><code>GET /contract</code> and <code>POST /verify</code></h2>
+        <p>The workbench does not invent a second verdict path. It calls the same local API contract as the CLI and uses the same deterministic runtime artifacts, typed boundary tags, and outcome policies.</p>
+        <div class="card-actions">
+          <a class="pill" href="verify-contract.md">Contract notes</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/verifier-contract.json">Open contract JSON</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>How to run it</h2>
+    </section>
+    <div class="panel">
+      <pre><code>cd projects/dev/opencompliance
+python3 scripts/serve_verify_api.py --port 8788
+
+# second terminal, same directory
+python3 -m http.server 8000
+
+# then open
+http://127.0.0.1:8000/ui/verify/</code></pre>
+    </div>
+
+    <section class="card-grid">
+      <article class="section-card">
+        <div class="kicker">Inline Bundles</div>
+        <h3>Load current synthetic corridors into the browser</h3>
+        <p>The workbench can preload the checked-in public ExampleCo corridors from <code>fixtures/public/*</code>, including <code>minimal</code>, <code>failed</code>, <code>stale</code>, <code>medium</code>, <code>issued</code>, <code>cyber-baseline</code>, and <code>ai-governance</code>.</p>
+        <div class="card-actions">
+          <a class="pill" href="showcase.html">See ExampleCo showcase</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Fixture Paths</div>
+        <h3>Verify any fixture-shaped directory on disk</h3>
+        <p>The same UI can send a <code>fixture_path</code> request to the local API, which is useful when testing copied bundles or local synthetic variations without editing the browser payload directly.</p>
+        <div class="card-actions">
+          <a class="pill" href="verifier-release.html">See copied bundle flow</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Local Only</div>
+        <h3>No fake SaaS surface</h3>
+        <p>This is a browser workbench for the deterministic local runtime. It is not a claim that hosted auth, tenant isolation, operator ingress controls, or live organization evidence flows are finished product surfaces.</p>
+        <div class="card-actions">
+          <a class="pill" href="roadmap.html">See remaining product gaps</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="double-grid">
+      <article class="callout">
+        <div class="kicker">Release Bundle</div>
+        <p>The current versioned public bundle now includes both <code>docs/</code> and <code>ui/</code>, so the workbench and its linked documentation remain usable when the bundle is copied out of the private monorepo and served locally.</p>
+        <div class="card-actions">
+          <a class="pill" href="verifier-release.html">See release details</a>
+        </div>
+      </article>
+      <article class="callout">
+        <div class="kicker">Boundary</div>
+        <p>The workbench is useful because it makes the existing deterministic surface inspectable. It would become misleading if it implied a production customer workspace before signer-bound ingress, live connectors, and external release attestation exist.</p>
+        <div class="card-actions">
+          <a class="pill" href="roadmap.html">See remaining roadmap</a>
+        </div>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <p>The right standard here is not visual novelty. It is whether a reviewer can run the current Verify surface locally without guessing which files or commands matter.</p>
+      <div class="footer-nav">
+        <a href="index.html">Overview</a>
+        <a href="verifier-release.html">Verifier release</a>
+        <a href="repositories.html">Repositories</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
