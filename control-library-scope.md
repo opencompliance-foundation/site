@@ -52,10 +52,13 @@ access-procedure, vulnerability-scanning, and penetration-testing slices now
 decomposed or promoted, with the current planned public waves now covering
 continuity, risk-governance, retention/deletion, facilities, supplier
 commitments, ISMS context, project-security, reported-security-concern
-handling, and outsourced-development governance controls, and the next
-ISO-first work moving onward into stakeholder management, continual
-improvement, compliance-requirement inventories, intellectual-property
-governance, and remote-working atoms.
+handling, outsourced-development governance, stakeholder management,
+continual improvement, compliance-requirement inventories,
+intellectual-property governance, and remote-working atoms, and the next
+ISO-first work moving onward into special-interest-group participation,
+disciplinary and conduct follow-through, internal-audit and
+customer-support adequacy, facility-workspace governance, and the
+remaining governance-and-operations atoms.
 
 ## Interpretation rule
 
