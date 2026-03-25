@@ -36,7 +36,7 @@
     <section class="page-hero">
       <div class="eyebrow">Public Runtime</div>
       <h1>A versioned verifier bundle now exists.</h1>
-      <p class="lead">The first public verifier release packages the Python runtime, Lean corridor, public specs, evidence schemas, conformance scripts, and synthetic ExampleCo corridors into one replayable bundle. It is still synthetic and scoped, but it is no longer only a private monorepo execution path.</p>
+      <p class="lead">The first public verifier release packages the Python runtime, Lean corridor, public specs, evidence schemas, conformance scripts, and synthetic ExampleCo corridors into one replayable bundle. It is still synthetic and scoped, but it is no longer only a private monorepo execution path, and the release is now rebuilt and revalidated through one scripted private release path before publication.</p>
       <div class="pill-row">
         <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.8.0">Open release bundle</a>
         <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/verifier-contract.json">Open verifier contract</a>
@@ -86,7 +86,7 @@
       <article class="section-card">
         <div class="kicker">Contracts</div>
         <h3>Specs, schemas, and conformance</h3>
-        <p>The bundle includes <code>open-specs/</code>, <code>evidence-schema/</code>, and <code>conformance/</code> so the artifact shapes and the replay checks travel with the release. The release manifest now points at a machine-readable verifier contract instead of leaving the runtime surface implicit.</p>
+        <p>The bundle includes <code>open-specs/</code>, <code>evidence-schema/</code>, and <code>conformance/</code> so the artifact shapes and the replay checks travel with the release. The release manifest now points at a machine-readable verifier contract instead of leaving the runtime surface implicit, and the current release line is rebuilt, smoke-checked from a temporary bundle copy, and republished through one scripted private workflow instead of a hand-sequenced local checklist.</p>
         <div class="card-actions">
           <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.8.0/open-specs">Open bundled specs</a>
           <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/verifier-contract.json">Open verifier contract</a>
