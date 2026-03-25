@@ -53,12 +53,18 @@
           <li>Which controls remain judgment-dependent and therefore require human review.</li>
           <li>Which assumptions, exclusions, or unresolved axioms still remain in the artifact set.</li>
         </ul>
+        <div class="card-actions">
+          <a class="pill" href="showcase.html">See scoped disclosure</a>
+        </div>
       </article>
       <article class="section-card">
         <div class="kicker">Shortcut-Proof</div>
         <h2>What that means here</h2>
         <p>Shortcut-proof does not mean impossible to attack. It means a vendor should not be able to leap from mutable internal state to a polished certificate while skipping the public, checkable intermediate trail.</p>
         <p>The verification chain should be legible enough that missing steps break issuance instead of being smoothed over by prose.</p>
+        <div class="card-actions">
+          <a class="pill" href="public-artifacts.html">See publishable artifacts</a>
+        </div>
       </article>
     </section>
 
@@ -70,31 +76,49 @@
         <div class="kicker">1</div>
         <strong>Canonicalize before signing</strong>
         <p>Evidence claims, proof bundles, certificates, and revocations get canonical serialization before hashing or signing so identity is sharper than presentation.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/specs">See artifact specs</a>
+        </div>
       </article>
       <article class="flow-step">
         <div class="kicker">2</div>
         <strong>Separate signer roles</strong>
         <p>Producers sign facts. Reviewers sign attestations. The verifier signs conclusions. Witnesses sign replay receipts. The current public pack now includes synthetic Ed25519 signature manifests so this is an executable example, not just a future design note.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples">See signing pack</a>
+        </div>
       </article>
       <article class="flow-step">
         <div class="kicker">3</div>
         <strong>Append-only transparency</strong>
         <p>Artifact digests go into a transparency ledger. Replacements require new append entries. Silent mutation should be structurally invalid.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples">See transparency logs</a>
+        </div>
       </article>
       <article class="flow-step">
         <div class="kicker">4</div>
         <strong>Independent witness reruns</strong>
         <p>Published proof bundles can be replayed in clean environments. Witness receipts only exist on exact digest matches under the expected verifier version, and the bundle itself should say which proved claims really entered the public proof batch versus which were still outside that boundary.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/conformance">See witness checks</a>
+        </div>
       </article>
       <article class="flow-step">
         <div class="kicker">5</div>
         <strong>Fail closed</strong>
         <p>No proof bundle, no certificate. No logged attestation digest, no certificate. Expired signer authority, no certificate. Missing steps are hard stops.</p>
+        <div class="card-actions">
+          <a class="pill" href="showcase.html">See issued vs blocked</a>
+        </div>
       </article>
       <article class="flow-step">
         <div class="kicker">6</div>
         <strong>Revocation stays public</strong>
         <p>When drift breaks an issued result, the revocation is an artifact too. Certificates are revocable state, not static PDFs that quietly age in place.</p>
+        <div class="card-actions">
+          <a class="pill" href="continuous-verification.html">See revocation flow</a>
+        </div>
       </article>
     </section>
 
@@ -104,10 +128,16 @@
       <article class="callout">
         <div class="kicker">Why Not Blockchain</div>
         <p>The trust problem here is not scarce digital assets or distributed consensus. It is auditability, mutation resistance, and reproducibility. Supply-chain security patterns fit better: signatures, transparency logs, provenance, reproducible environments, and public witnesses.</p>
+        <div class="card-actions">
+          <a class="pill" href="architecture.html">See runtime pipeline</a>
+        </div>
       </article>
       <article class="callout">
         <div class="kicker">Current Public Signing Pack</div>
         <p>The public examples now ship transparency logs and inclusion proofs for every ExampleCo corridor, plus a synthetic Ed25519 public key and signed-artifact manifests for the issued corridor and the lifecycle pack. That makes the canonical-digest story independently checkable even before a real release identity exists.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples">Open signing artifacts</a>
+        </div>
       </article>
     </section>
 

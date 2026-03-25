@@ -62,6 +62,10 @@
         <h2>OSCAL outside, Lean inside</h2>
         <p>The external contract stays machine-readable and standards-aligned. OSCAL packages, profiles, mappings, and assessment-result style artifacts form the interchange layer. Lean 4 is the internal proof kernel for the decidable technical corridor.</p>
         <p>This split matters. It avoids locking the product into an ad hoc private schema while still keeping the trusted core small and explicit.</p>
+        <div class="card-actions">
+          <a class="pill" href="public-artifacts.html">See public artifacts</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/specs">Open specs repo</a>
+        </div>
       </article>
       <article class="section-card">
         <div class="kicker">Epistemic Model</div>
@@ -72,6 +76,9 @@
           <li><strong>Judgment:</strong> controls whose adequacy depends on interpretation, governance, or review.</li>
           <li><strong>Mixed:</strong> controls decomposed into sub-obligations that take different routes.</li>
         </ul>
+        <div class="card-actions">
+          <a class="pill" href="trust.html">See trust model</a>
+        </div>
       </article>
     </section>
 
@@ -83,51 +90,81 @@
         <div class="stage-number">1</div>
         <h3>Control Spec Library</h3>
         <p>Versioned Lean 4 modules encode the in-scope control corridor together with proof boundaries and source mappings.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/lean4-controls">Open Lean corridor</a>
+        </div>
       </article>
       <article class="roadmap-stage">
         <div class="stage-number">2</div>
         <h3>OSCAL Bridge</h3>
         <p>Normalizes catalogs, profiles, mappings, and assessment-result style packages into the internal representation while rejecting unresolved references.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/specs">See OSCAL-facing specs</a>
+        </div>
       </article>
       <article class="roadmap-stage">
         <div class="stage-number">3</div>
         <h3>Evidence Claim Registry</h3>
         <p>Stores typed claims with actor identity, actor type, scope, timestamp, source system, signature state, and control mappings.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/evidence-schema">Open evidence schema</a>
+        </div>
       </article>
       <article class="roadmap-stage">
         <div class="stage-number">4</div>
         <h3>Control Classifier</h3>
         <p>Routes controls into proof, attestation, or judgment queues. It is the anti-magic layer that prevents ambiguous obligations from being mislabeled as machine-proven.</p>
+        <div class="card-actions">
+          <a class="pill" href="showcase.html">See classification outcomes</a>
+        </div>
       </article>
       <article class="roadmap-stage">
         <div class="stage-number">5</div>
         <h3>Proof Kernel Runner</h3>
         <p>Executes Lean proof batches, extracts unresolved axioms, and emits the trust-surface artifact for the verification session.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/lean4-controls">See proof corridor</a>
+        </div>
       </article>
       <article class="roadmap-stage">
         <div class="stage-number">6</div>
         <h3>Verification Session</h3>
         <p>Presents one Verify API that returns either a deterministic certificate or a typed punch-list. No prose layer is allowed to overrule the kernel verdict.</p>
+        <div class="card-actions">
+          <a class="pill" href="showcase.html">See Verify outputs</a>
+        </div>
       </article>
       <article class="roadmap-stage">
         <div class="stage-number">7</div>
         <h3>Transparency Ledger</h3>
         <p>Appends canonical digests for evidence claims, proof bundles, certificates, witness receipts, and revocations so later mutation is publicly detectable.</p>
+        <div class="card-actions">
+          <a class="pill" href="trust.html">See trust chain</a>
+        </div>
       </article>
       <article class="roadmap-stage">
         <div class="stage-number">8</div>
         <h3>Reproducible Witness Verifier</h3>
         <p>Reruns published bundles under pinned environments and only issues a witness receipt when the resulting digests match exactly.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/conformance">See replay checks</a>
+        </div>
       </article>
       <article class="roadmap-stage">
         <div class="stage-number">9</div>
         <h3>Certificate Lifecycle Manager</h3>
         <p>Tracks drift, revokes stale certificates, and composes child certificates into larger trust artifacts when scope boundaries allow it.</p>
+        <div class="card-actions">
+          <a class="pill" href="continuous-verification.html">See lifecycle story</a>
+        </div>
       </article>
       <article class="roadmap-stage">
         <div class="stage-number">10</div>
         <h3>Public Docs and Artifact Publishing</h3>
         <p>Explains the system honestly, exposes limitations, and exports allow-listed public bundles for docs, open specs, and example fixtures.</p>
+        <div class="card-actions">
+          <a class="pill" href="repositories.html">See public repos</a>
+        </div>
       </article>
     </section>
 
@@ -139,11 +176,17 @@
         <h2>A single verification run</h2>
         <p>A company requests verification for a scoped profile. OpenCompliance ingests the relevant OSCAL profile, imports typed evidence from systems and attestations, classifies the resulting obligations, sends only the decidable corridor to Lean, then packages the result into a certificate or punch-list with a trust-surface report.</p>
         <p>From there, the output can be signed, logged, replayed by witnesses, and revoked later if drift is detected.</p>
+        <div class="card-actions">
+          <a class="pill" href="showcase.html">See ExampleCo walkthrough</a>
+        </div>
       </article>
       <article class="section-card">
         <div class="kicker">LLM Boundary</div>
         <h2>Where language models are allowed</h2>
         <p>LLMs may help with bounded normalization of messy attachments into candidate claims. They do not get to decide verdicts, proof status, or publication safety. Any LLM-assisted step still terminates in deterministic schema checks and rule validation.</p>
+        <div class="card-actions">
+          <a class="pill" href="trust.html">See boundary rules</a>
+        </div>
       </article>
     </section>
 
