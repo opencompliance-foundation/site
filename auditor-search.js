@@ -385,7 +385,18 @@
   }
 
   function renderLocation(record) {
-    var label = [record.city, record.state].filter(Boolean).join(", ");
+    var locationParts = [];
+    if (record.city) {
+      locationParts.push(record.city);
+    }
+    if (record.country === "United Kingdom") {
+      locationParts.push("United Kingdom");
+    } else if (record.state) {
+      locationParts.push(record.state);
+    } else if (record.country) {
+      locationParts.push(record.country);
+    }
+    var label = locationParts.join(", ");
     if (record.address) {
       return (
         '<div class="auditor-cell-stack">' +
@@ -401,6 +412,7 @@
     if (record.source_key === "ukas") {
       return (
         '<div class="auditor-status-list">' +
+        statusLine("Record type", '<span class="status-badge source">UKAS</span>') +
         statusLine("ISO 27001", statusBadge(record.has_iso_27001)) +
         statusLine("ISO 27701", statusBadge(record.has_iso_27701)) +
         "</div>"
@@ -477,7 +489,9 @@
         '<a class="auditor-link" href="' +
           escapeHtml(record.detail_url) +
           '" target="_blank" rel="noreferrer noopener">' +
-          escapeHtml(record.detail_label || "Source") +
+          escapeHtml(
+            record.source_key === "ukas" ? "UKAS schedule" : (record.detail_label || "Source")
+          ) +
           "</a>"
       );
     }
@@ -519,6 +533,9 @@
           "<td><div class=\"auditor-cell-stack\"><strong>" +
           escapeHtml(record.firm_name || "Unknown") +
           "</strong>" +
+          '<span class="auditor-cell-subline">' +
+          escapeHtml(record.source_key === "ukas" ? "UKAS ISMS certification body" : "AICPA peer-review firm") +
+          "</span>" +
           (record.summary_scope && record.source_key === "ukas"
             ? '<span class="auditor-cell-subline">' +
               escapeHtml(truncateText(record.summary_scope, 96)) +
@@ -528,7 +545,7 @@
           "<td><div class=\"auditor-cell-stack\">" +
           sourceBadge(record) +
           '<span class="auditor-cell-subline">' +
-          escapeHtml(record.source_label || "Unknown source") +
+          escapeHtml(record.source_key === "ukas" ? "UKAS public register" : "AICPA public file search") +
           "</span></div></td>" +
           "<td>" + escapeHtml(record.reference_number || "Not listed") + "</td>" +
           "<td>" + renderLocation(record) + "</td>" +

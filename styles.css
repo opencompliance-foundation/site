@@ -786,6 +786,11 @@ pre code {
   background: rgba(157, 41, 63, 0.68);
 }
 
+.status-badge.source {
+  color: #041126;
+  background: rgba(93, 160, 255, 0.88);
+}
+
 .status-badge.na {
   color: var(--ink-soft-strong);
   background: rgba(78, 94, 124, 0.46);
