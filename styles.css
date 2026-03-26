@@ -627,7 +627,7 @@ pre code {
 .auditor-filter-grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .auditor-filter {
@@ -730,7 +730,7 @@ pre code {
 
 .auditor-table {
   width: 100%;
-  min-width: 980px;
+  min-width: 1180px;
   border-collapse: collapse;
   font-size: 0.91rem;
 }
@@ -784,6 +784,88 @@ pre code {
 .status-badge.no {
   color: #ffe7e7;
   background: rgba(157, 41, 63, 0.68);
+}
+
+.status-badge.na {
+  color: var(--ink-soft-strong);
+  background: rgba(78, 94, 124, 0.46);
+}
+
+.auditor-cell-stack {
+  display: grid;
+  gap: 0.26rem;
+}
+
+.auditor-cell-subline {
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.source-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 0.24rem 0.62rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.source-aicpa {
+  color: #041126;
+  background: rgba(93, 160, 255, 0.88);
+}
+
+.source-ukas {
+  color: #07110b;
+  background: rgba(126, 249, 192, 0.9);
+}
+
+.auditor-status-list {
+  display: grid;
+  gap: 0.38rem;
+}
+
+.auditor-status-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+}
+
+.auditor-status-label {
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.auditor-link-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.auditor-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(126, 249, 192, 0.18);
+  background: rgba(93, 160, 255, 0.08);
+  color: var(--ink);
+  padding: 0.34rem 0.7rem;
+  font-size: 0.78rem;
+  text-decoration: none;
+}
+
+.auditor-link:hover,
+.auditor-link:focus-visible {
+  border-color: rgba(126, 249, 192, 0.35);
+  background: rgba(126, 249, 192, 0.12);
 }
 
 @keyframes rise-in {

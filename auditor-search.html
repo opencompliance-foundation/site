@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OpenCompliance Auditor Search</title>
-  <meta name="description" content="Search publication-safe AICPA peer review firm records by name, state, peer-reviewed status, in-program status, recency, and center memberships.">
+  <meta name="description" content="Search publication-safe AICPA peer review firms and UKAS ISMS certification bodies by source, name, location, status, recency, and visible public scope.">
   <meta name="theme-color" content="#0b1324">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="manifest" href="site.webmanifest">
@@ -35,9 +35,10 @@
 
     <section class="page-hero">
       <div class="eyebrow">Public Evidence Explorer</div>
-      <h1>AICPA auditor search, publication-safe and inspectable.</h1>
-      <p class="lead">This explorer publishes only safe fields from public AICPA search records so teams can filter by state, peer review status, program enrollment, review recency, and center memberships without carrying internal notes or private judgment.</p>
+      <h1>Auditor and certification-body search, publication-safe and inspectable.</h1>
+      <p class="lead">This explorer publishes only safe fields from public AICPA peer review records and UKAS ISMS certification-body listings so teams can filter by source, location, recency, public status, and visible scope without carrying internal notes or private judgment.</p>
       <div class="pill-row">
+        <span class="pill">AICPA + UKAS</span>
         <span class="pill">Static-first dataset</span>
         <span class="pill">Refresh target: 3-7 days</span>
         <span class="pill">Provenance disclosed</span>
@@ -52,14 +53,14 @@
     <section class="double-grid">
       <article class="callout">
         <div class="kicker">Scope</div>
-        <p>This page is a public-record search surface. It is not an auditor recommendation engine and does not replace due diligence, licensing checks, independence review, or engagement-specific legal assessment.</p>
+        <p>This page is a public-record search surface. It is not an auditor recommendation engine and does not replace due diligence, licensing checks, independence review, certification-scope review, or engagement-specific legal assessment.</p>
         <div class="card-actions">
           <a class="pill" href="showcase.html">See a buyer-facing example</a>
         </div>
       </article>
       <article class="callout">
         <div class="kicker">Publication boundary</div>
-        <p>Only publication-safe fields are included: firm identity, location, enrollment and peer-review flags, program status, review period and acceptance date, report rating, center memberships, source, and refresh metadata.</p>
+        <p>Only publication-safe fields are included: organisation identity, location, peer-review or accreditation status markers, review or issue dates, visible public scope, stable source links, website links already exposed by the source, and refresh metadata.</p>
         <div class="card-actions">
           <a class="pill" href="data/auditors.json">Open dataset JSON</a>
         </div>
@@ -67,33 +68,40 @@
     </section>
 
     <section class="section-title">
-      <h2>Filter auditor records</h2>
+      <h2>Filter public records</h2>
     </section>
     <section class="section-card auditor-filter-shell">
       <div class="auditor-filter-intro">
         <div>
           <div class="kicker">Search Lens</div>
           <h3>Start broad, then narrow cleanly.</h3>
-          <p>Use the firm search first, then tighten the list with a smaller set of selectors for state, review status, recency, and center memberships.</p>
+          <p>Use the search first, then narrow by source and the source-aware selectors below. Some filters only apply cleanly to AICPA rows, and the UI keeps that boundary explicit.</p>
         </div>
       </div>
       <form class="auditor-filter-stack" id="auditor-filter-form" onsubmit="return false;">
         <label class="auditor-filter auditor-filter--search">
           <span>Firm search</span>
-          <small class="auditor-filter-hint">Search by firm name, firm number, city, or state.</small>
+          <small class="auditor-filter-hint">Search by organisation name, reference number, location, public scope text, or source label.</small>
           <input id="search-input" type="search" placeholder="Company Name LLC or TN">
         </label>
         <div class="auditor-filter-grid">
           <label class="auditor-filter">
-            <span>State</span>
-            <small class="auditor-filter-hint">Narrow to a single jurisdiction.</small>
+            <span>Source</span>
+            <small class="auditor-filter-hint">Choose AICPA peer-review firms, UKAS certification bodies, or both.</small>
+            <select id="source-filter">
+              <option value="any">Any source</option>
+            </select>
+          </label>
+          <label class="auditor-filter">
+            <span>State / country</span>
+            <small class="auditor-filter-hint">Narrow to a single jurisdiction code.</small>
             <select id="state-filter">
-              <option value="any">Any state</option>
+              <option value="any">Any jurisdiction</option>
             </select>
           </label>
           <label class="auditor-filter">
             <span>Peer reviewed</span>
-            <small class="auditor-filter-hint">Show only reviewed or non-reviewed firms.</small>
+            <small class="auditor-filter-hint">AICPA-specific. UKAS rows remain visible only when this is left at Any.</small>
             <select id="peer-reviewed-filter">
               <option value="any">Any</option>
               <option value="yes">Yes</option>
@@ -101,8 +109,8 @@
             </select>
           </label>
           <label class="auditor-filter">
-            <span>Program status</span>
-            <small class="auditor-filter-hint">Filter by current AICPA program enrollment.</small>
+            <span>AICPA program</span>
+            <small class="auditor-filter-hint">AICPA-specific. Filter by current AICPA program enrollment.</small>
             <select id="in-program-filter">
               <option value="any">Any</option>
               <option value="yes">Yes</option>
@@ -110,8 +118,8 @@
             </select>
           </label>
           <label class="auditor-filter">
-            <span>Acceptance window</span>
-            <small class="auditor-filter-hint">Focus on recent or older acceptance dates.</small>
+            <span>Record recency</span>
+            <small class="auditor-filter-hint">Uses acceptance dates for AICPA rows and issue dates for UKAS rows.</small>
             <select id="recency-filter">
               <option value="any">Any</option>
               <option value="12">Within 12 months</option>
@@ -121,8 +129,8 @@
             </select>
           </label>
           <label class="auditor-filter">
-            <span>Center membership</span>
-            <small class="auditor-filter-hint">Find firms active in a named AICPA center.</small>
+            <span>AICPA center</span>
+            <small class="auditor-filter-hint">AICPA-specific. Find firms active in a named center.</small>
             <select id="center-filter">
               <option value="any">Any center</option>
             </select>
@@ -148,20 +156,19 @@
         <table class="auditor-table">
           <thead>
             <tr>
-              <th>Firm</th>
-              <th>Firm Number</th>
+              <th>Organisation</th>
+              <th>Source</th>
+              <th>Reference</th>
               <th>Location</th>
-              <th>Peer Reviewed</th>
-              <th>In Program</th>
-              <th>Acceptance Date</th>
-              <th>Review Period</th>
-              <th>Report Rating</th>
-              <th>Center Memberships</th>
+              <th>Status</th>
+              <th>Scope / Review</th>
+              <th>Date</th>
+              <th>Links</th>
             </tr>
           </thead>
           <tbody id="results-body">
             <tr>
-              <td colspan="9" class="empty-row">Loading dataset...</td>
+              <td colspan="8" class="empty-row">Loading dataset...</td>
             </tr>
           </tbody>
         </table>
