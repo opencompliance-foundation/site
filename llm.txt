@@ -14,6 +14,7 @@ Primary pages:
 - /competitive-landscape.html: overlap with commercial trust/compliance platforms and the open-source thesis
 - /foundation.html: foundation charter, sponsor model, repo structure, and peer review discipline
 - /frameworks.html: standards depth order, framework coverage, and AI-standard priorities
+- /agentic-ai.html: agentic-AI data-protection boundary, including purpose limitation, rights, explainability, retention, and supply-chain roles
 - /actor-ontology.html: actor kinds, delegated approver rules, verifier identities, and trust-policy registry
 - /roadmap.html: phased roadmap
 - /showcase.html: ExampleCo walkthrough showing how a hypothetical company can present corridor-scoped proofs, attestations, and punch-lists
