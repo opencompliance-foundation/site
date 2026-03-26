@@ -117,7 +117,7 @@
     <div class="divider"></div>
 
     <section class="section-title">
-      <h2>Artifacts that would answer those risks</h2>
+      <h2>AI artifact checklist</h2>
     </section>
     <section class="card-grid">
       <article class="artifact-card">
@@ -166,6 +166,76 @@
         <p>Access-control, prompt-injection resistance, adversarial testing, patching, and incident-response evidence tied to the agent’s actual tool and data access.</p>
         <div class="card-actions">
           <a class="pill" href="trust.html">See trust hardening</a>
+        </div>
+      </article>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section-title">
+      <h2>Worked scenario</h2>
+    </section>
+    <section class="double-grid">
+      <article class="section-card">
+        <div class="kicker">Example</div>
+        <h3>DSAR triage by an agentic case worker</h3>
+        <p>A customer asks for access to all personal data held about them. An agentic case worker is allowed to search a support system, a CRM, and a product audit store, but not billing archives or unrelated employee systems. It can classify likely duplicates, prepare a draft bundle, and escalate legal edge cases.</p>
+        <div class="card-actions">
+          <a class="pill" href="showcase.html">See ExampleCo language</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">What must be visible</div>
+        <h3>The trace has to answer five questions</h3>
+        <ul class="list">
+          <li>What declared purpose and lawful-basis context applied to the run.</li>
+          <li>Which stores and tools were actually accessed, and which were blocked.</li>
+          <li>What the agent inferred or excluded, and where a human reviewer intervened.</li>
+          <li>How the resulting bundle supports access, rectification, erasure, and objection if challenged later.</li>
+          <li>How long the trace, memory, and exported package are retained before deletion or restricted archive.</li>
+        </ul>
+        <div class="card-actions">
+          <a class="pill" href="public-artifacts.html">See artifact model</a>
+        </div>
+      </article>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section-title">
+      <h2>What this protects against</h2>
+    </section>
+    <section class="double-grid">
+      <article class="section-card">
+        <div class="kicker">Drift</div>
+        <h3>Purpose creep and hidden inference</h3>
+        <p>Without a verifiable trace, the system can quietly expand into new tasks, data sources, or inferred sensitive categories while still looking operationally normal.</p>
+        <div class="card-actions">
+          <a class="pill" href="frameworks.html">See privacy and AI priorities</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Opacity</div>
+        <h3>Unreviewable autonomous action</h3>
+        <p>If there is no reconstructable trace, the organisation cannot show what the agent saw, did, or why it was permitted. That makes rights handling and oversight much weaker in practice.</p>
+        <div class="card-actions">
+          <a class="pill" href="trust.html">See reconstruction boundary</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Sprawl</div>
+        <h3>Silent vendor and transfer expansion</h3>
+        <p>Agents that hop across models, connectors, and services can create hidden processor, recipient, and cross-border transfer paths unless those boundaries are recorded explicitly.</p>
+        <div class="card-actions">
+          <a class="pill" href="repositories.html">See public surfaces</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Propagation</div>
+        <h3>Error that turns into action</h3>
+        <p>The danger is not only one hallucinated answer. It is a hallucinated answer that becomes a real workflow step, data deletion, denial, escalation, or disclosure downstream.</p>
+        <div class="card-actions">
+          <a class="pill" href="showcase.html">See blocked versus issued</a>
         </div>
       </article>
     </section>
