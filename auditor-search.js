@@ -7,6 +7,7 @@
     search: "q",
     source: "source",
     state: "state",
+    signal: "signal",
     peerReviewed: "peer",
     inProgram: "program",
     recency: "recency",
@@ -17,6 +18,7 @@
     searchInput: document.getElementById("search-input"),
     sourceFilter: document.getElementById("source-filter"),
     stateFilter: document.getElementById("state-filter"),
+    signalFilter: document.getElementById("signal-filter"),
     peerReviewedFilter: document.getElementById("peer-reviewed-filter"),
     inProgramFilter: document.getElementById("in-program-filter"),
     recencyFilter: document.getElementById("recency-filter"),
@@ -34,9 +36,13 @@
     filtered: [],
     sources: [],
   };
+
   var SOURCE_FILTER_LABELS = {
     aicpa: "AICPA only",
     ukas: "UKAS only",
+    pcaob: "PCAOB only",
+    anab: "ANAB only",
+    fedramp: "FedRAMP only",
   };
 
   function readUrlState() {
@@ -45,6 +51,7 @@
       search: params.get(QUERY_KEYS.search) || "",
       source: params.get(QUERY_KEYS.source) || "any",
       state: params.get(QUERY_KEYS.state) || "any",
+      signal: params.get(QUERY_KEYS.signal) || "any",
       peerReviewed: params.get(QUERY_KEYS.peerReviewed) || "any",
       inProgram: params.get(QUERY_KEYS.inProgram) || "any",
       recency: params.get(QUERY_KEYS.recency) || "any",
@@ -64,6 +71,7 @@
     refs.searchInput.value = urlState.search || "";
     setSelectValue(refs.sourceFilter, urlState.source, "any");
     setSelectValue(refs.stateFilter, urlState.state, "any");
+    setSelectValue(refs.signalFilter, urlState.signal, "any");
     setSelectValue(refs.peerReviewedFilter, urlState.peerReviewed, "any");
     setSelectValue(refs.inProgramFilter, urlState.inProgram, "any");
     setSelectValue(refs.recencyFilter, urlState.recency, "any");
@@ -82,6 +90,9 @@
     }
     if (refs.stateFilter.value !== "any") {
       params.set(QUERY_KEYS.state, refs.stateFilter.value);
+    }
+    if (refs.signalFilter.value !== "any") {
+      params.set(QUERY_KEYS.signal, refs.signalFilter.value);
     }
     if (refs.peerReviewedFilter.value !== "any") {
       params.set(QUERY_KEYS.peerReviewed, refs.peerReviewedFilter.value);
@@ -254,50 +265,65 @@
   }
 
   function buildSearchableText(record) {
+    if (record._searchableText) {
+      return record._searchableText;
+    }
+
     var parts = [
       record.firm_name,
-      record.firm_number,
+      record.reference_number,
       record.city,
       record.state,
+      record.country,
       record.address,
       record.source_label,
+      record.source_descriptor,
+      record.record_kind_label,
       record.summary_scope,
       record.report_rating,
       record.accreditation_standard,
       record.issue_number,
+      record.recency_display,
+      record.recency_label,
     ];
 
-    if (Array.isArray(record.center_memberships)) {
-      record.center_memberships.forEach(function (center) {
-        parts.push(center);
-      });
-    }
-    if (Array.isArray(record.standards)) {
-      record.standards.forEach(function (standard) {
-        parts.push(standard);
-      });
-    }
-    if (Array.isArray(record.website_urls)) {
-      record.website_urls.forEach(function (url) {
-        parts.push(url);
-      });
-    }
+    (record.scope_lines || []).forEach(function (line) {
+      parts.push(line);
+    });
+    (record.filter_tags || []).forEach(function (tag) {
+      parts.push(tag);
+    });
+    (record.center_memberships || []).forEach(function (center) {
+      parts.push(center);
+    });
+    (record.status_chips || []).forEach(function (chip) {
+      parts.push(typeof chip === "string" ? chip : chip.label);
+    });
+    (record.standards || []).forEach(function (standard) {
+      parts.push(standard);
+    });
+    (record.website_urls || []).forEach(function (url) {
+      parts.push(url);
+    });
 
-    return parts
-      .join(" ")
-      .toLowerCase();
+    record._searchableText = parts.join(" ").toLowerCase();
+    return record._searchableText;
   }
 
   function applyFilters() {
     var query = refs.searchInput.value.trim().toLowerCase();
     var sourceValue = refs.sourceFilter.value;
     var stateValue = refs.stateFilter.value;
+    var signalValue = refs.signalFilter.value;
     var peerReviewedValue = refs.peerReviewedFilter.value;
     var inProgramValue = refs.inProgramFilter.value;
     var recencyValue = refs.recencyFilter.value;
     var centerValue = refs.centerFilter.value;
 
     state.filtered = state.records.filter(function (record) {
+      var jurisdiction = record.jurisdiction || record.state || record.country || "";
+      var recordSignals = Array.isArray(record.filter_tags) ? record.filter_tags : [];
+
       if (sourceValue !== "any" && record.source_key !== sourceValue) {
         return false;
       }
@@ -306,7 +332,11 @@
         return false;
       }
 
-      if (stateValue !== "any" && record.state !== stateValue) {
+      if (stateValue !== "any" && jurisdiction !== stateValue) {
+        return false;
+      }
+
+      if (signalValue !== "any" && recordSignals.indexOf(signalValue) === -1) {
         return false;
       }
 
@@ -345,26 +375,18 @@
       if (!aDate && bDate) {
         return 1;
       }
-      return a.firm_name.localeCompare(b.firm_name);
+      return (a.firm_name || "").localeCompare(b.firm_name || "");
     });
   }
 
-  function statusBadge(value) {
-    if (value === true) {
-      return '<span class="status-badge yes">Yes</span>';
-    }
-    if (value === false) {
-      return '<span class="status-badge no">No</span>';
-    }
-    return '<span class="status-badge na">N/A</span>';
-  }
-
-  function statusLine(label, badgeHtml) {
+  function statusBadge(label, tone) {
+    var safeTone = tone || "neutral";
     return (
-      '<div class="auditor-status-line">' +
-      '<span class="auditor-status-label">' + escapeHtml(label) + "</span>" +
-      badgeHtml +
-      "</div>"
+      '<span class="status-badge ' +
+      escapeHtml(safeTone) +
+      '">' +
+      escapeHtml(label) +
+      "</span>"
     );
   }
 
@@ -390,14 +412,17 @@
 
   function renderLocation(record) {
     var locationParts = [];
+    var stateLabel = record.state;
+    if (record.country === "United Kingdom" && stateLabel === "UK") {
+      stateLabel = "";
+    }
     if (record.city) {
       locationParts.push(record.city);
     }
-    if (record.country === "United Kingdom") {
-      locationParts.push("United Kingdom");
-    } else if (record.state) {
-      locationParts.push(record.state);
-    } else if (record.country) {
+    if (stateLabel) {
+      locationParts.push(stateLabel);
+    }
+    if (record.country && (record.country !== "United States" || !stateLabel)) {
       locationParts.push(record.country);
     }
     var label = locationParts.join(", ");
@@ -413,65 +438,35 @@
   }
 
   function renderStatus(record) {
-    if (record.source_key === "ukas") {
-      return (
-        '<div class="auditor-status-list">' +
-        statusLine("Record type", '<span class="status-badge source">UKAS</span>') +
-        statusLine("ISO 27001", statusBadge(record.has_iso_27001)) +
-        statusLine("ISO 27701", statusBadge(record.has_iso_27701)) +
-        "</div>"
-      );
+    var chips = Array.isArray(record.status_chips) ? record.status_chips : [];
+    if (!chips.length) {
+      return '<span class="auditor-cell-subline">Not listed</span>';
     }
-    return (
-      '<div class="auditor-status-list">' +
-      statusLine("Peer reviewed", statusBadge(record.is_peer_reviewed)) +
-      statusLine("In program", statusBadge(record.is_in_peer_review_program)) +
-      "</div>"
-    );
+    var html = chips
+      .map(function (chip) {
+        if (typeof chip === "string") {
+          return statusBadge(chip, "neutral");
+        }
+        return statusBadge(chip.label, chip.tone);
+      })
+      .join("");
+    return '<div class="auditor-chip-list">' + html + "</div>";
   }
 
   function renderScope(record) {
-    if (record.source_key === "ukas") {
-      var lines = [];
-      if (record.accreditation_standard) {
-        lines.push('<strong>' + escapeHtml(record.accreditation_standard) + "</strong>");
-      }
-      if (record.issue_number) {
-        lines.push('<span class="auditor-cell-subline">Issue ' + escapeHtml(record.issue_number) + "</span>");
-      }
-      if (record.summary_scope) {
-        lines.push(
-          '<span class="auditor-cell-subline" title="' +
-            escapeHtml(record.summary_scope) +
-            '">' +
-            escapeHtml(truncateText(record.summary_scope, 170)) +
-            "</span>"
-        );
-      }
-      return '<div class="auditor-cell-stack">' + lines.join("") + "</div>";
-    }
-
-    var period =
-      record.peer_review_period_from && record.peer_review_period_to
-        ? record.peer_review_period_from + " - " + record.peer_review_period_to
-        : "";
-    var centers = Array.isArray(record.center_memberships) && record.center_memberships.length
-      ? record.center_memberships.join(", ")
-      : "";
-    var aicpaLines = [];
-    if (record.report_rating) {
-      aicpaLines.push('<strong>' + escapeHtml(record.report_rating) + "</strong>");
-    }
-    if (period) {
-      aicpaLines.push('<span class="auditor-cell-subline">' + escapeHtml(period) + "</span>");
-    }
-    if (centers) {
-      aicpaLines.push('<span class="auditor-cell-subline">Centers: ' + escapeHtml(centers) + "</span>");
-    }
-    if (aicpaLines.length === 0) {
+    var lines = Array.isArray(record.scope_lines) ? record.scope_lines.filter(Boolean) : [];
+    if (!lines.length) {
       return "Not listed";
     }
-    return '<div class="auditor-cell-stack">' + aicpaLines.join("") + "</div>";
+    var html = lines
+      .map(function (line, index) {
+        if (index === 0) {
+          return '<strong>' + escapeHtml(truncateText(line, 170)) + "</strong>";
+        }
+        return '<span class="auditor-cell-subline">' + escapeHtml(truncateText(line, 170)) + "</span>";
+      })
+      .join("");
+    return '<div class="auditor-cell-stack">' + html + "</div>";
   }
 
   function renderDate(record) {
@@ -487,36 +482,25 @@
   }
 
   function renderLinks(record) {
-    var links = [];
-    if (record.detail_url) {
-      links.push(
-        '<a class="auditor-link" href="' +
-          escapeHtml(record.detail_url) +
-          '" target="_blank" rel="noreferrer noopener">' +
-          escapeHtml(
-            record.source_key === "ukas" ? "UKAS schedule" : (record.detail_label || "Source")
-          ) +
-          "</a>"
-      );
-    }
-    if (record.source_url && record.source_url !== record.detail_url) {
-      links.push(
-        '<a class="auditor-link" href="' +
-          escapeHtml(record.source_url) +
-          '" target="_blank" rel="noreferrer noopener">Source</a>'
-      );
-    }
-    if (Array.isArray(record.website_urls) && record.website_urls.length > 0) {
-      links.push(
-        '<a class="auditor-link" href="' +
-          escapeHtml(record.website_urls[0]) +
-          '" target="_blank" rel="noreferrer noopener">Website</a>'
-      );
-    }
+    var links = Array.isArray(record.public_links) ? record.public_links : [];
     if (links.length === 0) {
       return '<span class="auditor-cell-subline">No public link</span>';
     }
-    return '<div class="auditor-link-list">' + links.join("") + "</div>";
+    return (
+      '<div class="auditor-link-list">' +
+      links
+        .map(function (link) {
+          return (
+            '<a class="auditor-link" href="' +
+            escapeHtml(link.url) +
+            '" target="_blank" rel="noreferrer noopener">' +
+            escapeHtml(link.label) +
+            "</a>"
+          );
+        })
+        .join("") +
+      "</div>"
+    );
   }
 
   function renderRows() {
@@ -538,18 +522,12 @@
           escapeHtml(record.firm_name || "Unknown") +
           "</strong>" +
           '<span class="auditor-cell-subline">' +
-          escapeHtml(record.source_key === "ukas" ? "UKAS ISMS certification body" : "AICPA peer-review firm") +
-          "</span>" +
-          (record.summary_scope && record.source_key === "ukas"
-            ? '<span class="auditor-cell-subline">' +
-              escapeHtml(truncateText(record.summary_scope, 96)) +
-              "</span>"
-            : "") +
-          "</div></td>" +
+          escapeHtml(record.record_kind_label || "Public assurance record") +
+          "</span></div></td>" +
           "<td><div class=\"auditor-cell-stack\">" +
           sourceBadge(record) +
           '<span class="auditor-cell-subline">' +
-          escapeHtml(record.source_key === "ukas" ? "UKAS public register" : "AICPA public file search") +
+          escapeHtml(record.source_descriptor || record.source_label || "Public source") +
           "</span></div></td>" +
           "<td>" + escapeHtml(record.reference_number || "Not listed") + "</td>" +
           "<td>" + renderLocation(record) + "</td>" +
@@ -583,7 +561,7 @@
         "Showing first " +
         MAX_ROWS +
         " rows of " +
-        state.filtered.length +
+        formatCount(state.filtered.length) +
         ". Narrow filters for a smaller set." +
         (breakdown ? " " + breakdown : "");
     } else {
@@ -604,6 +582,7 @@
       refs.searchInput,
       refs.sourceFilter,
       refs.stateFilter,
+      refs.signalFilter,
       refs.peerReviewedFilter,
       refs.inProgramFilter,
       refs.recencyFilter,
@@ -621,6 +600,7 @@
       refs.searchInput.value = "";
       refs.sourceFilter.value = "any";
       refs.stateFilter.value = "any";
+      refs.signalFilter.value = "any";
       refs.peerReviewedFilter.value = "any";
       refs.inProgramFilter.value = "any";
       refs.recencyFilter.value = "any";
@@ -636,11 +616,12 @@
 
   function renderMetadata(metadata) {
     var sources = Array.isArray(metadata.sources) ? metadata.sources : [];
+    var excluded = Array.isArray(metadata.excluded_sources) ? metadata.excluded_sources : [];
     var sourceParts = sources.map(function (source) {
-      return source.source_label + " (" + formatCount(source.record_count || 0) + ")";
+      return source.source_short_label + " (" + formatCount(source.record_count || 0) + ")";
     });
     var freshnessParts = sources.map(function (source) {
-      return source.source_label + ": " + formatTimestamp(source.fetched_at);
+      return source.source_short_label + ": " + formatTimestamp(source.fetched_at);
     });
 
     refs.freshnessLine.textContent =
@@ -652,10 +633,14 @@
       (metadata.refresh_target || "3-7 days");
 
     refs.sourceLine.textContent =
-      "Sources: " +
+      "Published sources: " +
       sourceParts.join(" | ") +
       " | Total records: " +
-      formatCount(metadata.record_count || 0);
+      formatCount(metadata.record_count || 0) +
+      (excluded.length
+        ? " | Staged, not yet published: " +
+          excluded.map(function (item) { return item.source_label; }).join(", ")
+        : "");
   }
 
   function load() {
@@ -677,21 +662,28 @@
         renderMetadata(metadata);
         populateSourceSelect(sources);
 
-        var states = uniqueSorted(
+        var jurisdictions = uniqueSorted(
           records.map(function (record) {
-            return record.state || "";
+            return record.jurisdiction || record.state || record.country || "";
           })
         );
-        populateSelect(refs.stateFilter, states);
+        populateSelect(refs.stateFilter, jurisdictions);
 
+        var signals = [];
         var centers = [];
         records.forEach(function (record) {
+          if (Array.isArray(record.filter_tags)) {
+            record.filter_tags.forEach(function (tag) {
+              signals.push(tag);
+            });
+          }
           if (Array.isArray(record.center_memberships)) {
             record.center_memberships.forEach(function (center) {
               centers.push(center);
             });
           }
         });
+        populateSelect(refs.signalFilter, uniqueSorted(signals));
         populateSelect(refs.centerFilter, uniqueSorted(centers));
 
         applyUrlState(initialUrlState);

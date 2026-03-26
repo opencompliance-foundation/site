@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OpenCompliance Auditor Search</title>
-  <meta name="description" content="Search publication-safe AICPA peer review firms and UKAS ISMS certification bodies by source, name, location, status, recency, and visible public scope.">
+  <meta name="description" content="Search publication-safe AICPA, UKAS, PCAOB, ANAB, and FedRAMP assurance records by source, name, jurisdiction, source-specific signals, recency, and visible public scope.">
   <meta name="theme-color" content="#0b1324">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="manifest" href="site.webmanifest">
@@ -35,10 +35,11 @@
 
     <section class="page-hero">
       <div class="eyebrow">Public Evidence Explorer</div>
-      <h1>Auditor and certification-body search, publication-safe and inspectable.</h1>
-      <p class="lead">This explorer publishes only safe fields from public AICPA peer review records and UKAS ISMS certification-body listings so teams can filter by source, location, recency, public status, and visible scope without carrying internal notes or private judgment.</p>
+      <h1>Assurance directory search, publication-safe and source-aware.</h1>
+      <p class="lead">This explorer publishes only safe fields from public AICPA, UKAS, PCAOB, ANAB, and FedRAMP listings so teams can compare firms, certification bodies, and assessors across regimes without flattening them into one fake standard or carrying private judgment into the page.</p>
       <div class="pill-row">
-        <span class="pill">AICPA + UKAS</span>
+        <span class="pill">5 published sources</span>
+        <span class="pill">AICPA + UKAS + PCAOB + ANAB + FedRAMP</span>
         <span class="pill">Static-first dataset</span>
         <span class="pill">Refresh target: 3-7 days</span>
         <span class="pill">Provenance disclosed</span>
@@ -53,14 +54,14 @@
     <section class="double-grid">
       <article class="callout">
         <div class="kicker">Scope</div>
-        <p>This page is a public-record search surface. It is not an auditor recommendation engine and does not replace due diligence, licensing checks, independence review, certification-scope review, or engagement-specific legal assessment.</p>
+        <p>This page is a public-record search surface. It is not an auditor recommendation engine and does not replace due diligence, licensing checks, independence review, certification-scope review, assessor scope review, or engagement-specific legal assessment.</p>
         <div class="card-actions">
           <a class="pill" href="showcase.html">See a buyer-facing example</a>
         </div>
       </article>
       <article class="callout">
         <div class="kicker">Publication boundary</div>
-        <p>Only publication-safe fields are included: organisation identity, location, peer-review or accreditation status markers, review or issue dates, visible public scope, stable source links, website links already exposed by the source, and refresh metadata.</p>
+        <p>Only publication-safe fields are included: organisation identity, jurisdiction, source-specific public status markers, review or issue dates, visible public scope, stable source links, website links already exposed by the source, and refresh metadata. Records stay source-separate even when names overlap across registries.</p>
         <div class="card-actions">
           <a class="pill" href="data/auditors.json">Open dataset JSON</a>
         </div>
@@ -75,33 +76,40 @@
         <div>
           <div class="kicker">Search Lens</div>
           <h3>Start broad, then narrow cleanly.</h3>
-          <p>Use the search first, then narrow by source and the source-aware selectors below. Some filters only apply cleanly to AICPA rows, and the UI keeps that boundary explicit.</p>
+          <p>Use the search first, then narrow by source, jurisdiction, and source-aware signal filters. AICPA-only filters remain available where they add value, but the explorer keeps registry boundaries explicit instead of pretending all sources mean the same thing.</p>
         </div>
       </div>
       <form class="auditor-filter-stack" id="auditor-filter-form" onsubmit="return false;">
         <label class="auditor-filter auditor-filter--search">
           <span>Firm search</span>
-          <small class="auditor-filter-hint">Search by organisation name, reference number, location, public scope text, or source label.</small>
+          <small class="auditor-filter-hint">Search by organisation name, reference number, jurisdiction, public scope text, standard names, source label, or source-specific signal text.</small>
           <input id="search-input" type="search" placeholder="Company Name LLC or TN">
         </label>
         <div class="auditor-filter-grid">
           <label class="auditor-filter">
             <span>Source Scope</span>
-            <small class="auditor-filter-hint">Set this to UKAS only to show only UKAS certification bodies, or AICPA only to stay inside the peer-review register.</small>
+            <small class="auditor-filter-hint">Narrow to one registry when you want only AICPA, UKAS, PCAOB, ANAB, or FedRAMP results.</small>
             <select id="source-filter">
               <option value="any">Any source</option>
             </select>
           </label>
           <label class="auditor-filter">
-            <span>State / country</span>
-            <small class="auditor-filter-hint">Narrow to a single jurisdiction code.</small>
+            <span>Jurisdiction</span>
+            <small class="auditor-filter-hint">Narrow to a single state, province, or country-level jurisdiction label.</small>
             <select id="state-filter">
               <option value="any">Any jurisdiction</option>
             </select>
           </label>
           <label class="auditor-filter">
+            <span>Signal / standard</span>
+            <small class="auditor-filter-hint">Filter by source-specific public markers such as peer reviewed, UKAS ISO 27001, PCAOB registered, ISO/IEC 42001, or FedRAMP 3PAO.</small>
+            <select id="signal-filter">
+              <option value="any">Any signal</option>
+            </select>
+          </label>
+          <label class="auditor-filter">
             <span>Peer reviewed</span>
-            <small class="auditor-filter-hint">AICPA-specific. UKAS rows remain visible only when this is left at Any.</small>
+            <small class="auditor-filter-hint">AICPA-specific. Non-AICPA rows only remain visible when this stays at Any.</small>
             <select id="peer-reviewed-filter">
               <option value="any">Any</option>
               <option value="yes">Yes</option>
@@ -119,7 +127,7 @@
           </label>
           <label class="auditor-filter">
             <span>Record recency</span>
-            <small class="auditor-filter-hint">Uses acceptance dates for AICPA rows and issue dates for UKAS rows.</small>
+            <small class="auditor-filter-hint">Uses acceptance dates for AICPA rows, issue dates for UKAS rows, and accreditation dates for FedRAMP rows where available.</small>
             <select id="recency-filter">
               <option value="any">Any</option>
               <option value="12">Within 12 months</option>
@@ -160,8 +168,8 @@
               <th>Source</th>
               <th>Reference</th>
               <th>Location</th>
-              <th>Status</th>
-              <th>Scope / Review</th>
+              <th>Signals</th>
+              <th>Scope / Profile</th>
               <th>Date</th>
               <th>Links</th>
             </tr>
@@ -188,6 +196,6 @@
       </div>
     </footer>
   </main>
-  <script src="auditor-search.js?v=20260326d"></script>
+  <script src="auditor-search.js?v=20260326e"></script>
 </body>
 </html>

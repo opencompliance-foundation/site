@@ -18,7 +18,7 @@ Primary pages:
 - /roadmap.html: phased roadmap
 - /showcase.html: ExampleCo walkthrough showing how a hypothetical company can present corridor-scoped proofs, attestations, and punch-lists
 - /public-artifacts.html: docs/specs/examples publication strategy
-- /auditor-search.html: static publication-safe explorer for AICPA auditor records with firm, state, peer-review, in-program, recency, center, and provenance filters
+- /auditor-search.html: static publication-safe multi-registry explorer for AICPA, UKAS, PCAOB, ANAB, and FedRAMP assurance records with source, jurisdiction, signal, recency, center, and provenance filters
 - /verifier-release.html: versioned public verifier bundle, release manifest, and runnable replay path
 - /verify-workbench.html: local browser workbench for the deterministic Verify API and copied public release bundle
 

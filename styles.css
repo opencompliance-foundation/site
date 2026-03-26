@@ -627,7 +627,7 @@ pre code {
 .auditor-filter-grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .auditor-filter {
@@ -791,6 +791,11 @@ pre code {
   background: rgba(93, 160, 255, 0.88);
 }
 
+.status-badge.neutral {
+  color: #ebf3ff;
+  background: rgba(65, 85, 121, 0.62);
+}
+
 .status-badge.na {
   color: var(--ink-soft-strong);
   background: rgba(78, 94, 124, 0.46);
@@ -830,22 +835,25 @@ pre code {
   background: rgba(126, 249, 192, 0.9);
 }
 
-.auditor-status-list {
-  display: grid;
-  gap: 0.38rem;
+.source-pcaob {
+  color: #05110b;
+  background: rgba(255, 210, 122, 0.9);
 }
 
-.auditor-status-line {
+.source-anab {
+  color: #061223;
+  background: rgba(151, 204, 255, 0.9);
+}
+
+.source-fedramp {
+  color: #17051c;
+  background: rgba(246, 167, 255, 0.86);
+}
+
+.auditor-chip-list {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.65rem;
-}
-
-.auditor-status-label {
-  color: var(--ink-soft);
-  font-size: 0.8rem;
-  white-space: nowrap;
+  flex-wrap: wrap;
+  gap: 0.45rem;
 }
 
 .auditor-link-list {
