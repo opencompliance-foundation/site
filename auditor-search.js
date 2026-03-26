@@ -34,6 +34,10 @@
     filtered: [],
     sources: [],
   };
+  var SOURCE_FILTER_LABELS = {
+    aicpa: "AICPA only",
+    ukas: "UKAS only",
+  };
 
   function readUrlState() {
     var params = new URLSearchParams(window.location.search);
@@ -205,7 +209,7 @@
       }
       var option = document.createElement("option");
       option.value = source.source_key;
-      option.textContent = source.source_label;
+      option.textContent = SOURCE_FILTER_LABELS[source.source_key] || source.source_label;
       refs.sourceFilter.appendChild(option);
     });
   }
