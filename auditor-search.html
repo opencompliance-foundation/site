@@ -69,50 +69,65 @@
     <section class="section-title">
       <h2>Filter auditor records</h2>
     </section>
-    <section class="section-card">
-      <form class="auditor-filter-grid" id="auditor-filter-form" onsubmit="return false;">
-        <label class="auditor-filter">
-          <span>Search by name, firm number, city, or state</span>
+    <section class="section-card auditor-filter-shell">
+      <div class="auditor-filter-intro">
+        <div>
+          <div class="kicker">Search Lens</div>
+          <h3>Start broad, then narrow cleanly.</h3>
+          <p>Use the firm search first, then tighten the list with a smaller set of selectors for state, review status, recency, and center memberships.</p>
+        </div>
+      </div>
+      <form class="auditor-filter-stack" id="auditor-filter-form" onsubmit="return false;">
+        <label class="auditor-filter auditor-filter--search">
+          <span>Firm search</span>
+          <small class="auditor-filter-hint">Search by firm name, firm number, city, or state.</small>
           <input id="search-input" type="search" placeholder="Example: Prescient or TN">
         </label>
-        <label class="auditor-filter">
-          <span>State</span>
-          <select id="state-filter">
-            <option value="any">Any state</option>
-          </select>
-        </label>
-        <label class="auditor-filter">
-          <span>Peer reviewed</span>
-          <select id="peer-reviewed-filter">
-            <option value="any">Any</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-        </label>
-        <label class="auditor-filter">
-          <span>In peer review program</span>
-          <select id="in-program-filter">
-            <option value="any">Any</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-        </label>
-        <label class="auditor-filter">
-          <span>Acceptance recency</span>
-          <select id="recency-filter">
-            <option value="any">Any</option>
-            <option value="12">Within 12 months</option>
-            <option value="24">Within 24 months</option>
-            <option value="older">Older than 24 months</option>
-            <option value="no-date">No acceptance date listed</option>
-          </select>
-        </label>
-        <label class="auditor-filter">
-          <span>Center membership</span>
-          <select id="center-filter">
-            <option value="any">Any center</option>
-          </select>
-        </label>
+        <div class="auditor-filter-grid">
+          <label class="auditor-filter">
+            <span>State</span>
+            <small class="auditor-filter-hint">Narrow to a single jurisdiction.</small>
+            <select id="state-filter">
+              <option value="any">Any state</option>
+            </select>
+          </label>
+          <label class="auditor-filter">
+            <span>Peer reviewed</span>
+            <small class="auditor-filter-hint">Show only reviewed or non-reviewed firms.</small>
+            <select id="peer-reviewed-filter">
+              <option value="any">Any</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </label>
+          <label class="auditor-filter">
+            <span>Program status</span>
+            <small class="auditor-filter-hint">Filter by current AICPA program enrollment.</small>
+            <select id="in-program-filter">
+              <option value="any">Any</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </label>
+          <label class="auditor-filter">
+            <span>Acceptance window</span>
+            <small class="auditor-filter-hint">Focus on recent or older acceptance dates.</small>
+            <select id="recency-filter">
+              <option value="any">Any</option>
+              <option value="12">Within 12 months</option>
+              <option value="24">Within 24 months</option>
+              <option value="older">Older than 24 months</option>
+              <option value="no-date">No acceptance date listed</option>
+            </select>
+          </label>
+          <label class="auditor-filter">
+            <span>Center membership</span>
+            <small class="auditor-filter-hint">Find firms active in a named AICPA center.</small>
+            <select id="center-filter">
+              <option value="any">Any center</option>
+            </select>
+          </label>
+        </div>
       </form>
       <div class="card-actions">
         <button id="reset-filters" class="pill auditor-reset" type="button">Reset filters</button>

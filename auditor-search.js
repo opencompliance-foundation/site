@@ -3,6 +3,14 @@
 
   var DATA_PATH = "data/auditors.json";
   var MAX_ROWS = 250;
+  var QUERY_KEYS = {
+    search: "q",
+    state: "state",
+    peerReviewed: "peer",
+    inProgram: "program",
+    recency: "recency",
+    center: "center",
+  };
 
   var refs = {
     searchInput: document.getElementById("search-input"),
@@ -23,6 +31,67 @@
     records: [],
     filtered: [],
   };
+
+  function readUrlState() {
+    var params = new URLSearchParams(window.location.search);
+    return {
+      search: params.get(QUERY_KEYS.search) || "",
+      state: params.get(QUERY_KEYS.state) || "any",
+      peerReviewed: params.get(QUERY_KEYS.peerReviewed) || "any",
+      inProgram: params.get(QUERY_KEYS.inProgram) || "any",
+      recency: params.get(QUERY_KEYS.recency) || "any",
+      center: params.get(QUERY_KEYS.center) || "any",
+    };
+  }
+
+  function setSelectValue(select, value, fallbackValue) {
+    var nextValue = value || fallbackValue;
+    var hasValue = Array.prototype.some.call(select.options, function (option) {
+      return option.value === nextValue;
+    });
+    select.value = hasValue ? nextValue : fallbackValue;
+  }
+
+  function applyUrlState(urlState) {
+    refs.searchInput.value = urlState.search || "";
+    setSelectValue(refs.stateFilter, urlState.state, "any");
+    setSelectValue(refs.peerReviewedFilter, urlState.peerReviewed, "any");
+    setSelectValue(refs.inProgramFilter, urlState.inProgram, "any");
+    setSelectValue(refs.recencyFilter, urlState.recency, "any");
+    setSelectValue(refs.centerFilter, urlState.center, "any");
+  }
+
+  function syncUrlState() {
+    var params = new URLSearchParams();
+    var searchValue = refs.searchInput.value.trim();
+
+    if (searchValue) {
+      params.set(QUERY_KEYS.search, searchValue);
+    }
+    if (refs.stateFilter.value !== "any") {
+      params.set(QUERY_KEYS.state, refs.stateFilter.value);
+    }
+    if (refs.peerReviewedFilter.value !== "any") {
+      params.set(QUERY_KEYS.peerReviewed, refs.peerReviewedFilter.value);
+    }
+    if (refs.inProgramFilter.value !== "any") {
+      params.set(QUERY_KEYS.inProgram, refs.inProgramFilter.value);
+    }
+    if (refs.recencyFilter.value !== "any") {
+      params.set(QUERY_KEYS.recency, refs.recencyFilter.value);
+    }
+    if (refs.centerFilter.value !== "any") {
+      params.set(QUERY_KEYS.center, refs.centerFilter.value);
+    }
+
+    var nextQuery = params.toString();
+    var nextUrl = window.location.pathname + (nextQuery ? "?" + nextQuery : "");
+    var currentUrl = window.location.pathname + window.location.search;
+
+    if (nextUrl !== currentUrl) {
+      window.history.replaceState(null, "", nextUrl);
+    }
+  }
 
   function escapeHtml(value) {
     return String(value)
@@ -78,6 +147,36 @@
     return output.sort(function (a, b) {
       return a.localeCompare(b);
     });
+  }
+
+  function formatCount(value) {
+    if (typeof value !== "number") {
+      return String(value || "");
+    }
+    return new Intl.NumberFormat("en-US").format(value);
+  }
+
+  function formatTimestamp(value) {
+    if (!value) {
+      return "Unknown";
+    }
+
+    var parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) {
+      return value;
+    }
+
+    var formatted = new Intl.DateTimeFormat("en-GB", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+      timeZone: "UTC",
+    }).format(parsed);
+
+    return formatted.replace(",", "") + " UTC";
   }
 
   function populateSelect(select, options) {
@@ -258,9 +357,12 @@
     }
   }
 
-  function refresh() {
+  function refresh(options) {
     applyFilters();
     renderRows();
+    if (!options || options.updateUrl !== false) {
+      syncUrlState();
+    }
   }
 
   function wireEvents() {
@@ -272,8 +374,12 @@
       refs.recencyFilter,
       refs.centerFilter,
     ].forEach(function (el) {
-      el.addEventListener("input", refresh);
-      el.addEventListener("change", refresh);
+      el.addEventListener("input", function () {
+        refresh();
+      });
+      el.addEventListener("change", function () {
+        refresh();
+      });
     });
 
     refs.resetButton.addEventListener("click", function () {
@@ -285,19 +391,30 @@
       refs.centerFilter.value = "any";
       refresh();
     });
+
+    window.addEventListener("popstate", function () {
+      applyUrlState(readUrlState());
+      refresh({ updateUrl: false });
+    });
   }
 
   function renderMetadata(metadata) {
+    var source = metadata.source || "AICPA Public File Search";
+    var sourceParts = ["Source: " + source];
+
+    if (typeof metadata.record_count === "number") {
+      sourceParts.push(formatCount(metadata.record_count) + " firms in current snapshot");
+    }
+
     refs.freshnessLine.textContent =
       "Last refreshed: " +
-      (metadata.fetched_at || "Unknown") +
+      formatTimestamp(metadata.fetched_at) +
       " | Generated: " +
-      (metadata.generated_at || "Unknown") +
+      formatTimestamp(metadata.generated_at) +
       " | Target cadence: " +
       (metadata.refresh_target || "3-7 days");
 
-    refs.sourceLine.textContent =
-      "Source: " + (metadata.source || "AICPA Public File Search");
+    refs.sourceLine.textContent = sourceParts.join(" | ");
   }
 
   function load() {
@@ -311,6 +428,7 @@
       .then(function (payload) {
         var metadata = payload.metadata || {};
         var records = Array.isArray(payload.records) ? payload.records : [];
+        var initialUrlState = readUrlState();
 
         state.records = records;
         renderMetadata(metadata);
@@ -332,6 +450,7 @@
         });
         populateSelect(refs.centerFilter, uniqueSorted(centers));
 
+        applyUrlState(initialUrlState);
         wireEvents();
         refresh();
       })

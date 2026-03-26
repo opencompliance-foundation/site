@@ -595,15 +595,56 @@ pre code {
   color: var(--accent-2);
 }
 
+.auditor-filter-shell {
+  gap: 1.3rem;
+}
+
+.auditor-filter-intro {
+  display: grid;
+  gap: 0.55rem;
+  padding: 1rem 1.1rem 1.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  background:
+    linear-gradient(160deg, rgba(126, 249, 192, 0.08), rgba(93, 160, 255, 0.06)),
+    rgba(8, 14, 28, 0.78);
+}
+
+.auditor-filter-intro h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.auditor-filter-intro p {
+  margin: 0;
+}
+
+.auditor-filter-stack {
+  display: grid;
+  gap: 1rem;
+}
+
 .auditor-filter-grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .auditor-filter {
   display: grid;
-  gap: 0.45rem;
+  gap: 0.48rem;
+  padding: 0.95rem 1rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background: rgba(7, 12, 24, 0.76);
+}
+
+.auditor-filter--search {
+  gap: 0.6rem;
+  padding: 1.1rem 1.15rem 1.15rem;
+  background:
+    linear-gradient(135deg, rgba(126, 249, 192, 0.08), rgba(93, 160, 255, 0.05)),
+    rgba(7, 12, 24, 0.88);
 }
 
 .auditor-filter span {
@@ -614,6 +655,12 @@ pre code {
   font-weight: 700;
 }
 
+.auditor-filter-hint {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
 .auditor-filter input,
 .auditor-filter select {
   width: 100%;
@@ -621,9 +668,28 @@ pre code {
   border-radius: 12px;
   background: rgba(7, 12, 24, 0.86);
   color: var(--ink);
-  padding: 0.7rem 0.78rem;
+  min-height: 3rem;
+  padding: 0.78rem 0.88rem;
   font-family: inherit;
   font-size: 0.95rem;
+}
+
+.auditor-filter--search input {
+  min-height: 3.3rem;
+  font-size: 1rem;
+}
+
+.auditor-filter select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(126, 249, 192, 0.92) 50%),
+    linear-gradient(135deg, rgba(126, 249, 192, 0.92) 50%, transparent 50%);
+  background-position:
+    calc(100% - 1.15rem) calc(50% - 0.14rem),
+    calc(100% - 0.82rem) calc(50% - 0.14rem);
+  background-size: 0.38rem 0.38rem, 0.38rem 0.38rem;
+  background-repeat: no-repeat;
+  padding-right: 2.4rem;
 }
 
 .auditor-filter input::placeholder {
@@ -756,7 +822,7 @@ pre code {
   }
 
   .auditor-filter-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -785,7 +851,7 @@ pre code {
   }
 
   .auditor-filter-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .hero-panel,
@@ -799,6 +865,12 @@ pre code {
   .mini-card,
   .flow-step {
     padding: 1.4rem;
+  }
+
+  .auditor-filter,
+  .auditor-filter--search,
+  .auditor-filter-intro {
+    padding: 1rem;
   }
 }
 
