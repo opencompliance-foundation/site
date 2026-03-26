@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenCompliance Verify Contract</title>
+  <meta name="description" content="The current deterministic OpenCompliance Verify contract: CLI entrypoints, local HTTP routes, supported input modes, emitted artifacts, and the boundary of the public reference surface.">
+  <meta name="theme-color" content="#0b1324">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">OC</span>
+        <span>OpenCompliance</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Overview</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="trust.html">Trust Model</a>
+        <a href="frameworks.html">Frameworks</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="showcase.html">Showcase</a>
+        <a href="public-artifacts.html">Public Artifacts</a>
+        <a href="repositories.html">Repositories</a>
+        <a href="auditor-search.html">Auditor Search</a>
+        <a href="verifier-release.html">Verifier Release</a>
+        <a href="verify-workbench.html">Verify Workbench</a>
+        <a href="verify-contract.html" aria-current="page">Verify Contract</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div class="eyebrow">Deterministic Surface</div>
+      <h1>The current Verify contract is explicit.</h1>
+      <p class="lead">This page describes the narrow deterministic reference surface behind the local OpenCompliance CLI, API, and browser workbench. It is a synthetic public contract, not a claim of a hosted production verification service.</p>
+      <div class="pill-row">
+        <a class="pill" href="verifier-release.html">Verifier release</a>
+        <a class="pill" href="verify-workbench.html">Verify workbench</a>
+        <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/verifier-contract.json">Open contract JSON</a>
+      </div>
+    </section>
+
+    <section class="double-grid">
+      <article class="section-card">
+        <div class="kicker">Current reference entrypoints</div>
+        <h2>CLI and local API</h2>
+        <div class="panel">
+          <pre><code>cd projects/dev/opencompliance
+python3 scripts/verify_fixture.py --fixture-root fixtures/public/issued --check
+
+cd projects/dev/opencompliance
+python3 scripts/serve_verify_api.py --port 8788
+
+cd projects/dev/opencompliance
+python3 -m http.server 8000</code></pre>
+        </div>
+        <p>Then open <code>http://127.0.0.1:8000/ui/verify/</code>. The compatibility wrapper still exists for the built-in ExampleCo packs via <code>python3 scripts/verify_example.py --fixture issued --check</code>.</p>
+        <div class="card-actions">
+          <a class="pill" href="verify-workbench.html">See workbench</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">API routes</div>
+        <h2><code>GET /contract</code> and <code>POST /verify</code></h2>
+        <p>The local HTTP surface exposes <code>GET /healthz</code>, <code>GET /fixtures</code>, <code>GET /contract</code>, and <code>POST /verify</code>. The workbench does not invent a second verdict path. It calls the same local API contract as the CLI and uses the same deterministic runtime artifacts, typed boundary tags, and outcome policies.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/verifier-contract.json">Open contract JSON</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>Supported input modes</h2>
+    </section>
+    <section class="double-grid">
+      <article class="section-card">
+        <div class="kicker">Mode 1</div>
+        <h3><code>fixture_path</code></h3>
+        <div class="panel">
+          <pre><code>{
+  "fixtureName": "issued",
+  "input": {
+    "mode": "fixture_path",
+    "fixtureRoot": "/abs/path/to/fixture-shaped-root"
+  }
+}</code></pre>
+        </div>
+        <div class="card-actions">
+          <a class="pill" href="verify-workbench.html">See local runner</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Mode 2</div>
+        <h3><code>inline_bundle</code></h3>
+        <div class="panel">
+          <pre><code>{
+  "fixtureName": "issued",
+  "input": {
+    "mode": "inline_bundle",
+    "profile": {"profileId": "exampleco-issued-profile"},
+    "evidenceClaims": [],
+    "useDefaultOscalSeed": true
+  }
+}</code></pre>
+        </div>
+        <p>The inline bundle can also carry explicit OSCAL material under <code>input.oscal</code> with <code>catalog</code>, <code>profile</code>, <code>ssp</code>, and <code>mappingCollection</code>. If <code>input.oscal</code> is omitted, the local API can currently fall back to the checked-in OSCAL seed for the selected fixture when <code>useDefaultOscalSeed</code> is true.</p>
+        <div class="card-actions">
+          <a class="pill" href="public-artifacts.html">See public package model</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>Deterministic outputs</h2>
+    </section>
+    <section class="card-grid">
+      <article class="section-card">
+        <div class="kicker">Artifacts</div>
+        <h3>Always emitted</h3>
+        <ul class="list">
+          <li><code>proof-bundle.json</code></li>
+          <li><code>trust-surface-report.md</code></li>
+          <li><code>verification-result.json</code></li>
+          <li><code>replay-bundle.json</code></li>
+          <li><code>witness-receipt.json</code></li>
+          <li><code>revocation.json</code></li>
+        </ul>
+        <div class="card-actions">
+          <a class="pill" href="verifier-release.html">See bundled release</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Outcome</div>
+        <h3>Conditional final artifact</h3>
+        <p>The outcome artifact depends on the proof summary: <code>certificate.json</code> when there are zero <code>judgmentRequired</code> and zero <code>evidenceMissing</code>, and <code>punch-list.json</code> otherwise.</p>
+        <div class="card-actions">
+          <a class="pill" href="showcase.html">See outcome examples</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Inputs</div>
+        <h3>Current corridor files</h3>
+        <p>The deterministic corridor uses <code>profile.json</code>, <code>evidence-claims.json</code>, and the matching OSCAL catalog, profile, SSP, and mapping files under <code>oscal/</code>.</p>
+        <div class="card-actions">
+          <a class="pill" href="public-artifacts.html">See fixture contents</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="double-grid">
+      <article class="callout">
+        <div class="kicker">What it is useful for</div>
+        <p>This reference surface is useful for validating the artifact contract, testing blocked and successful runs, checking fixture-shaped inputs by path instead of only by built-in example name, and exercising replay and transparency logic.</p>
+        <div class="card-actions">
+          <a class="pill" href="showcase.html">See ExampleCo showcase</a>
+        </div>
+      </article>
+      <article class="callout">
+        <div class="kicker">Current boundary</div>
+        <p>This is still a synthetic reference surface. It is now a stable local CLI plus local HTTP/JSON API plus local browser workbench for the synthetic corridor, but it is still not a general live-evidence network API.</p>
+        <p>Current limitations: the API is intentionally local-only and unauthenticated; the request model still depends on known fixture names and corridor shapes; inline bundles can reuse checked-in OSCAL seed material; live connectors and signer-bound ingress remain future work.</p>
+        <div class="card-actions">
+          <a class="pill" href="roadmap.html">See remaining product gaps</a>
+        </div>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <p>The right bar for this page is straightforward: a reviewer should be able to tell what the deterministic Verify surface accepts, emits, and still does not promise.</p>
+      <div class="footer-nav">
+        <a href="index.html">Overview</a>
+        <a href="verifier-release.html">Verifier release</a>
+        <a href="verify-workbench.html">Verify workbench</a>
+        <a href="repositories.html">Repositories</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

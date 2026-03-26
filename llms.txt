@@ -20,6 +20,7 @@ Primary pages:
 - /public-artifacts.html: docs/specs/examples publication strategy
 - /auditor-search.html: static publication-safe multi-registry explorer for AICPA, UKAS, PCAOB, ANAB, and FedRAMP assurance records with source, jurisdiction, signal, recency, center, and provenance filters
 - /verifier-release.html: versioned public verifier bundle, release manifest, and runnable replay path
+- /verify-contract.html: deterministic Verify API contract, accepted input modes, emitted artifacts, and boundary notes
 - /verify-workbench.html: local browser workbench for the deterministic Verify API and copied public release bundle
 
 Public repositories:
