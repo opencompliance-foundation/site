@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenCompliance Actor Ontology</title>
+  <meta name="description" content="The OpenCompliance actor ontology: system exporters, human owners, delegated approvers, verifier services, independent witnesses, and the trust-policy registry that binds them.">
+  <meta name="theme-color" content="#0b1324">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">OC</span>
+        <span>OpenCompliance</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Overview</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="trust.html">Trust Model</a>
+        <a href="open-proof-layer.html">Essay</a>
+        <a href="competitive-landscape.html">Landscape</a>
+        <a href="foundation.html">Foundation</a>
+        <a href="frameworks.html">Frameworks</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="showcase.html">Showcase</a>
+        <a href="public-artifacts.html">Public Artifacts</a>
+        <a href="repositories.html">Repositories</a>
+        <a href="auditor-search.html">Auditor Search</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div class="eyebrow">Actor Ontology</div>
+      <h1>Evidence is only as clear as the identities behind it.</h1>
+      <p class="lead">OpenCompliance now makes the actor model explicit across evidence claims, signed manifests, and witness receipts. That means system exports, human owners, delegated approvers, verifier services, and independent witnesses are no longer flattened into one generic “signed by someone” bucket.</p>
+      <div class="pill-row">
+        <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/actor-trust-policies.json">Trust-policy registry</a>
+        <a class="pill" href="https://github.com/opencompliance-foundation/evidence-schema">Evidence schema</a>
+        <a class="pill" href="repositories.html">Repository map</a>
+      </div>
+    </section>
+
+    <section class="section-title">
+      <h2>Current actor kinds</h2>
+    </section>
+    <section class="card-grid">
+      <article class="section-card">
+        <div class="kicker">System</div>
+        <h3>Scoped exporters and connectors</h3>
+        <p>Machine evidence still starts with deterministic source exports. These claims now reference the explicit `oc.trust.system-export` policy instead of relying on an implicit “it came from a bot” assumption.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/evidence-schema/blob/main/schemas/evidence-claim.schema.json">Open claim envelope</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Human</div>
+        <h3>Direct owner attestations</h3>
+        <p>Some claims should still be direct owner statements. Training completion and restore-test attestations stay in this lane, with signer role and signed time carried explicitly.</p>
+        <div class="card-actions">
+          <a class="pill" href="showcase.html">Open owner-attestation examples</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Delegated Approver</div>
+        <h3>Authority with visible delegation</h3>
+        <p>Operational governance claims often come from delegated approvers rather than from a single top owner. These claims now carry `delegatedBy`, `delegationScope`, signer role, and a trust policy that says delegation is required.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/evidence-schema/blob/main/examples/evidence-claim.delegated-approver.example.json">Open delegated example</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Verifier Service</div>
+        <h3>Release and verification signer</h3>
+        <p>Public signed-artifact manifests now carry a verifier-service identity and trust-policy reference so release signing is not described as a generic key-holder action.</p>
+        <div class="card-actions">
+          <a class="pill" href="verifier-release.html">Open verifier release</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Independent Witness</div>
+        <h3>Replay witness, not just another receipt</h3>
+        <p>Witness receipts now carry a dedicated witness identity and trust-policy reference. That keeps rerun verification separate from the verifier service that produced the original bundle.</p>
+        <div class="card-actions">
+          <a class="pill" href="trust.html">Open witness model</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>Trust-policy registry</h2>
+    </section>
+    <section class="double-grid">
+      <article class="section-card">
+        <div class="kicker">Machine-readable</div>
+        <p>The trust-policy registry lives in the public specs repo and records the actor kinds, signer kinds, required signer roles, and whether delegation is mandatory for a given surface.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/actor-trust-policies.json">Open registry JSON</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/schemas/actor-trust-policies.schema.json">Open registry schema</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Current policies</div>
+        <ul class="list">
+          <li><strong>`oc.trust.system-export`</strong>: deterministic connector/exporter claims.</li>
+          <li><strong>`oc.trust.human-owner-attestation`</strong>: direct owner statements like training and restore tests.</li>
+          <li><strong>`oc.trust.delegated-security-approver`</strong>: access review, change governance, exceptions, incidents, and monitoring review.</li>
+          <li><strong>`oc.trust.delegated-privacy-approver`</strong>: privacy and vendor-governance attestations.</li>
+          <li><strong>`oc.trust.delegated-ai-governance-approver`</strong>: documentary AI governance approvals.</li>
+          <li><strong>`oc.trust.verifier-service`</strong>: signed release and verifier bundle artifacts.</li>
+          <li><strong>`oc.trust.independent-witness`</strong>: exact-match replay witness receipts.</li>
+        </ul>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/actor-trust-policies.json">Open policy list</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>Where this shows up now</h2>
+    </section>
+    <section class="flow-grid">
+      <article class="flow-step">
+        <div class="kicker">Evidence claims</div>
+        <strong>Typed claim envelope</strong>
+        <p>The public evidence-claim schema now carries `trustPolicyRef`, actor role, signer role, signed time, and delegation metadata where required.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/evidence-schema/blob/main/schemas/evidence-claim.schema.json">Open envelope schema</a>
+        </div>
+      </article>
+      <article class="flow-step">
+        <div class="kicker">Schema examples</div>
+        <strong>System and delegated examples</strong>
+        <p>The public schema examples now show both the simple system-export case and a delegated-approver attestation case instead of only one flattened example.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/evidence-schema/tree/main/examples">Open schema examples</a>
+        </div>
+      </article>
+      <article class="flow-step">
+        <div class="kicker">Verifier release</div>
+        <strong>Signer identity is explicit</strong>
+        <p>The signed release manifest now carries a verifier-service identity and trust-policy reference.</p>
+        <div class="card-actions">
+          <a class="pill" href="verifier-release.html">Open release docs</a>
+        </div>
+      </article>
+      <article class="flow-step">
+        <div class="kicker">Witness reruns</div>
+        <strong>Witness identity is explicit</strong>
+        <p>Witness receipts now carry an independent-witness identity instead of leaving the replay witness implied.</p>
+        <div class="card-actions">
+          <a class="pill" href="showcase.html">Open ExampleCo showcase</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="double-grid">
+      <article class="callout">
+        <div class="kicker">Current boundary</div>
+        <p>This is still not live identity verification. The current public corridor uses synthetic identities and roles so the artifact shapes can be inspected and replayed without leaking private organisations or credentials.</p>
+        <div class="card-actions">
+          <a class="pill" href="showcase.html">Open synthetic showcase</a>
+        </div>
+      </article>
+      <article class="callout">
+        <div class="kicker">Why it matters</div>
+        <p>The distinction between owner, delegated approver, verifier, and witness is what prevents every artifact from looking equally authoritative when they are not. That is one of the core differences between a proof-carrying compliance layer and a polished checklist UI.</p>
+        <div class="card-actions">
+          <a class="pill" href="open-proof-layer.html">Open proof-layer essay</a>
+        </div>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <p>Identity and delegation semantics should be inspectable artifacts, not hidden vendor assumptions.</p>
+      <div class="footer-nav">
+        <a href="index.html">Overview</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="repositories.html">Repositories</a>
+        <a href="https://github.com/opencompliance-foundation/specs">Specs repo</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

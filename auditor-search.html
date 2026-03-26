@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenCompliance Auditor Search</title>
+  <meta name="description" content="Search publication-safe AICPA peer review firm records by name, state, peer-reviewed status, in-program status, recency, and center memberships.">
+  <meta name="theme-color" content="#0b1324">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">OC</span>
+        <span>OpenCompliance</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Overview</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="trust.html">Trust Model</a>
+        <a href="open-proof-layer.html">Essay</a>
+        <a href="competitive-landscape.html">Landscape</a>
+        <a href="foundation.html">Foundation</a>
+        <a href="frameworks.html">Frameworks</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="showcase.html">Showcase</a>
+        <a href="public-artifacts.html">Public Artifacts</a>
+        <a href="repositories.html">Repositories</a>
+        <a href="auditor-search.html" aria-current="page">Auditor Search</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div class="eyebrow">Public Evidence Explorer</div>
+      <h1>AICPA auditor search, publication-safe and inspectable.</h1>
+      <p class="lead">This explorer publishes only safe fields from public AICPA search records so teams can filter by state, peer review status, program enrollment, review recency, and center memberships without carrying internal notes or private judgment.</p>
+      <div class="pill-row">
+        <span class="pill">Static-first dataset</span>
+        <span class="pill">Refresh target: 3-7 days</span>
+        <span class="pill">Provenance disclosed</span>
+      </div>
+      <p class="small-note" id="freshness-line">Last refreshed: loading...</p>
+      <p class="small-note" id="source-line">Source: loading...</p>
+    </section>
+
+    <section class="section-title">
+      <h2>Boundary and provenance</h2>
+    </section>
+    <section class="double-grid">
+      <article class="callout">
+        <div class="kicker">Scope</div>
+        <p>This page is a public-record search surface. It is not an auditor recommendation engine and does not replace due diligence, licensing checks, independence review, or engagement-specific legal assessment.</p>
+        <div class="card-actions">
+          <a class="pill" href="showcase.html">See a buyer-facing example</a>
+        </div>
+      </article>
+      <article class="callout">
+        <div class="kicker">Publication boundary</div>
+        <p>Only publication-safe fields are included: firm identity, location, enrollment and peer-review flags, program status, review period and acceptance date, report rating, center memberships, source, and refresh metadata.</p>
+        <div class="card-actions">
+          <a class="pill" href="data/auditors.json">Open dataset JSON</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>Filter auditor records</h2>
+    </section>
+    <section class="section-card">
+      <form class="auditor-filter-grid" id="auditor-filter-form" onsubmit="return false;">
+        <label class="auditor-filter">
+          <span>Search by name, firm number, city, or state</span>
+          <input id="search-input" type="search" placeholder="Example: Prescient or TN">
+        </label>
+        <label class="auditor-filter">
+          <span>State</span>
+          <select id="state-filter">
+            <option value="any">Any state</option>
+          </select>
+        </label>
+        <label class="auditor-filter">
+          <span>Peer reviewed</span>
+          <select id="peer-reviewed-filter">
+            <option value="any">Any</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </label>
+        <label class="auditor-filter">
+          <span>In peer review program</span>
+          <select id="in-program-filter">
+            <option value="any">Any</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </label>
+        <label class="auditor-filter">
+          <span>Acceptance recency</span>
+          <select id="recency-filter">
+            <option value="any">Any</option>
+            <option value="12">Within 12 months</option>
+            <option value="24">Within 24 months</option>
+            <option value="older">Older than 24 months</option>
+            <option value="no-date">No acceptance date listed</option>
+          </select>
+        </label>
+        <label class="auditor-filter">
+          <span>Center membership</span>
+          <select id="center-filter">
+            <option value="any">Any center</option>
+          </select>
+        </label>
+      </form>
+      <div class="card-actions">
+        <button id="reset-filters" class="pill auditor-reset" type="button">Reset filters</button>
+        <a class="pill" href="data/auditors.json">Download dataset</a>
+        <a class="pill" href="public-artifacts.html">Review provenance model</a>
+      </div>
+    </section>
+
+    <section class="section-title">
+      <h2>Results</h2>
+    </section>
+    <section class="section-card">
+      <div class="auditor-results-meta">
+        <p id="results-count">0 results</p>
+        <p class="small-note" id="status-line">Loading dataset...</p>
+      </div>
+      <div class="auditor-table-wrap">
+        <table class="auditor-table">
+          <thead>
+            <tr>
+              <th>Firm</th>
+              <th>Firm Number</th>
+              <th>Location</th>
+              <th>Peer Reviewed</th>
+              <th>In Program</th>
+              <th>Acceptance Date</th>
+              <th>Review Period</th>
+              <th>Report Rating</th>
+              <th>Center Memberships</th>
+            </tr>
+          </thead>
+          <tbody id="results-body">
+            <tr>
+              <td colspan="9" class="empty-row">Loading dataset...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card-actions">
+        <a class="pill" href="data/auditors.json">Inspect raw records</a>
+        <a class="pill" href="repositories.html">Find the public repos</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>This explorer is static-first by design to keep provenance explicit and operational overhead low.</p>
+      <div class="footer-nav">
+        <a href="index.html">Overview</a>
+        <a href="public-artifacts.html">Public artifacts</a>
+        <a href="repositories.html">Repositories</a>
+      </div>
+    </footer>
+  </main>
+  <script src="auditor-search.js"></script>
+</body>
+</html>

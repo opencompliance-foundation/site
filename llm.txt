@@ -14,9 +14,11 @@ Primary pages:
 - /competitive-landscape.html: overlap with commercial trust/compliance platforms and the open-source thesis
 - /foundation.html: foundation charter, sponsor model, repo structure, and peer review discipline
 - /frameworks.html: standards depth order, framework coverage, and AI-standard priorities
+- /actor-ontology.html: actor kinds, delegated approver rules, verifier identities, and trust-policy registry
 - /roadmap.html: phased roadmap
 - /showcase.html: ExampleCo walkthrough showing how a hypothetical company can present corridor-scoped proofs, attestations, and punch-lists
 - /public-artifacts.html: docs/specs/examples publication strategy
+- /auditor-search.html: static publication-safe explorer for AICPA auditor records with firm, state, peer-review, in-program, recency, center, and provenance filters
 - /verifier-release.html: versioned public verifier bundle, release manifest, and runnable replay path
 - /verify-workbench.html: local browser workbench for the deterministic Verify API and copied public release bundle
 
