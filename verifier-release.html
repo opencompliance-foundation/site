@@ -40,8 +40,9 @@
       <h1>A versioned verifier bundle now exists.</h1>
       <p class="lead">The current public verifier release packages the Python runtime, Lean corridor, public specs, evidence schemas, conformance scripts, static docs, local workbench UI, and synthetic ExampleCo corridors into one replayable bundle. It is still synthetic and scoped, but it is no longer only a private monorepo execution path, and the release is now rebuilt and revalidated through one scripted private release path before publication.</p>
       <div class="pill-row">
-        <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.9.3">Open release bundle</a>
+        <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.9.4">Open release bundle</a>
         <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/verifier-contract.json">Open verifier contract</a>
+        <a class="pill" href="release-identity.html">Release identity</a>
         <a class="pill" href="verify-workbench.html">Verify workbench</a>
         <a class="pill" href="repositories.html">See repo map</a>
       </div>
@@ -50,7 +51,7 @@
     <section class="double-grid">
       <article class="section-card">
         <div class="kicker">Release ID</div>
-        <h2><code>opencompliance-verifier-0.9.3</code></h2>
+        <h2><code>opencompliance-verifier-0.9.4</code></h2>
         <p>The release bundle lives in the public <code>examples</code> repository because it is a stitched, public-safe snapshot of the verifier runtime plus the synthetic corridors it can replay.</p>
         <div class="card-actions">
           <a class="pill" href="https://github.com/opencompliance-foundation/examples">Open examples repo</a>
@@ -58,10 +59,10 @@
       </article>
       <article class="section-card">
         <div class="kicker">Verifier Version</div>
-        <h2><code>opencompliance-verifier/0.9.3</code></h2>
-        <p>All current public corridors now report one stable verifier version rather than a different version string per fixture. The current release line exposes the CLI, a local HTTP/JSON Verify API, a local browser workbench, and a bundle-level release attestation, so the public bundle now carries a pinned runtime contract instead of only filesystem-oriented scripts. The bundled signer and witness surfaces now also fail closed against the published actor-identity registry before signature or replay verification succeeds, and system-export claims now have to match a published connector-ingress profile instead of only a generic system-actor label.</p>
+        <h2><code>opencompliance-verifier/0.9.4</code></h2>
+        <p>All current public corridors now report one stable verifier version rather than a different version string per fixture. The current release line exposes the CLI, a local HTTP/JSON Verify API, a local browser workbench, and a bundle-level release attestation, so the public bundle now carries a pinned runtime contract instead of only filesystem-oriented scripts. The bundled signer and witness surfaces now also fail closed against the published actor-identity registry before signature or replay verification succeeds, system-export claims now have to match a published connector-ingress profile instead of only a generic system-actor label, and the release line now publishes explicit trust-root profiles for synthetic fallback versus environment-supplied publication roots.</p>
         <div class="card-actions">
-          <a class="pill" href="https://github.com/opencompliance-foundation/examples/blob/main/verifier-release/opencompliance-verifier-0.9.3/VERSION">Open version file</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/blob/main/verifier-release/opencompliance-verifier-0.9.4/VERSION">Open version file</a>
         </div>
       </article>
     </section>
@@ -75,7 +76,7 @@
         <h3>Python verifier and entrypoint scripts</h3>
         <p>The bundle ships the verifier runtime under <code>src/opencompliance/</code> plus runnable scripts for fixture verification, local HTTP/JSON API serving, Lean batch inspection, release attestation, transparency verification, and signed-artifact verification.</p>
         <div class="card-actions">
-          <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.9.3/src/opencompliance">Open bundled runtime</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.9.4/src/opencompliance">Open bundled runtime</a>
         </div>
       </article>
       <article class="section-card">
@@ -83,16 +84,17 @@
         <h3>Proof corridor with first-run bootstrap</h3>
         <p>The bundle ships the Lean 4 corridor source under <code>lean4-controls/</code>. On first use it bootstraps the local Lake build state instead of assuming a prebuilt private workspace.</p>
         <div class="card-actions">
-          <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.9.3/lean4-controls">Open bundled Lean package</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.9.4/lean4-controls">Open bundled Lean package</a>
         </div>
       </article>
       <article class="section-card">
         <div class="kicker">Contracts</div>
         <h3>Specs, schemas, and conformance</h3>
-        <p>The bundle includes <code>open-specs/</code>, <code>evidence-schema/</code>, <code>conformance/</code>, <code>docs/</code>, and <code>ui/</code> so the artifact shapes, replay checks, runtime docs, and local workbench travel with the release. The release manifest now points at a machine-readable verifier contract, explicit bundled trust registries for policies, identities, and connector ingress, and a concrete <code>release-attestation.json</code> artifact instead of leaving the runtime surface implicit, and the current release line is rebuilt, self-attested, smoke-checked from a temporary bundle copy, and republished through one scripted private workflow instead of a hand-sequenced local checklist.</p>
+        <p>The bundle includes <code>open-specs/</code>, <code>evidence-schema/</code>, <code>conformance/</code>, <code>docs/</code>, and <code>ui/</code> so the artifact shapes, replay checks, runtime docs, and local workbench travel with the release. The release manifest now points at a machine-readable verifier contract, explicit bundled trust registries for policies, identities, connector ingress, and release trust roots, and a concrete <code>release-attestation.json</code> artifact instead of leaving the runtime surface implicit, and the current release line is rebuilt, self-attested, smoke-checked from a temporary bundle copy, and republished through one scripted private workflow instead of a hand-sequenced local checklist.</p>
         <div class="card-actions">
-          <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.9.3/open-specs">Open bundled specs</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.9.4/open-specs">Open bundled specs</a>
           <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/verifier-contract.json">Open verifier contract</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/trust-root-profiles.json">Open trust-root registry</a>
         </div>
       </article>
       <article class="section-card">
@@ -101,7 +103,7 @@
         <p>The bundle now ships a minimal browser workbench under <code>ui/verify/</code>. It is still local-only, but it gives reviewers one browser entrypoint for loading synthetic ExampleCo bundles, sending fixture-path or inline-bundle requests, and inspecting the raw deterministic response.</p>
         <div class="card-actions">
           <a class="pill" href="verify-workbench.html">See workbench docs</a>
-          <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.9.3/ui/verify">Open bundled workbench</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.9.4/ui/verify">Open bundled workbench</a>
         </div>
       </article>
       <article class="section-card">
@@ -109,7 +111,19 @@
         <h3>Seven runnable corridors plus support packs</h3>
         <p>The bundled fixtures cover <code>minimal</code>, <code>failed</code>, <code>stale</code>, <code>medium</code>, <code>issued</code>, <code>cyber-baseline</code>, and <code>ai-governance</code>, plus the showcase, lifecycle, and signing packs.</p>
         <div class="card-actions">
-          <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.9.3/fixtures/public">Open bundled fixtures</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/tree/main/verifier-release/opencompliance-verifier-0.9.4/fixtures/public">Open bundled fixtures</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="double-grid">
+      <article class="section-card">
+        <div class="kicker">Release identity</div>
+        <h3>Signer and witness roots are explicit now</h3>
+        <p>The release line now publishes a trust-root registry that distinguishes the current synthetic reference roots from the environment-override path for non-synthetic publication. That makes the live publication story inspectable without pretending the public reference bundle already uses it.</p>
+        <div class="card-actions">
+          <a class="pill" href="release-identity.html">Release identity notes</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/trust-root-profiles.json">Open trust-root registry</a>
         </div>
       </article>
     </section>
@@ -132,14 +146,14 @@ python3 scripts/verify_signed_artifacts.py --manifest signed-artifact-manifest.j
         <div class="kicker">What it proves</div>
         <p>The release proves that a third party can take the public bundle, rerun the verifier, rerun the Lean slice, validate the synthetic corridors, verify the signed file manifest, verify the synthetic release attestation, and read one explicit contract describing which release artifacts, fixture artifacts, trust registries, typed-boundary tags, and outcome policies are meant to stay stable.</p>
         <div class="card-actions">
-          <a class="pill" href="https://github.com/opencompliance-foundation/examples/blob/main/verifier-release/opencompliance-verifier-0.9.3/release-manifest.json">Open release manifest</a>
-          <a class="pill" href="https://github.com/opencompliance-foundation/examples/blob/main/verifier-release/opencompliance-verifier-0.9.3/release-attestation.json">Open release attestation</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/blob/main/verifier-release/opencompliance-verifier-0.9.4/release-manifest.json">Open release manifest</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/examples/blob/main/verifier-release/opencompliance-verifier-0.9.4/release-attestation.json">Open release attestation</a>
           <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/verifier-contract.json">Open verifier contract</a>
         </div>
       </article>
       <article class="section-card">
         <div class="kicker">What it does not prove</div>
-        <p>It does not yet prove live-connector operation, real-organisation evidence ingestion, or a production release pipeline. It is still a synthetic public reference release, not a claim of full audit readiness for arbitrary organisations.</p>
+        <p>It does not yet prove live-connector operation, real-organisation evidence ingestion, or that a non-synthetic publication root has already been exercised on the public bundle. It is still a synthetic public reference release, not a claim of full audit readiness for arbitrary organisations.</p>
         <div class="card-actions">
           <a class="pill" href="roadmap.html">See remaining roadmap</a>
         </div>

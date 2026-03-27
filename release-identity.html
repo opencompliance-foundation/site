@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenCompliance Release Identity</title>
+  <meta name="description" content="How OpenCompliance models release signer and release witness roots, synthetic fallback, and environment-supplied publication identities.">
+  <meta name="theme-color" content="#0b1324">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">OC</span>
+        <span>OpenCompliance</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Overview</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="trust.html">Trust Model</a>
+        <a href="frameworks.html">Frameworks</a>
+        <a href="agentic-ai.html">Agentic AI</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="showcase.html">Showcase</a>
+        <a href="public-artifacts.html">Public Artifacts</a>
+        <a href="repositories.html">Repositories</a>
+        <a href="auditor-search.html">Auditor Search</a>
+        <a href="verifier-release.html">Verifier Release</a>
+        <a href="release-identity.html" aria-current="page">Release Identity</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div class="eyebrow">Release Trust Roots</div>
+      <h1>Release identity is now a published contract.</h1>
+      <p class="lead">The public verifier release now publishes an explicit trust-root profile registry. That makes the signer and witness path inspectable instead of hiding it behind one hard-coded synthetic identity or an unstated future plan.</p>
+      <div class="pill-row">
+        <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/trust-root-profiles.json">Open trust-root registry</a>
+        <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/schemas/trust-root-profiles.schema.json">Open trust-root schema</a>
+        <a class="pill" href="verifier-release.html">Verifier release</a>
+        <a class="pill" href="actor-ontology.html">Actor ontology</a>
+      </div>
+    </section>
+
+    <section class="double-grid">
+      <article class="section-card">
+        <div class="kicker">Synthetic reference roots</div>
+        <h2>Default public release path</h2>
+        <p>The current public reference release still defaults to the synthetic signer and synthetic release witness. That keeps the bundle public-safe and replayable without implying a production publication root that does not exist yet.</p>
+        <a href="verifier-release.html">See the current public release</a>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Environment override roots</div>
+        <h2>Implemented live-root path</h2>
+        <p>The runtime now also exposes environment-override profiles for release signing and release attestation. That means the move to non-synthetic publication roots is now an explicit contract and resolver path, not only a roadmap item.</p>
+        <a href="verify-contract.html">Inspect the verifier contract</a>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>What the registry says</h2>
+    </section>
+    <section class="card-grid">
+      <article class="section-card">
+        <div class="kicker">Who</div>
+        <h3>Actor type and role</h3>
+        <p>Each profile pins the expected actor type, role, and trust policy. Release signing stays in the verifier-service lane. Release attestation stays in the independent-witness lane.</p>
+        <a href="actor-ontology.html">View actor identities and trust policy</a>
+      </article>
+      <article class="section-card">
+        <div class="kicker">How</div>
+        <h3>Synthetic fallback vs environment override</h3>
+        <p>The registry distinguishes synthetic reference roots from environment-supplied roots. That matters because a public-safe demo bundle and a live publication root should not be described as the same thing.</p>
+        <a href="https://github.com/opencompliance-foundation/specs/blob/main/trust-root-profiles.json">Open trust-root profiles</a>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Boundary</div>
+        <h3>What still is not claimed</h3>
+        <p>The public release does not yet claim that a real production trust root is in use. The new profiles make the migration path explicit, but the published bundle still defaults to synthetic identities unless a live root is configured.</p>
+        <a href="trust.html">Read the trust-model boundary</a>
+      </article>
+    </section>
+
+    <section class="double-grid">
+      <article class="callout">
+        <div class="kicker">Why this matters</div>
+        <p>Without this registry, the public release can only say “signed” or “attested.” With it, the bundle can say whether it used the reference synthetic roots or an explicitly selected release identity path.</p>
+        <a href="public-artifacts.html">See how release artifacts are published</a>
+      </article>
+      <article class="callout">
+        <div class="kicker">Current state</div>
+        <p>The public reference bundle now ships the registry, the resolver path, and the live placeholders. The remaining gap is exercising those non-synthetic roots in an actually published release line.</p>
+        <a href="roadmap.html">Track the remaining hardening work</a>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <p>The point is not to hide synthetic roots better. It is to make the transition to live publication roots inspectable and machine-readable.</p>
+      <div class="footer-nav">
+        <a href="verifier-release.html">Verifier release</a>
+        <a href="actor-ontology.html">Actor ontology</a>
+        <a href="repositories.html">Repositories</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

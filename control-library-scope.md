@@ -28,6 +28,7 @@ It encodes narrow OpenCompliance controls such as:
 - supported security updates,
 - endpoint malware protection,
 - AI-generated-content disclosure configuration,
+- AI content provenance configuration,
 - and a default-deny network-boundary baseline for the cyber-hygiene corridor.
 
 Those narrow controls are then cross-walked outward to public-safe family proxies for ISO 27001, SOC 2, IRAP, GDPR, Cyber Essentials, NCSC CAF 4.0, NIST CSF 2.0, NIST SP 800-53 Rev. 5.1, and the current AI-governance plus AI-assurance frameworks.
@@ -37,7 +38,8 @@ layer for the same corridor. That layer currently covers
 `FormalisationBoundary`-typed identity and logging results, a concrete `Defeats`
 example for risk acceptance, a small `Vague` inventory for discretionary
 compliance terms, a first `LegalLean.Solver` instantiation for the
-five-claim minimal corpus, and a public runtime layer that now drives the
+five-claim minimal corpus with full expected-boundary theorems for all five
+claims, and a public runtime layer that now drives the
 verification verdict path for every current synthetic corridor. That is real
 progress, but it is still narrower than a released live-evidence verifier.
 
@@ -55,10 +57,13 @@ commitments, ISMS context, project-security, reported-security-concern
 handling, outsourced-development governance, stakeholder management,
 continual improvement, compliance-requirement inventories,
 intellectual-property governance, and remote-working atoms, and the next
-ISO-first work moving onward into special-interest-group participation,
+ISO-first work now reaching special-interest-group participation,
 disciplinary and conduct follow-through, internal-audit and
-customer-support adequacy, facility-workspace governance, and the
-remaining governance-and-operations atoms.
+customer-support adequacy, and facility-workspace governance via the new
+public control families `oc.conduct-*`, `oc.hr-13..15`, `oc.audit-*`,
+`oc.ops-04..06`, `oc.phys-01..03`, and `oc.intel-01..03`, while the
+remaining governance-and-operations atoms still sit behind the private
+bridge for later promotion.
 
 ## Interpretation rule
 
@@ -87,11 +92,21 @@ That is the direction the public mapping metadata now points toward.
 
 The specs now also carry a first exact-anchor review pilot.
 
-That pilot now covers 44 public controls across 25 frameworks, and it does
+That pilot now covers 47 public controls across 25 frameworks, and it does
 three things at once:
 
-1. it records public-source exact anchors where the source material is actually open enough to review responsibly, including the current GDPR control set, a deeper IRAP operational layer that now reaches secure baselines, configuration exceptions, CI policy, change governance, access-review exports and closure, patch state, and patch exceptions, plus the first NIST AI 100-4 and NIST AI 700-2 anchors alongside the earlier UK ICO, NIST AI 600-1, and ETSI AI layers,
+1. it records public-source exact anchors where the source material is actually open enough to review responsibly, including the current GDPR control set plus the retention/deletion governance slice, a deeper IRAP operational layer that now reaches secure baselines, configuration exceptions, CI policy, change governance, access-review exports and closure, patch state, and patch exceptions, plus the first NIST AI 100-4 and NIST AI 700-2 anchors alongside the earlier UK ICO, NIST AI 600-1, and ETSI AI layers,
 2. it records explicit blocker entries where proprietary or non-public framework text still prevents an honest exact-anchor publication, and
 3. it still reaches beyond the implemented runtime examples, so the public exact-anchor layer can stay ahead of the current Lean and fixture corridor without pretending those reviewed anchors are already fully proved, including planned AI provenance, evaluation, and data-quality controls that do not yet have public fixture evidence.
 
 That is a better state than a fake complete mapping corpus.
+
+## Release and trust-root boundary
+
+OSCAL remains the external interchange layer, but the public verifier bundle
+now goes further by carrying explicit trust registries for actor identities,
+trust policies, connector ingress, and release trust roots. The current public
+release still defaults to synthetic signer and witness identities, but the
+runtime now also publishes environment-override trust-root profiles for
+non-synthetic release publication and release attestation so the live-root path
+is explicit instead of implied future work.
