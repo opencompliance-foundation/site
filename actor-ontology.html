@@ -40,6 +40,7 @@
       <p class="lead">OpenCompliance now makes the actor model explicit across evidence claims, signed manifests, and witness receipts. That means system exports, human owners, delegated approvers, verifier services, and independent witnesses are no longer flattened into one generic “signed by someone” bucket.</p>
       <div class="pill-row">
         <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/actor-trust-policies.json">Trust-policy registry</a>
+        <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/connector-ingress-profiles.json">Connector ingress registry</a>
         <a class="pill" href="https://github.com/opencompliance-foundation/evidence-schema">Evidence schema</a>
         <a class="pill" href="repositories.html">Repository map</a>
       </div>
@@ -52,7 +53,7 @@
       <article class="section-card">
         <div class="kicker">System</div>
         <h3>Scoped exporters and connectors</h3>
-        <p>Machine evidence still starts with deterministic source exports. These claims now reference the explicit `oc.trust.system-export` policy instead of relying on an implicit “it came from a bot” assumption.</p>
+        <p>Machine evidence still starts with deterministic source exports. These claims now reference the explicit <code>oc.trust.system-export</code> policy and must match a published connector-ingress profile instead of relying on an implicit “it came from a bot” assumption.</p>
         <div class="card-actions">
           <a class="pill" href="https://github.com/opencompliance-foundation/evidence-schema/blob/main/schemas/evidence-claim.schema.json">Open claim envelope</a>
         </div>
@@ -116,6 +117,14 @@
         </ul>
         <div class="card-actions">
           <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/actor-trust-policies.json">Open policy list</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">Connector ingress</div>
+        <p>System evidence now has one more public contract to satisfy: the source system, collection method, and source-path prefix must match a published connector-ingress profile keyed to the actor identity. That turns system ingress into a visible machine-checkable boundary instead of an untyped bot assertion.</p>
+        <div class="card-actions">
+          <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/connector-ingress-profiles.json">Open ingress registry</a>
+          <a class="pill" href="https://github.com/opencompliance-foundation/specs/blob/main/schemas/connector-ingress-profiles.schema.json">Open ingress schema</a>
         </div>
       </article>
     </section>
