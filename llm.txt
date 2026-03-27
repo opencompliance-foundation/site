@@ -13,8 +13,8 @@ Primary pages:
 - /open-proof-layer.html: essay on why an open proof layer helps the industry
 - /competitive-landscape.html: overlap with commercial trust/compliance platforms and the open-source thesis
 - /foundation.html: foundation charter, sponsor model, repo structure, and peer review discipline
-- /frameworks.html: standards depth order, framework coverage, and AI-standard priorities
-- /standards-mapping.html: what it would take to fully map ISO 27001 and SOC 2 into OpenCompliance, including blocker-aware exact-anchor status and rollout gaps
+- /frameworks.html: standards depth order, framework coverage, GDPR status, and current ISO AI-standard priorities
+- /standards-mapping.html: what it would take to fully map ISO 27001, SOC 2, GDPR, and the current ISO AI standards wave into OpenCompliance, including blocker-aware exact-anchor status and rollout gaps
 - /agentic-ai.html: agentic-AI data-protection boundary, including purpose limitation, rights, explainability, retention, and supply-chain roles
 - /actor-ontology.html: actor kinds, delegated approver rules, verifier identities, and trust-policy registry
 - /roadmap.html: phased roadmap
@@ -29,7 +29,7 @@ Primary pages:
 Public repositories:
 - https://github.com/opencompliance-foundation/site: static project site published at opencompliancefoundation.com
 - https://github.com/opencompliance-foundation/governance: charter, governance, conflicts, sponsor model, and release/sign-off policy
-- https://github.com/opencompliance-foundation/specs: public artifact formats, mapping methodology, control-boundary metadata, exact-anchor review pilots, framework coverage, standards-mapping-status, the proprietary-framework publication model, the external review program, and versioning rules
+- https://github.com/opencompliance-foundation/specs: public artifact formats, mapping methodology, control-boundary metadata, exact-anchor review pilots, framework coverage, standards-mapping-status, gdpr-ai-mapping-status, the ISO/SOC and GDPR/AI publication models, the ISO/SOC and GDPR/AI review programs, and versioning rules
 - https://github.com/opencompliance-foundation/examples: synthetic ExampleCo bundles, the ExampleCo showcase meta-pack, lifecycle packs, replay bundles, transparency logs, witness receipts, and the versioned public verifier release bundle
 - https://github.com/opencompliance-foundation/conformance: executable validators, conformance vectors, public-boundary checks, and the showcase builder
 - https://github.com/opencompliance-foundation/evidence-schema: typed evidence envelope schema plus public claim-type payload schemas
