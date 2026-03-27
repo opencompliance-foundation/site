@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OpenCompliance | Proof-Carrying Compliance</title>
-  <meta name="description" content="OpenCompliance is an OSCAL-native, Lean 4 proof-carrying compliance engine that distinguishes proofs, attestations, and judgment instead of flattening everything into a dashboard checkbox.">
+  <meta name="description" content="OpenCompliance is OSCAL-compatible but goes beyond OSCAL with typed evidence claims, Lean 4 verification, trust-surface reports, and replayable audit artifacts.">
   <meta name="theme-color" content="#0b1324">
   <meta property="og:title" content="OpenCompliance">
-  <meta property="og:description" content="Proof-carrying compliance for OSCAL, Lean 4, typed evidence claims, and tamper-evident audit artifacts.">
+  <meta property="og:description" content="OSCAL-compatible proof-carrying compliance with typed evidence claims, Lean 4 verification, and replayable trust artifacts.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="OpenCompliance">
   <meta name="twitter:card" content="summary_large_image">
@@ -45,7 +45,7 @@
       <div class="hero-copy">
         <div class="eyebrow">Open Proof Layer</div>
         <h1>Compliance should say what it proves.</h1>
-        <p class="lead">OpenCompliance is an OSCAL-native, Lean 4 proof-carrying compliance engine. It treats technical controls as theorems when they really are theorems, treats human attestations as signed claims when they are not, and keeps judgment-heavy controls explicit instead of hiding them behind green checks. For agentic systems, the same idea becomes a verifiable trace: the ability to show what the system did, why it was allowed, and where a human could still intervene.</p>
+        <p class="lead">OpenCompliance is an OSCAL-native, Lean 4 proof-carrying compliance engine. OSCAL is the external interchange layer, not the whole product. OpenCompliance goes further by adding typed evidence claims, proof-versus-attestation-versus-judgment routing, Lean verification, trust-surface reports, and replayable trust artifacts. For agentic systems, the same idea becomes a verifiable trace: the ability to show what the system did, why it was allowed, and where a human could still intervene.</p>
         <div class="artifact-strip">
           <div class="artifact">
             <span class="artifact-label">Kernel</span>
@@ -102,6 +102,16 @@
         <p>OpenCompliance tries to break that habit by making the boundary between proof and assertion visible and machine-readable. That makes it complementary to trust-management platforms, audit workflows, and certification programmes rather than a claim to replace them with one new dashboard.</p>
         <div class="card-actions">
           <a class="pill" href="competitive-landscape.html">See the landscape</a>
+        </div>
+      </article>
+      <article class="section-card">
+        <div class="kicker">OSCAL Boundary</div>
+        <h2>OSCAL is necessary, but not sufficient</h2>
+        <p>OSCAL gives OpenCompliance a standards-aligned wire format for catalogs, profiles, mappings, and assessment-style artifacts. It does not by itself provide typed evidence semantics, theorem proving, trust-policy evaluation, trust-surface reporting, signatures, transparency logging, or witness replay.</p>
+        <p>OpenCompliance keeps OSCAL as the external contract, then adds those missing verification and publication layers on top.</p>
+        <div class="card-actions">
+          <a class="pill" href="architecture.html">See the architecture split</a>
+          <a class="pill" href="verify-contract.html">See the Verify contract</a>
         </div>
       </article>
     </section>

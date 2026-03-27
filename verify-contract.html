@@ -37,7 +37,7 @@
     <section class="page-hero">
       <div class="eyebrow">Deterministic Surface</div>
       <h1>The current Verify contract is explicit.</h1>
-      <p class="lead">This page describes the narrow deterministic reference surface behind the local OpenCompliance CLI, API, and browser workbench. It is a synthetic public contract, not a claim of a hosted production verification service.</p>
+      <p class="lead">This page describes the narrow deterministic reference surface behind the local OpenCompliance CLI, API, and browser workbench. It is a synthetic public contract, not a claim of a hosted production verification service. OSCAL is part of that contract, but this surface goes beyond OSCAL by binding typed evidence claims, classification results, proof outputs, trust-surface reporting, and replayable verification artifacts into one deterministic run.</p>
       <div class="pill-row">
         <a class="pill" href="verifier-release.html">Verifier release</a>
         <a class="pill" href="verify-workbench.html">Verify workbench</a>
@@ -146,6 +146,7 @@ python3 -m http.server 8000</code></pre>
         <div class="kicker">Inputs</div>
         <h3>Current corridor files</h3>
         <p>The deterministic corridor uses <code>profile.json</code>, <code>evidence-claims.json</code>, and the matching OSCAL catalog, profile, SSP, and mapping files under <code>oscal/</code>.</p>
+        <p>That is deliberate: OSCAL carries the standards-aligned interchange layer, while OpenCompliance adds the typed evidence semantics, proof boundary tags, outcome logic, and replayable publication artifacts that OSCAL alone does not define.</p>
         <div class="card-actions">
           <a class="pill" href="public-artifacts.html">See fixture contents</a>
         </div>

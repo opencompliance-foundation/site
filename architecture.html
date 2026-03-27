@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OpenCompliance Architecture</title>
-  <meta name="description" content="The OpenCompliance runtime pipeline: OSCAL ingestion, typed evidence claims, Lean 4 proofs, trust-surface reporting, transparency logging, and public artifact publishing.">
+  <meta name="description" content="The OpenCompliance runtime pipeline: OSCAL as the interchange layer, plus typed evidence claims, Lean 4 proofs, trust-surface reporting, transparency logging, and public artifact publishing.">
   <meta name="theme-color" content="#0b1324">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="manifest" href="site.webmanifest">
@@ -37,7 +37,7 @@
     <section class="page-hero">
       <div class="eyebrow">Technical Walkthrough</div>
       <h1>The architecture is a narrow verification pipeline.</h1>
-      <p class="lead">OSCAL packages and typed evidence claims enter through deterministic ingestion. The classifier decides what may be proved, what must be attested, and what remains a human question. Lean 4 produces proof artifacts, not marketing prose.</p>
+      <p class="lead">OSCAL packages and typed evidence claims enter through deterministic ingestion. OSCAL is the interchange layer, while OpenCompliance adds the internal evidence, classification, proof, and trust-publication layers above it. The classifier decides what may be proved, what must be attested, and what remains a human question. Lean 4 produces proof artifacts, not marketing prose.</p>
       <div class="stat-grid">
         <div class="stat-card">
           <strong>10</strong>
@@ -63,7 +63,7 @@
         <div class="kicker">Core Principle</div>
         <h2>OSCAL outside, Lean inside</h2>
         <p>The external contract stays machine-readable and standards-aligned. OSCAL packages, profiles, mappings, and assessment-result style artifacts form the interchange layer. Lean 4 is the internal proof kernel for the decidable technical corridor.</p>
-        <p>This split matters. It avoids locking the product into an ad hoc private schema while still keeping the trusted core small and explicit.</p>
+        <p>This split matters. It avoids locking the product into an ad hoc private schema while still keeping the trusted core small and explicit. It also makes the boundary clear: OpenCompliance is not just an OSCAL viewer or OSCAL validator. It layers typed evidence claims, proof-versus-attestation routing, trust-surface reporting, signing, transparency, and replayability on top of OSCAL-compatible inputs and outputs.</p>
         <div class="card-actions">
           <a class="pill" href="public-artifacts.html">See public artifacts</a>
           <a class="pill" href="https://github.com/opencompliance-foundation/specs">Open specs repo</a>
