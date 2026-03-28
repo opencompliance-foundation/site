@@ -92,7 +92,7 @@ That is the direction the public mapping metadata now points toward.
 
 The specs now also carry a first exact-anchor review pilot.
 
-That pilot now covers 47 public controls across 25 frameworks, and it does
+That pilot now covers 56 public controls across 30 frameworks, and it does
 three things at once:
 
 1. it records public-source exact anchors where the source material is actually open enough to review responsibly, including the current GDPR control set plus the retention/deletion governance slice, a deeper IRAP operational layer that now reaches secure baselines, configuration exceptions, CI policy, change governance, access-review exports and closure, patch state, and patch exceptions, plus the first NIST AI 100-4 and NIST AI 700-2 anchors alongside the earlier UK ICO, NIST AI 600-1, and ETSI AI layers,
