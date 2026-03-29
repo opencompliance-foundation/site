@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenCompliance Vendor Search</title>
+  <meta name="description" content="Search a source-aware market map of compliance automation and trust platforms by segment, headquarters, supported frameworks, public assurance signals, age, and employee band.">
+  <meta name="theme-color" content="#0b1324">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="styles.css?v=20260329a">
+</head>
+<body>
+  <main class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">OC</span>
+        <span>OpenCompliance</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Overview</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="trust.html">Trust Model</a>
+        <a href="open-proof-layer.html">Essay</a>
+        <a href="competitive-landscape.html">Landscape</a>
+        <a href="foundation.html">Foundation</a>
+        <a href="frameworks.html">Frameworks</a>
+        <a href="agentic-ai.html">Agentic AI</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="showcase.html">Showcase</a>
+        <a href="public-artifacts.html">Public Artifacts</a>
+        <a href="repositories.html">Repositories</a>
+        <a href="auditor-search.html">Auditor Search</a>
+        <a href="vendor-search.html" aria-current="page">Vendor Search</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div class="eyebrow">Market Research Explorer</div>
+      <h1>Trust and compliance platforms, searchable and source-aware.</h1>
+      <p class="lead">This page tracks public-market facts for compliance automation and trust-management vendors without pretending marketing pages are proof. It keeps company profile data, framework coverage, and vendor self-assurance signals visible, linked, and bounded so buyers can narrow the landscape faster.</p>
+      <div class="pill-row">
+        <span class="pill" id="vendor-count-pill">Loading vendors...</span>
+        <span class="pill" id="framework-count-pill">Tracking frameworks...</span>
+        <span class="pill">Static-first research</span>
+        <span class="pill" id="segment-count-pill">Loading segments...</span>
+        <span class="pill">No endorsement scoring</span>
+      </div>
+      <p class="small-note" id="freshness-line">Last refreshed: loading...</p>
+      <p class="small-note" id="source-line">Sources: loading...</p>
+      <p class="small-note" id="method-line">Method: loading...</p>
+    </section>
+
+    <section class="section-title">
+      <h2>Boundary and method</h2>
+    </section>
+    <section class="double-grid">
+      <article class="callout">
+        <div class="kicker">Scope</div>
+        <p>This is a market map, not a buyer-ranking engine. It does not replace product trials, pricing work, security review, auditor selection, independence checks, or legal and procurement diligence.</p>
+        <div class="card-actions">
+          <a class="pill" href="competitive-landscape.html">Open competitive framing</a>
+        </div>
+      </article>
+      <article class="callout">
+        <div class="kicker">Publication boundary</div>
+        <p>Only public, publication-safe fields are included: vendor identity, segment, headquarters, founded year, approximate employee count, visible framework coverage, public assurance signals, and source links. Missing public assurance data here does not mean the vendor lacks it.</p>
+        <div class="card-actions">
+          <a class="pill" href="data/compliance-vendors.json">Open dataset JSON</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>Filter the market</h2>
+    </section>
+    <section class="section-card auditor-filter-shell">
+      <div class="auditor-filter-intro">
+        <div>
+          <div class="kicker">Search Lens</div>
+          <h3>Start with fit, then narrow by evidence.</h3>
+          <p>Search by vendor name, segment, framework, signal, or location. Use the public-assurance filter to narrow to vendors that visibly publish their own assurance posture, and the employee or years-running filters to separate newer entrants from more mature platforms.</p>
+        </div>
+      </div>
+      <form class="auditor-filter-stack" id="vendor-filter-form" onsubmit="return false;">
+        <label class="auditor-filter auditor-filter--search">
+          <span>Vendor search</span>
+          <small class="auditor-filter-hint">Search by company name, summary, frameworks, headquarters, signal, or segment.</small>
+          <input id="search-input" type="search" placeholder="Vanta or ISO 27001">
+        </label>
+        <div class="auditor-filter-grid">
+          <label class="auditor-filter">
+            <span>Segment</span>
+            <small class="auditor-filter-hint">Trust management, compliance automation, enterprise GRC, and adjacent operating models.</small>
+            <select id="segment-filter">
+              <option value="any">Any segment</option>
+            </select>
+          </label>
+          <label class="auditor-filter">
+            <span>Headquarters</span>
+            <small class="auditor-filter-hint">Current public headquarters label captured from the source set.</small>
+            <select id="location-filter">
+              <option value="any">Any location</option>
+            </select>
+          </label>
+          <label class="auditor-filter">
+            <span>Customer framework</span>
+            <small class="auditor-filter-hint">Narrow by frameworks the vendor publicly says it helps customers prepare for or manage.</small>
+            <select id="framework-filter">
+              <option value="any">Any framework</option>
+            </select>
+          </label>
+          <label class="auditor-filter">
+            <span>Vendor assurance</span>
+            <small class="auditor-filter-hint">Filter by the vendor's own public assurance signals captured from trust, security, or company pages.</small>
+            <select id="assurance-filter">
+              <option value="any">Any assurance</option>
+            </select>
+          </label>
+          <label class="auditor-filter">
+            <span>Employee band</span>
+            <small class="auditor-filter-hint">Approximate current public profile size.</small>
+            <select id="employee-filter">
+              <option value="any">Any size</option>
+              <option value="1-50">1-50</option>
+              <option value="51-200">51-200</option>
+              <option value="201-500">201-500</option>
+              <option value="501-1000">501-1000</option>
+              <option value="1001+">1001+</option>
+            </select>
+          </label>
+          <label class="auditor-filter">
+            <span>Years running</span>
+            <small class="auditor-filter-hint">Computed from the founded year in the current data snapshot.</small>
+            <select id="years-filter">
+              <option value="any">Any age</option>
+              <option value="0-2">0-2 years</option>
+              <option value="3-5">3-5 years</option>
+              <option value="6-10">6-10 years</option>
+              <option value="11+">11+ years</option>
+            </select>
+          </label>
+        </div>
+      </form>
+      <div class="card-actions">
+        <button id="reset-filters" class="pill auditor-reset" type="button">Reset filters</button>
+        <a class="pill" href="data/compliance-vendors.json">Download dataset</a>
+        <a class="pill" href="auditor-search.html">Open auditor search</a>
+      </div>
+    </section>
+
+    <section class="section-title">
+      <h2>Results</h2>
+    </section>
+    <section class="section-card">
+      <div class="auditor-results-meta">
+        <p id="results-count">0 results</p>
+        <p class="small-note" id="status-line">Loading dataset...</p>
+      </div>
+      <div id="results-grid" class="vendor-results-grid">
+        <article class="section-card vendor-card vendor-card--empty">
+          <p>Loading dataset...</p>
+          <div class="card-actions">
+            <a class="pill" href="data/compliance-vendors.json">Inspect raw records</a>
+            <a class="pill" href="competitive-landscape.html">Read the prose view</a>
+          </div>
+        </article>
+      </div>
+      <div class="card-actions">
+        <a class="pill" href="data/compliance-vendors.json">Inspect raw records</a>
+        <a class="pill" href="competitive-landscape.html">Read the prose view</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>This market map stays static-first on purpose: current enough to be useful, bounded enough to stay legible.</p>
+      <div class="footer-nav">
+        <a href="index.html">Overview</a>
+        <a href="competitive-landscape.html">Landscape</a>
+        <a href="auditor-search.html">Auditor search</a>
+      </div>
+    </footer>
+  </main>
+  <script src="vendor-search.js?v=20260329a"></script>
+</body>
+</html>

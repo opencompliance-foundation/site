@@ -21,6 +21,7 @@ Primary pages:
 - /showcase.html: ExampleCo walkthrough showing how a hypothetical company can present corridor-scoped proofs, attestations, and punch-lists
 - /public-artifacts.html: docs/specs/examples publication strategy
 - /auditor-search.html: static publication-safe multi-registry explorer for AICPA, UKAS, PCAOB, ANAB, and FedRAMP assurance records with source, jurisdiction, signal, recency, center, and provenance filters
+- /vendor-search.html: static source-aware market map for compliance automation and trust platforms with filters for segment, headquarters, framework coverage, vendor public assurance, employee band, and years running
 - /verifier-release.html: versioned public verifier bundle, release manifest, and runnable replay path
 - /release-identity.html: synthetic fallback versus environment-supplied release signer and witness roots
 - /verify-contract.html: deterministic Verify API contract, accepted input modes, emitted artifacts, and boundary notes

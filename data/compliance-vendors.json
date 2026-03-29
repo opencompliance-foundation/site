@@ -1,0 +1,775 @@
+{
+  "metadata": {
+    "schema_version": "1.0",
+    "source": "OpenCompliance compliance vendor market index",
+    "source_url": "https://opencompliancefoundation.com/vendor-search.html",
+    "generated_at": "2026-03-29T17:50:44.657174Z",
+    "refresh_target": "30-60 days",
+    "vendor_count": 12,
+    "framework_count": 23,
+    "public_assurance_count": 7,
+    "segment_count": 7,
+    "source_link_count": 32,
+    "source_types": [
+      "Official company website",
+      "Official trust or security page",
+      "Public LinkedIn company page"
+    ],
+    "notes": [
+      "This is a curated public market map, not an exhaustive buyer guide or endorsement list.",
+      "Employee counts are approximate public profile figures and may drift.",
+      "Public assurance lists only reflect signals captured from the current public source set.",
+      "Customer framework coverage reflects public marketing or profile materials, not a contractual product scope matrix."
+    ]
+  },
+  "records": [
+    {
+      "slug": "anecdotes",
+      "company_name": "Anecdotes",
+      "segment": "Compliance operations",
+      "summary": "Compliance OS focused on continuous compliance, control validation, analytics, and trust-center style buyer assurance.",
+      "website_url": "https://www.anecdotes.ai",
+      "headquarters_city": "Palo Alto",
+      "headquarters_state": "California",
+      "headquarters_country": "United States",
+      "location_label": "Palo Alto, California, United States",
+      "founded_year": 2020,
+      "years_running": 6,
+      "employees_estimate": 156,
+      "employee_band": "51-200",
+      "customer_frameworks": [
+        "SOC 2",
+        "ISO 27001",
+        "ISO 27701",
+        "ISO 42001",
+        "HIPAA",
+        "GDPR"
+      ],
+      "public_assurance": [],
+      "signals": [
+        "Trust center",
+        "Continuous compliance",
+        "Control validation",
+        "Compliance analytics"
+      ],
+      "source_links": [
+        {
+          "label": "Website",
+          "url": "https://www.anecdotes.ai"
+        },
+        {
+          "label": "Trust center",
+          "url": "https://www.anecdotes.ai/trust-center"
+        },
+        {
+          "label": "Company profile",
+          "url": "https://www.linkedin.com/company/anecdotes-ai"
+        }
+      ],
+      "search_tags": [
+        "Anecdotes",
+        "Compliance operations",
+        "Compliance OS focused on continuous compliance, control validation, analytics, and trust-center style buyer assurance.",
+        "Palo Alto, California, United States",
+        "SOC 2",
+        "ISO 27001",
+        "ISO 27701",
+        "ISO 42001",
+        "HIPAA",
+        "GDPR",
+        "Trust center",
+        "Continuous compliance",
+        "Control validation",
+        "Compliance analytics"
+      ]
+    },
+    {
+      "slug": "auditboard",
+      "company_name": "AuditBoard",
+      "segment": "Enterprise GRC",
+      "summary": "Enterprise audit, risk, and compliance platform spanning internal audit, IT compliance, third-party risk, and security program workflows.",
+      "website_url": "https://auditboard.com",
+      "headquarters_city": "Cerritos",
+      "headquarters_state": "California",
+      "headquarters_country": "United States",
+      "location_label": "Cerritos, California, United States",
+      "founded_year": 2014,
+      "years_running": 12,
+      "employees_estimate": 464,
+      "employee_band": "201-500",
+      "customer_frameworks": [
+        "SOX",
+        "IT compliance",
+        "Third-party risk",
+        "Internal audit"
+      ],
+      "public_assurance": [
+        "ISO/IEC 27001",
+        "SOC 2",
+        "CSA STAR"
+      ],
+      "signals": [
+        "Enterprise audit workflows",
+        "Third-party risk",
+        "InfoSec compliance",
+        "Risk management"
+      ],
+      "source_links": [
+        {
+          "label": "Website",
+          "url": "https://auditboard.com"
+        },
+        {
+          "label": "Company profile",
+          "url": "https://www.linkedin.com/company/auditboard"
+        }
+      ],
+      "search_tags": [
+        "AuditBoard",
+        "Enterprise GRC",
+        "Enterprise audit, risk, and compliance platform spanning internal audit, IT compliance, third-party risk, and security program workflows.",
+        "Cerritos, California, United States",
+        "SOX",
+        "IT compliance",
+        "Third-party risk",
+        "Internal audit",
+        "ISO/IEC 27001",
+        "SOC 2",
+        "CSA STAR",
+        "Enterprise audit workflows",
+        "InfoSec compliance",
+        "Risk management"
+      ]
+    },
+    {
+      "slug": "delve",
+      "company_name": "Delve",
+      "segment": "AI-native compliance",
+      "summary": "AI-native GRC platform for fast-growing companies with integrations, framework setup, and guided audit-readiness workflows.",
+      "website_url": "https://delve.co",
+      "headquarters_city": "San Francisco",
+      "headquarters_state": "California",
+      "headquarters_country": "United States",
+      "location_label": "San Francisco, California, United States",
+      "founded_year": 2023,
+      "years_running": 3,
+      "employees_estimate": 46,
+      "employee_band": "1-50",
+      "customer_frameworks": [
+        "SOC 2",
+        "ISO 27001",
+        "HIPAA",
+        "GDPR"
+      ],
+      "public_assurance": [],
+      "signals": [
+        "AI-native workflows",
+        "Integration-based evidence collection",
+        "Audit readiness"
+      ],
+      "source_links": [
+        {
+          "label": "Website",
+          "url": "https://delve.co"
+        },
+        {
+          "label": "Company profile",
+          "url": "https://www.linkedin.com/company/getdelve"
+        }
+      ],
+      "search_tags": [
+        "Delve",
+        "AI-native compliance",
+        "AI-native GRC platform for fast-growing companies with integrations, framework setup, and guided audit-readiness workflows.",
+        "San Francisco, California, United States",
+        "SOC 2",
+        "ISO 27001",
+        "HIPAA",
+        "GDPR",
+        "AI-native workflows",
+        "Integration-based evidence collection",
+        "Audit readiness"
+      ]
+    },
+    {
+      "slug": "drata",
+      "company_name": "Drata",
+      "segment": "Trust management",
+      "summary": "Trust management platform spanning compliance automation, continuous assurance, third-party risk, trust centers, and AI-assisted workflows.",
+      "website_url": "https://drata.com",
+      "headquarters_city": "San Francisco",
+      "headquarters_state": "California",
+      "headquarters_country": "United States",
+      "location_label": "San Francisco, California, United States",
+      "founded_year": 2020,
+      "years_running": 6,
+      "employees_estimate": 724,
+      "employee_band": "501-1000",
+      "customer_frameworks": [
+        "SOC 2",
+        "ISO 27001",
+        "HIPAA",
+        "GDPR",
+        "CMMC",
+        "ISO 42001"
+      ],
+      "public_assurance": [
+        "SOC 2",
+        "ISO/IEC 27001"
+      ],
+      "signals": [
+        "Trust center",
+        "Third-party risk",
+        "AI questionnaire assistance",
+        "Continuous assurance"
+      ],
+      "source_links": [
+        {
+          "label": "Website",
+          "url": "https://drata.com"
+        },
+        {
+          "label": "Security page",
+          "url": "https://drata.com/security"
+        },
+        {
+          "label": "Company profile",
+          "url": "https://www.linkedin.com/company/drata"
+        }
+      ],
+      "search_tags": [
+        "Drata",
+        "Trust management",
+        "Trust management platform spanning compliance automation, continuous assurance, third-party risk, trust centers, and AI-assisted workflows.",
+        "San Francisco, California, United States",
+        "SOC 2",
+        "ISO 27001",
+        "HIPAA",
+        "GDPR",
+        "CMMC",
+        "ISO 42001",
+        "ISO/IEC 27001",
+        "Trust center",
+        "Third-party risk",
+        "AI questionnaire assistance",
+        "Continuous assurance"
+      ]
+    },
+    {
+      "slug": "hyperproof",
+      "company_name": "Hyperproof",
+      "segment": "Compliance operations",
+      "summary": "Integrated compliance operations and risk platform centered on audit coordination, vendor risk, and cross-functional compliance management.",
+      "website_url": "https://hyperproof.io",
+      "headquarters_city": "Seattle",
+      "headquarters_state": "Washington",
+      "headquarters_country": "United States",
+      "location_label": "Seattle, Washington, United States",
+      "founded_year": 2018,
+      "years_running": 8,
+      "employees_estimate": 148,
+      "employee_band": "51-200",
+      "customer_frameworks": [
+        "SOC 2",
+        "ISO 27001"
+      ],
+      "public_assurance": [
+        "SOC 2",
+        "FedRAMP Moderate"
+      ],
+      "signals": [
+        "Vendor risk",
+        "Compliance operations",
+        "Risk management",
+        "FedRAMP product variant"
+      ],
+      "source_links": [
+        {
+          "label": "Website",
+          "url": "https://hyperproof.io"
+        },
+        {
+          "label": "Company profile",
+          "url": "https://www.linkedin.com/company/hyperproof"
+        }
+      ],
+      "search_tags": [
+        "Hyperproof",
+        "Compliance operations",
+        "Integrated compliance operations and risk platform centered on audit coordination, vendor risk, and cross-functional compliance management.",
+        "Seattle, Washington, United States",
+        "SOC 2",
+        "ISO 27001",
+        "FedRAMP Moderate",
+        "Vendor risk",
+        "Risk management",
+        "FedRAMP product variant"
+      ]
+    },
+    {
+      "slug": "oneleet",
+      "company_name": "Oneleet",
+      "segment": "Security-first compliance",
+      "summary": "Security-first compliance platform combining framework automation with security tooling and penetration testing support.",
+      "website_url": "https://www.oneleet.com",
+      "headquarters_city": "Wilmington",
+      "headquarters_state": "Delaware",
+      "headquarters_country": "United States",
+      "location_label": "Wilmington, Delaware, United States",
+      "founded_year": 2022,
+      "years_running": 4,
+      "employees_estimate": 36,
+      "employee_band": "1-50",
+      "customer_frameworks": [
+        "SOC 2",
+        "ISO 27001",
+        "ISO 42001",
+        "HIPAA",
+        "GDPR",
+        "PCI DSS",
+        "HITRUST",
+        "DORA",
+        "FedRAMP"
+      ],
+      "public_assurance": [],
+      "signals": [
+        "Security tooling",
+        "Penetration testing",
+        "Security-first positioning"
+      ],
+      "source_links": [
+        {
+          "label": "Website",
+          "url": "https://www.oneleet.com"
+        },
+        {
+          "label": "Company profile",
+          "url": "https://www.linkedin.com/company/oneleet"
+        }
+      ],
+      "search_tags": [
+        "Oneleet",
+        "Security-first compliance",
+        "Security-first compliance platform combining framework automation with security tooling and penetration testing support.",
+        "Wilmington, Delaware, United States",
+        "SOC 2",
+        "ISO 27001",
+        "ISO 42001",
+        "HIPAA",
+        "GDPR",
+        "PCI DSS",
+        "HITRUST",
+        "DORA",
+        "FedRAMP",
+        "Security tooling",
+        "Penetration testing",
+        "Security-first positioning"
+      ]
+    },
+    {
+      "slug": "scrut-automation",
+      "company_name": "Scrut Automation",
+      "segment": "Compliance automation",
+      "summary": "Security compliance automation platform focused on framework readiness, risk management, and continuous monitoring for growing companies.",
+      "website_url": "https://www.scrut.io",
+      "headquarters_city": "Palo Alto",
+      "headquarters_state": "California",
+      "headquarters_country": "United States",
+      "location_label": "Palo Alto, California, United States",
+      "founded_year": 2022,
+      "years_running": 4,
+      "employees_estimate": 232,
+      "employee_band": "201-500",
+      "customer_frameworks": [
+        "SOC 2",
+        "ISO 27001",
+        "ISO 42001",
+        "HIPAA",
+        "GDPR",
+        "PCI DSS",
+        "CCPA"
+      ],
+      "public_assurance": [
+        "SOC 2",
+        "ISO/IEC 27001"
+      ],
+      "signals": [
+        "Risk management",
+        "Continuous monitoring",
+        "Security compliance"
+      ],
+      "source_links": [
+        {
+          "label": "Website",
+          "url": "https://www.scrut.io"
+        },
+        {
+          "label": "Security page",
+          "url": "https://www.scrut.io/company/security"
+        },
+        {
+          "label": "Company profile",
+          "url": "https://www.linkedin.com/company/scrut-automation"
+        }
+      ],
+      "search_tags": [
+        "Scrut Automation",
+        "Compliance automation",
+        "Security compliance automation platform focused on framework readiness, risk management, and continuous monitoring for growing companies.",
+        "Palo Alto, California, United States",
+        "SOC 2",
+        "ISO 27001",
+        "ISO 42001",
+        "HIPAA",
+        "GDPR",
+        "PCI DSS",
+        "CCPA",
+        "ISO/IEC 27001",
+        "Risk management",
+        "Continuous monitoring",
+        "Security compliance"
+      ]
+    },
+    {
+      "slug": "scytale",
+      "company_name": "Scytale",
+      "segment": "Compliance automation",
+      "summary": "Compliance automation platform with strong SOC 2 and ISO 27001 positioning plus adjacent privacy and regulatory workflow support.",
+      "website_url": "https://scytale.ai",
+      "headquarters_city": "New York",
+      "headquarters_state": "New York",
+      "headquarters_country": "United States",
+      "location_label": "New York, New York, United States",
+      "founded_year": 2021,
+      "years_running": 5,
+      "employees_estimate": 159,
+      "employee_band": "51-200",
+      "customer_frameworks": [
+        "SOC 2",
+        "ISO 27001",
+        "HIPAA",
+        "GDPR",
+        "PCI DSS",
+        "CCPA",
+        "DORA",
+        "NIS 2",
+        "ISO 42001"
+      ],
+      "public_assurance": [
+        "SOC 2",
+        "ISO/IEC 27001"
+      ],
+      "signals": [
+        "Trust center",
+        "Cloud compliance",
+        "Security compliance"
+      ],
+      "source_links": [
+        {
+          "label": "Website",
+          "url": "https://scytale.ai"
+        },
+        {
+          "label": "Trust center",
+          "url": "https://scytale.ai/trust-center/"
+        },
+        {
+          "label": "Company profile",
+          "url": "https://www.linkedin.com/company/scytale-ai"
+        }
+      ],
+      "search_tags": [
+        "Scytale",
+        "Compliance automation",
+        "Compliance automation platform with strong SOC 2 and ISO 27001 positioning plus adjacent privacy and regulatory workflow support.",
+        "New York, New York, United States",
+        "SOC 2",
+        "ISO 27001",
+        "HIPAA",
+        "GDPR",
+        "PCI DSS",
+        "CCPA",
+        "DORA",
+        "NIS 2",
+        "ISO 42001",
+        "ISO/IEC 27001",
+        "Trust center",
+        "Cloud compliance",
+        "Security compliance"
+      ]
+    },
+    {
+      "slug": "secureframe",
+      "company_name": "Secureframe",
+      "segment": "Compliance automation",
+      "summary": "Compliance automation platform for audit readiness, framework mapping, continuous monitoring, and broader trust program operations.",
+      "website_url": "https://secureframe.com",
+      "headquarters_city": "San Francisco",
+      "headquarters_state": "California",
+      "headquarters_country": "United States",
+      "location_label": "San Francisco, California, United States",
+      "founded_year": 2020,
+      "years_running": 6,
+      "employees_estimate": 128,
+      "employee_band": "51-200",
+      "customer_frameworks": [
+        "SOC 2",
+        "ISO 27001",
+        "HIPAA",
+        "PCI DSS",
+        "GDPR",
+        "NIST 800-53",
+        "NIST 800-171",
+        "NIST CSF",
+        "CMMC",
+        "ISO 42001",
+        "FedRAMP"
+      ],
+      "public_assurance": [
+        "SOC 2",
+        "ISO/IEC 27001"
+      ],
+      "signals": [
+        "Audit readiness",
+        "AI features",
+        "Continuous monitoring"
+      ],
+      "source_links": [
+        {
+          "label": "Website",
+          "url": "https://secureframe.com"
+        },
+        {
+          "label": "Security page",
+          "url": "https://secureframe.com/security"
+        },
+        {
+          "label": "Company profile",
+          "url": "https://www.linkedin.com/company/secureframe"
+        }
+      ],
+      "search_tags": [
+        "Secureframe",
+        "Compliance automation",
+        "Compliance automation platform for audit readiness, framework mapping, continuous monitoring, and broader trust program operations.",
+        "San Francisco, California, United States",
+        "SOC 2",
+        "ISO 27001",
+        "HIPAA",
+        "PCI DSS",
+        "GDPR",
+        "NIST 800-53",
+        "NIST 800-171",
+        "NIST CSF",
+        "CMMC",
+        "ISO 42001",
+        "FedRAMP",
+        "ISO/IEC 27001",
+        "Audit readiness",
+        "AI features",
+        "Continuous monitoring"
+      ]
+    },
+    {
+      "slug": "sprinto",
+      "company_name": "Sprinto",
+      "segment": "Compliance automation",
+      "summary": "Automated GRC and compliance platform for fast-growing cloud companies, with strong audit-readiness and always-on trust positioning.",
+      "website_url": "https://www.sprinto.com",
+      "headquarters_city": "San Francisco",
+      "headquarters_state": "California",
+      "headquarters_country": "United States",
+      "location_label": "San Francisco, California, United States",
+      "founded_year": 2020,
+      "years_running": 6,
+      "employees_estimate": 466,
+      "employee_band": "201-500",
+      "customer_frameworks": [
+        "SOC 2",
+        "ISO 27001",
+        "ISO 27017",
+        "ISO 27018",
+        "ISO 27701",
+        "HIPAA",
+        "GDPR",
+        "PCI DSS"
+      ],
+      "public_assurance": [
+        "SOC 2"
+      ],
+      "signals": [
+        "Autonomous compliance",
+        "Trust center workflows",
+        "Cross-framework control mapping"
+      ],
+      "source_links": [
+        {
+          "label": "Website",
+          "url": "https://www.sprinto.com"
+        },
+        {
+          "label": "About page",
+          "url": "https://sprinto.com/about-us/"
+        },
+        {
+          "label": "Company profile",
+          "url": "https://in.linkedin.com/company/sprinto-com/"
+        }
+      ],
+      "search_tags": [
+        "Sprinto",
+        "Compliance automation",
+        "Automated GRC and compliance platform for fast-growing cloud companies, with strong audit-readiness and always-on trust positioning.",
+        "San Francisco, California, United States",
+        "SOC 2",
+        "ISO 27001",
+        "ISO 27017",
+        "ISO 27018",
+        "ISO 27701",
+        "HIPAA",
+        "GDPR",
+        "PCI DSS",
+        "Autonomous compliance",
+        "Trust center workflows",
+        "Cross-framework control mapping"
+      ]
+    },
+    {
+      "slug": "thoropass",
+      "company_name": "Thoropass",
+      "segment": "Audit + compliance",
+      "summary": "Audit and compliance platform combining automation, auditor-facing workflows, and related security testing services.",
+      "website_url": "https://thoropass.com",
+      "headquarters_city": "New York",
+      "headquarters_state": "New York",
+      "headquarters_country": "United States",
+      "location_label": "New York, New York, United States",
+      "founded_year": 2019,
+      "years_running": 7,
+      "employees_estimate": 231,
+      "employee_band": "201-500",
+      "customer_frameworks": [
+        "SOC 1",
+        "SOC 2",
+        "ISO 27001",
+        "HITRUST",
+        "HIPAA",
+        "PCI DSS",
+        "GDPR",
+        "CCPA",
+        "ISO 42001",
+        "ISO 27018"
+      ],
+      "public_assurance": [
+        "SOC 2 Type II",
+        "ISO/IEC 27001",
+        "ISO 9001",
+        "HITRUST i1"
+      ],
+      "signals": [
+        "Managed audits",
+        "Pentesting",
+        "Compliance services"
+      ],
+      "source_links": [
+        {
+          "label": "Website",
+          "url": "https://thoropass.com"
+        },
+        {
+          "label": "Trust center",
+          "url": "https://trust.thoropass.com/"
+        },
+        {
+          "label": "Company profile",
+          "url": "https://www.linkedin.com/company/thoropass"
+        }
+      ],
+      "search_tags": [
+        "Thoropass",
+        "Audit + compliance",
+        "Audit and compliance platform combining automation, auditor-facing workflows, and related security testing services.",
+        "New York, New York, United States",
+        "SOC 1",
+        "SOC 2",
+        "ISO 27001",
+        "HITRUST",
+        "HIPAA",
+        "PCI DSS",
+        "GDPR",
+        "CCPA",
+        "ISO 42001",
+        "ISO 27018",
+        "SOC 2 Type II",
+        "ISO/IEC 27001",
+        "ISO 9001",
+        "HITRUST i1",
+        "Managed audits",
+        "Pentesting",
+        "Compliance services"
+      ]
+    },
+    {
+      "slug": "vanta",
+      "company_name": "Vanta",
+      "segment": "Trust management",
+      "summary": "Trust management platform spanning compliance automation, risk, vendor risk, trust centers, questionnaire automation, and AI-assisted workflows.",
+      "website_url": "https://vanta.com",
+      "headquarters_city": "San Francisco",
+      "headquarters_state": "California",
+      "headquarters_country": "United States",
+      "location_label": "San Francisco, California, United States",
+      "founded_year": 2018,
+      "years_running": 8,
+      "employees_estimate": 1768,
+      "employee_band": "1001+",
+      "customer_frameworks": [
+        "SOC 2",
+        "ISO 27001",
+        "HIPAA",
+        "PCI DSS",
+        "GDPR"
+      ],
+      "public_assurance": [
+        "SOC 2",
+        "ISO/IEC 27001"
+      ],
+      "signals": [
+        "Trust center",
+        "Vendor risk",
+        "Questionnaire automation",
+        "AI"
+      ],
+      "source_links": [
+        {
+          "label": "Website",
+          "url": "https://vanta.com"
+        },
+        {
+          "label": "Security page",
+          "url": "https://www.vanta.com/company/security"
+        },
+        {
+          "label": "Company profile",
+          "url": "https://www.linkedin.com/company/vanta-security"
+        }
+      ],
+      "search_tags": [
+        "Vanta",
+        "Trust management",
+        "Trust management platform spanning compliance automation, risk, vendor risk, trust centers, questionnaire automation, and AI-assisted workflows.",
+        "San Francisco, California, United States",
+        "SOC 2",
+        "ISO 27001",
+        "HIPAA",
+        "PCI DSS",
+        "GDPR",
+        "ISO/IEC 27001",
+        "Trust center",
+        "Vendor risk",
+        "Questionnaire automation",
+        "AI"
+      ]
+    }
+  ]
+}
